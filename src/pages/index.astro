@@ -1,0 +1,129 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import HexCard from '@/components/HexCard.astro';
+
+const topRowCards = [
+  {
+    title: 'THEATRE',
+    description: 'Our performances, productions and creative work',
+    image: '/images/card-theatre.jpg',
+    icon: 'theatre' as const,
+    href: '#theatre',
+  },
+  {
+    title: 'INITIATIVES',
+    description: 'Projects, workshops and community initiatives',
+    image: '/images/card-initiatives.jpg',
+    icon: 'initiatives' as const,
+    href: '#initiatives',
+  },
+  {
+    title: 'ARCHIVE',
+    description: 'Past projects, productions and memories',
+    image: '/images/card-archive.jpg',
+    icon: 'archive' as const,
+    href: '#archive',
+  },
+];
+
+const bottomRowCards = [
+  {
+    title: 'ABOUT US',
+    description: 'Our mission, values and the team',
+    image: '/images/card-about.jpg',
+    icon: 'about' as const,
+    href: '#about',
+  },
+  {
+    title: 'GET INVOLVED',
+    description: 'Support us, collaborate or become a partner',
+    image: '/images/card-involved.jpg',
+    icon: 'involved' as const,
+    href: '#get-involved',
+  },
+];
+---
+
+<BaseLayout
+  title="Nordic Stage Theatre Association — Theatre for Connection. Culture for Community."
+  description="Nordic Stage Theatre Association based in Helsinki, Finland. Performances, productions, initiatives, and community."
+>
+  <!-- Main Hero & Hexagonal Showcase Section -->
+  <section class="relative min-h-[calc(100vh-5rem)] w-full overflow-hidden bg-white pt-10 sm:pt-14 pb-20 sm:pb-32">
+    <!-- Atmospheric Theatre Hall Background -->
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.28] pointer-events-none"
+      style="background-image: url('/images/theatre-hall-bg.jpg');"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Soft Vignette & Blend Overlay -->
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-white/95 pointer-events-none"
+      aria-hidden="true"
+    ></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-8">
+      <!-- Hero Headline matching reference -->
+      <div class="flex flex-col items-center text-center">
+        <h1 class="font-heading text-4xl sm:text-6xl md:text-[68px] lg:text-[76px] font-bold tracking-tight text-zinc-950 leading-[1.05] uppercase">
+          <div>NORDIC STAGE</div>
+          <div class="mt-1">THEATRE ASSOCIATION</div>
+        </h1>
+
+        <!-- Subtle Divider Line -->
+        <div class="mt-5 mb-4 h-[1px] w-40 sm:w-64 bg-zinc-300"></div>
+
+        <!-- Tagline / Slogan -->
+        <p class="text-xs sm:text-sm font-medium tracking-[0.22em] text-zinc-600 uppercase">
+          THEATRE FOR CONNECTION. CULTURE FOR COMMUNITY.
+        </p>
+      </div>
+
+      <!-- Hexagonal Cards Layout -->
+      <div class="mt-12 sm:mt-16 lg:mt-20">
+        <!-- Desktop / Tablet Honeycomb Layout (md and up) -->
+        <div class="hidden md:block">
+          <!-- Top Row (3 Hexagons) -->
+          <div class="flex justify-center items-center gap-4 sm:gap-6 lg:gap-8">
+            {topRowCards.map((card) => (
+              <HexCard
+                title={card.title}
+                description={card.description}
+                image={card.image}
+                icon={card.icon}
+                href={card.href}
+              />
+            ))}
+          </div>
+
+          <!-- Bottom Row (2 Hexagons, offset upwards to interlock like a honeycomb) -->
+          <div class="flex justify-center items-center gap-4 sm:gap-6 lg:gap-8 -mt-20 sm:-mt-24 lg:-mt-28">
+            {bottomRowCards.map((card) => (
+              <HexCard
+                title={card.title}
+                description={card.description}
+                image={card.image}
+                icon={card.icon}
+                href={card.href}
+              />
+            ))}
+          </div>
+        </div>
+
+        <!-- Mobile Layout (Single Column / stacked neatly) -->
+        <div class="flex flex-col items-center gap-8 md:hidden">
+          {[...topRowCards, ...bottomRowCards].map((card) => (
+            <HexCard
+              title={card.title}
+              description={card.description}
+              image={card.image}
+              icon={card.icon}
+              href={card.href}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
