@@ -11,7 +11,7 @@
 ├── public/              # Статические файлы (favicon, robots.txt и т.д.)
 ├── src/
 │   ├── assets/          # Оптимизируемые изображения, иконки, шрифты
-│   ├── components/      # Переиспользуемые UI-компоненты (Header, Footer и др.)
+│   ├── components/      # Переиспользуемые UI-компоненты (Header, Footer, HexCard и др.)
 │   ├── layouts/         # Шаблоны страниц (BaseLayout.astro с SEO)
 │   ├── pages/           # Файловый роутинг Astro (index.astro)
 │   └── styles/          # Глобальные стили (global.css с директивами Tailwind)
@@ -37,8 +37,21 @@
 
 ---
 
-## 🛠️ Особенности
+## 💻 Быстрый старт на Windows (для AI и новичков)
 
-- **Tailwind CSS**: подключен через `@tailwindcss/vite`, стили компилируются быстро и без лишней конфигурации.
-- **Path Alias**: настроен путь `@/*` к папке `src/*` в `tsconfig.json` для удобных импортов (`import Header from '@/components/Header.astro'`).
-- **SEO & Layout**: базовый лейаут содержит все необходимые мета-теги, Open Graph разметку и семантические теги HTML5.
+Если проект открывается на новом компьютере с Windows (например, через AI-агента Antigravity):
+
+1. **Установка окружения**:
+   - Убедиться в наличии **Git**: `winget install --id Git.Git -e --source winget`
+   - Убедиться в наличии **Bun**: `powershell -c "irm bun.sh/install.ps1 | iex"` *(или Node.js LTS через `winget install OpenJS.NodeJS.LTS`)*
+2. **Клонирование проекта**:
+   ```powershell
+   git clone https://github.com/coolswood/logrus.git
+   cd logrus
+   ```
+3. **Установка зависимостей и запуск**:
+   ```powershell
+   bun install
+   bun run dev
+   ```
+4. **Просмотр сайта**: Откройте в браузере `http://localhost:4321`.
