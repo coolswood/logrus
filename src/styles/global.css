@@ -42,8 +42,10 @@
 /* Site Layout Container */
 .site-container {
   max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 24px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 /* Card Bottom Slanted Panel */
