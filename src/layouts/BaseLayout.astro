@@ -6,43 +6,61 @@ import Footer from '@/components/Footer.astro';
 interface Props {
   title?: string;
   description?: string;
+  lang?: 'ru' | 'en' | 'fi';
+  ogImage?: string;
 }
 
 const {
   title = 'LOGRUS RY — Международное общество поддержки молодёжных инициатив',
   description = 'LOGRUS ry: театр, молодежные творческие студии, танцевальные мастер-классы, фестивали и практика в Хельсинки, Финляндия.',
+  lang = 'ru',
+  ogImage = '/images/card-theatre.webp',
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://logrus.fi');
 ---
 
 <!doctype html>
-<html lang="ru" class="h-full scroll-smooth">
-
+<html lang={lang} class="h-full scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts Preconnect & Optimized Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap"
       rel="stylesheet"
     />
 
-    <!-- SEO -->
+    <!-- Primary Meta Tags & SEO -->
     <title>{title}</title>
+    <meta name="title" content={title} />
     <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
   </head>
-  <body class="flex min-h-full flex-col bg-[#fafafa] text-zinc-900 antialiased selection:bg-zinc-900 selection:text-white">
-    <Header />
+  <body class="flex min-h-full flex-col bg-[#fcfbfa] text-zinc-950 antialiased selection:bg-zinc-900 selection:text-white">
+    <Header currentLang={lang} />
     <main class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <Footer currentLang={lang} />
   </body>
 </html>

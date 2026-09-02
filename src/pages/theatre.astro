@@ -1,90 +1,132 @@
-﻿---
 ---
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://www.teatterilogrus.fi/">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Театр — LOGRUS RY</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
 
-    <style is:global>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Montserrat', sans-serif; background-color: #fcfbfa; color: #111; line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+<BaseLayout
+  title="Театр Logrus — Репертуар и спектакли"
+  description="Официальный театр LOGRUS: премьеры спектаклей, билеты, афиша и актерская труппа в Хельсинки."
+  lang="ru"
+  ogImage="/images/card-theatre.webp"
+>
+  <!-- Page Hero -->
+  <section class="bg-white border-b border-zinc-200 py-12 sm:py-16 text-center">
+    <div class="site-container">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase mb-3">
+        Театр Logrus
+      </h1>
+      <p class="text-sm sm:text-base text-zinc-600 max-w-xl mx-auto font-medium">
+        Профессиональная сцена, премьеры и театральное искусство в Хельсинки.
+      </p>
+    </div>
+  </section>
 
-        /* HEADER */
-        header { padding: 24px 0; background: #fff; border-bottom: 1px solid #eaeaea; }
-        .header-inner { display: flex; align-items: center; justify-content: space-between; }
-        .logo-block { display: flex; align-items: center; gap: 12px; }
-        .logo-block img { height: 48px; width: auto; border-radius: 4px; display: block; object-fit: contain; }
-        .logo-text { display: flex; flex-direction: column; }
-        .logo-text .title { font-size: 1.1rem; font-weight: 900; letter-spacing: 0.05em; }
-        .logo-text .subtitle { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; color: #555; text-transform: uppercase; }
-        .header-right { display: flex; align-items: center; gap: 20px; }
-        .social-links { display: flex; gap: 12px; }
-        .social-links a { width: 34px; height: 34px; background: #111; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; transition: opacity 0.2s; }
-        .social-links a:hover { opacity: 0.75; }
-        .divider { width: 1px; height: 28px; background: #ccc; }
-        .lang-switch { font-size: 0.8rem; font-weight: 700; display: flex; gap: 8px; }
-        .lang-switch a { color: #777; }
-        .lang-switch a.active { color: #111; }
+  <!-- Featured Production Section -->
+  <section class="py-14 sm:py-16">
+    <div class="site-container">
+      <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12 mb-14">
+        <!-- Poster / Visual -->
+        <div class="lg:col-span-6 relative bg-zinc-950 min-h-[380px] sm:min-h-[460px]">
+          <img
+            src="/images/card-theatre.webp"
+            alt="Спектакль Новеченто"
+            width="800"
+            height="500"
+            loading="eager"
+            decoding="async"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
 
-        .redirect-box { text-align: center; padding: 100px 20px; }
-        .btn-redirect { display: inline-block; background: #111; color: #fff; padding: 14px 28px; border-radius: 4px; font-weight: 800; text-transform: uppercase; margin-top: 20px; transition: 0.2s; }
-        .btn-redirect:hover { background: #333; }
+        <!-- Details -->
+        <div class="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-black uppercase tracking-widest text-emerald-800 mb-2 block">
+              Текущий репертуар
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black uppercase text-zinc-950 mb-3 leading-tight">
+              NOVECENTO (1900)
+            </h2>
+            <p class="text-xs sm:text-sm font-bold text-zinc-500 uppercase tracking-wider mb-5">
+              Алессандро Барикко • Режиссер: Аквиле Рузгите
+            </p>
+            <p class="text-sm text-zinc-700 leading-relaxed mb-6 font-normal">
+              Удивительная музыкально-драматическая притча о гениальном пианисте, родившемся на борту трансатлантического океанского лайнера и ни разу в жизни не сошедшем на твердую землю.
+            </p>
 
-        footer { background-color: #16181b; color: #fff; padding: 50px 0 30px; }
-        .footer-bottom { display: flex; justify-content: space-between; font-size: 0.75rem; color: #777; }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container header-inner">
-            <a href="index.html" class="logo-block">
-                <img src="./images/logrus-pic-logo-title-noline-2.png" alt="Logrus Logo">
-                <div class="logo-text">
-                    <span class="title">LOGRUS RY</span>
-                    <span class="subtitle">International Youth Society</span>
-                </div>
+            <div class="bg-zinc-50 border border-zinc-200 rounded p-4 mb-6 text-xs text-zinc-700 space-y-1.5">
+              <div><strong>Площадка:</strong> Сцена Narri (Sörnäisten rantatie 31, Helsinki)</div>
+              <div><strong>Билеты:</strong> Biletti.fi и бронирование через театр</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://www.teatterilogrus.fi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 bg-zinc-950 text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded hover:bg-zinc-800 transition-colors"
+            >
+              Перейти на сайт театра (teatterilogrus.fi) &rarr;
             </a>
-
-            <div class="header-right">
-                <div class="social-links">
-                    <a href="https://www.facebook.com/logrusry" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/teat.rus" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://youtube.com/@logrusry2011" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="lang-switch">
-                    <a href="about.html">EN</a> |
-                    <a href="about.html">FI</a> |
-                    <a href="index.html">RU</a>
-                </div>
-            </div>
+            <a
+              href="/archive"
+              class="inline-flex items-center justify-center gap-2 bg-transparent border border-zinc-300 text-zinc-800 text-xs font-bold uppercase tracking-wider px-5 py-3.5 rounded hover:bg-zinc-100 transition-colors"
+            >
+              Архив постановок
+            </a>
+          </div>
         </div>
-    </header>
+      </div>
 
-    <main class="container redirect-box">
-        <h2>Переход на сайт театра...</h2>
-        <p>Если перенаправление не произошло автоматически, нажмите на кнопку ниже:</p>
-        <a href="https://www.teatterilogrus.fi/" class="btn-redirect">Перейти на www.teatterilogrus.fi</a>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-bottom">
-                <div>© 2026 Logrus ry — Общество поддержки молодёжных инициатив</div>
-                <div>Все права защищены.</div>
+      <!-- Other Repertoire Plays -->
+      <div>
+        <h3 class="text-2xl font-black uppercase tracking-tight text-zinc-950 mb-8 text-center sm:text-left">
+          История постановок театра
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <!-- Play 1 -->
+          <div class="bg-white border border-zinc-200 rounded-lg p-6 flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-bold text-zinc-400 uppercase tracking-wider block mb-1">Драма</span>
+              <h4 class="text-lg font-bold uppercase text-zinc-950 mb-2">Молодая хозяйка Нискавуори</h4>
+              <p class="text-xs text-zinc-600 leading-relaxed mb-4">
+                Классическая финская драма Хеллы Вуолийоки о борьбе традиций, любви и долга в родовом поместье Нискавуори.
+              </p>
             </div>
+            <a href="/archive" class="text-xs font-bold text-zinc-900 hover:underline inline-flex items-center gap-1">
+              Подробнее в архиве &rarr;
+            </a>
+          </div>
+
+          <!-- Play 2 -->
+          <div class="bg-white border border-zinc-200 rounded-lg p-6 flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-bold text-zinc-400 uppercase tracking-wider block mb-1">Комедия</span>
+              <h4 class="text-lg font-bold uppercase text-zinc-950 mb-2">SILVIA</h4>
+              <p class="text-xs text-zinc-600 leading-relaxed mb-4">
+                Остроумная и трогательная бродвейская комедия А. Р. Герни о любви, семье и неожиданных поворотах судьбы.
+              </p>
+            </div>
+            <a href="/archive" class="text-xs font-bold text-zinc-900 hover:underline inline-flex items-center gap-1">
+              Подробнее в архиве &rarr;
+            </a>
+          </div>
+
+          <!-- Play 3 -->
+          <div class="bg-white border border-zinc-200 rounded-lg p-6 flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-bold text-zinc-400 uppercase tracking-wider block mb-1">Притча</span>
+              <h4 class="text-lg font-bold uppercase text-zinc-950 mb-2">Очень простая история</h4>
+              <p class="text-xs text-zinc-600 leading-relaxed mb-4">
+                Трогательная история любви, верности и человеческих отношений глазами обитателей деревенского двора.
+              </p>
+            </div>
+            <a href="/archive" class="text-xs font-bold text-zinc-900 hover:underline inline-flex items-center gap-1">
+              Подробнее в архиве &rarr;
+            </a>
+          </div>
         </div>
-    </footer>
-</body>
-</html>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

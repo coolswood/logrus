@@ -1,7 +1,7 @@
-﻿const path = require('path');
+const path = require('path');
 const fs = require('fs');
 
-const distDir = 'C:/Projects/logrus/dist';
+const distDir = path.resolve(__dirname, 'dist');
 
 const server = Bun.serve({
   port: 4321,
