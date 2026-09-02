@@ -44,12 +44,12 @@ const i18n = {
 ---
 
 <footer class="w-full bg-[#16181b] text-white mt-auto">
-  <div class="site-container py-14">
+  <div class="site-container pt-12 pb-8 sm:pt-14 sm:pb-10">
     <!-- Top 3-Column Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 pb-12 border-b border-zinc-800">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12 pb-10 sm:pb-12 border-b border-zinc-800">
       
       <!-- Column 1: Contacts -->
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-3.5">
         <h3 class="text-xs font-extrabold tracking-widest uppercase text-white">
           {i18n.contactsTitle}
         </h3>
@@ -60,7 +60,7 @@ const i18n = {
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <span>{i18n.address}</span>
+            <span class="leading-snug">{i18n.address}</span>
           </div>
 
           <!-- Email -->
@@ -74,11 +74,11 @@ const i18n = {
           </div>
 
           <!-- Phone -->
-          <div class="flex items-center gap-3">
-            <svg class="h-4 w-4 shrink-0 text-zinc-400 fill-none stroke-current stroke-2" width="16" height="16" aria-hidden="true" viewBox="0 0 24 24">
+          <div class="flex items-start gap-3">
+            <svg class="h-4 w-4 shrink-0 text-zinc-400 mt-1 fill-none stroke-current stroke-2" width="16" height="16" aria-hidden="true" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            <div class="flex flex-col gap-1.5 pt-0.5">
+            <div class="flex flex-col gap-1">
               <a href="tel:+358458977777" class="hover:text-white transition-colors py-0.5 inline-block">
                 +358 45 897 7777
               </a>
@@ -91,11 +91,11 @@ const i18n = {
       </div>
 
       <!-- Column 2: Social Media -->
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-3.5">
         <h3 class="text-xs font-extrabold tracking-widest uppercase text-white">
           {i18n.socialsTitle}
         </h3>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 pt-0.5">
           <!-- Facebook -->
           <a
             href="https://www.facebook.com/logrusry"
@@ -138,15 +138,17 @@ const i18n = {
       </div>
 
       <!-- Column 3: Newsletter Form -->
-      <div class="flex flex-col gap-4">
-        <h3 class="text-xs font-extrabold tracking-widest uppercase text-white">
-          {i18n.newsTitle}
-        </h3>
-        <p class="text-xs text-zinc-400">
-          {i18n.newsDesc}
-        </p>
+      <div class="flex flex-col gap-3">
+        <div class="flex flex-col gap-1.5">
+          <h3 class="text-xs font-extrabold tracking-widest uppercase text-white">
+            {i18n.newsTitle}
+          </h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            {i18n.newsDesc}
+          </p>
+        </div>
         <form
-          class="flex w-full"
+          class="flex w-full mt-1"
           action="https://api.web3forms.com/submit"
           method="POST"
         >
@@ -159,11 +161,11 @@ const i18n = {
             aria-label={i18n.emailPlaceholder}
             placeholder={i18n.emailPlaceholder}
             required
-            class="flex-1 bg-[#212529] border border-zinc-700 px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-400"
+            class="flex-1 min-w-0 bg-[#212529] border border-zinc-700 px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-400 rounded-l-sm"
           />
           <button
             type="submit"
-            class="bg-white px-4 py-2.5 text-[11px] font-black uppercase tracking-wider text-black hover:bg-zinc-200 transition-colors cursor-pointer shrink-0"
+            class="bg-white px-4 py-2.5 text-[11px] font-black uppercase tracking-wider text-black hover:bg-zinc-200 transition-colors cursor-pointer shrink-0 rounded-r-sm"
           >
             {i18n.subscribeBtn}
           </button>
@@ -172,7 +174,7 @@ const i18n = {
     </div>
 
     <!-- Bottom Bar -->
-    <div class="flex flex-col sm:flex-row items-center justify-between pt-6 text-[11px] text-zinc-400 gap-2">
+    <div class="flex flex-col sm:flex-row items-center justify-between pt-7 sm:pt-8 text-[11px] text-zinc-400 gap-3 text-center sm:text-left">
       <div>{i18n.copyright}</div>
       <div>{i18n.rights}</div>
     </div>
