@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты и студии — LOGRUS RY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #fcfbfa; color: #111; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+        header { padding: 24px 0; background: #fff; border-bottom: 1px solid #eaeaea; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; }
+        .logo-block { display: flex; align-items: center; gap: 12px; }
+        .logo-block img { height: 44px; width: auto; }
+        .logo-text .title { font-size: 1.1rem; font-weight: 900; letter-spacing: 0.05em; }
+        .logo-text .subtitle { font-size: 0.65rem; font-weight: 700; color: #666; text-transform: uppercase; }
+        
+        .nav-links { display: flex; gap: 24px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
+        .nav-links a:hover { color: #555; }
+        .nav-links a.active { border-bottom: 2px solid #111; }
+
+        .page-hero { padding: 60px 0 40px; text-align: center; background: #fff; border-bottom: 1px solid #f0f0f0; }
+        .page-hero h1 { font-size: 2.8rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+        .page-hero p { font-size: 1rem; color: #666; max-width: 600px; margin: 0 auto; }
+
+        .section { padding: 60px 0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        
+        .project-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+        .project-img { height: 260px; overflow: hidden; background: #eee; }
+        .project-img img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .project-content { padding: 30px; display: flex; flex-direction: column; flex-grow: 1; }
+        .project-tag { font-size: 0.75rem; font-weight: 800; color: #004212; text-transform: uppercase; margin-bottom: 8px; }
+        .project-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; }
+        .project-desc { font-size: 0.95rem; color: #555; margin-bottom: 20px; flex-grow: 1; }
+        
+        .project-meta { background: #f9f9f9; padding: 16px; border-radius: 6px; font-size: 0.85rem; margin-bottom: 20px; }
+        .project-meta div { margin-bottom: 6px; }
+        .project-meta div:last-child { margin-bottom: 0; }
+
+        .btn-join { display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: 700; font-size: 0.85rem; width: fit-content; }
+        .btn-join:hover { background: #1ebc5a; }
+
+        footer { background-color: #16181b; color: #fff; padding: 50px 0 30px; }
+        .footer-bottom { display: flex; justify-content: space-between; font-size: 0.75rem; color: #777; }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .header-inner { flex-direction: column; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo-block">
+                <img src="images/logrus-pic-logo-title-noline-2.png" alt="Logrus Logo" onerror="this.style.display='none'">
+                <div class="logo-text">
+                    <span class="title">LOGRUS RY</span>
+                    <span class="subtitle">International Youth Society</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="theatre.html">Театр</a>
+                <a href="projects.html" class="active">Проекты</a>
+                <a href="archive.html">Архив</a>
+                <a href="about.html">О нас</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Проекты и студии</h1>
+            <p>Бесплатные творческие занятия, мастер-классы и молодежные инициативы в Хельсинки.</p>
+        </div>
+    </section>
+
+    <main class="container section">
+        <div class="grid-2">
+            
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/Курсы-Импровизации.png" alt="Творческие курсы" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600'">
+                </div>
+                <div class="project-content">
+                    <div class="project-tag">Бесплатный курс</div>
+                    <h2 class="project-title">Студии дефиле и китайского танца</h2>
+                    <p class="project-desc">Творческие занятия для подростков и молодежи с профессиональными педагогами. Подготовка сценических номеров, примерка ярких костюмов и участие в гала-концерте «Январские встречи».</p>
+                    
+                    <div class="project-meta">
+                        <div><strong>Возраст:</strong> 14–25 лет (участие бесплатное)</div>
+                        <div><strong>Расписание:</strong> По воскресеньям</div>
+                        <div><strong>Локация:</strong> Nuorisotalo Kontula, Ostostie 4, 00940 Helsinki</div>
+                    </div>
+
+                    <a href="https://wa.me/358458977777?text=Здравствуйте,+хочу+записаться+на+курс" target="_blank" class="btn-join">
+                        <i class="fa-brands fa-whatsapp"></i> Записаться через WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/120041242_767829627114593_2138231004363853000_n.jpg" alt="Практика TE-toimisto" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600'">
+                </div>
+                <div class="project-content">
+                    <div class="project-tag">Интеграция и практика</div>
+                    <h2 class="project-title">Практика от TE-toimisto</h2>
+                    <p class="project-desc">Возможность пройти официальную практику в сфере культуры и театра для стилистов, костюмеров, звукорежиссеров и осветителей. Реальный сценический опыт и сертификат.</p>
+                    
+                    <div class="project-meta">
+                        <div><strong>Направления:</strong> Швея/портниха, помощник стилиста, свет и звук</div>
+                        <div><strong>Условия:</strong> Гибкий график, регистрация в TE-palvelut</div>
+                        <div><strong>Куратор:</strong> Елена (+358 45 153 7303)</div>
+                    </div>
+
+                    <a href="mailto:info@logrus.fi" class="btn-join" style="background:#111;">
+                        <i class="fa-regular fa-envelope"></i> Отправить резюме
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <div>© 2026 Logrus ry — Общество поддержки молодёжных инициатив</div>
+                <div>Все права защищены.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

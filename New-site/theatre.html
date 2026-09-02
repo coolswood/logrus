@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=https://www.teatterilogrus.fi/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Театр — LOGRUS RY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #fcfbfa; color: #111; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+        /* HEADER */
+        header { padding: 24px 0; background: #fff; border-bottom: 1px solid #eaeaea; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; }
+        .logo-block { display: flex; align-items: center; gap: 12px; }
+        .logo-block img { height: 48px; width: auto; border-radius: 4px; display: block; object-fit: contain; }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-text .title { font-size: 1.1rem; font-weight: 900; letter-spacing: 0.05em; }
+        .logo-text .subtitle { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; color: #555; text-transform: uppercase; }
+        .header-right { display: flex; align-items: center; gap: 20px; }
+        .social-links { display: flex; gap: 12px; }
+        .social-links a { width: 34px; height: 34px; background: #111; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; transition: opacity 0.2s; }
+        .social-links a:hover { opacity: 0.75; }
+        .divider { width: 1px; height: 28px; background: #ccc; }
+        .lang-switch { font-size: 0.8rem; font-weight: 700; display: flex; gap: 8px; }
+        .lang-switch a { color: #777; }
+        .lang-switch a.active { color: #111; }
+
+        .redirect-box { text-align: center; padding: 100px 20px; }
+        .btn-redirect { display: inline-block; background: #111; color: #fff; padding: 14px 28px; border-radius: 4px; font-weight: 800; text-transform: uppercase; margin-top: 20px; transition: 0.2s; }
+        .btn-redirect:hover { background: #333; }
+
+        footer { background-color: #16181b; color: #fff; padding: 50px 0 30px; }
+        .footer-bottom { display: flex; justify-content: space-between; font-size: 0.75rem; color: #777; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo-block">
+                <img src="./images/logrus-pic-logo-title-noline-2.png" alt="Logrus Logo">
+                <div class="logo-text">
+                    <span class="title">LOGRUS RY</span>
+                    <span class="subtitle">International Youth Society</span>
+                </div>
+            </a>
+
+            <div class="header-right">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/logrusry" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/teat.rus" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com/@logrusry2011" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="lang-switch">
+                    <a href="about.html">EN</a> |
+                    <a href="about.html">FI</a> |
+                    <a href="index.html">RU</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container redirect-box">
+        <h2>Переход на сайт театра...</h2>
+        <p>Если перенаправление не произошло автоматически, нажмите на кнопку ниже:</p>
+        <a href="https://www.teatterilogrus.fi/" class="btn-redirect">Перейти на www.teatterilogrus.fi</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <div>© 2026 Logrus ry — Общество поддержки молодёжных инициатив</div>
+                <div>Все права защищены.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

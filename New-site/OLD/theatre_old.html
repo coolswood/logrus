@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Театр — LOGRUS RY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #fcfbfa; color: #111; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+        header { padding: 24px 0; background: #fff; border-bottom: 1px solid #eaeaea; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; }
+        .logo-block { display: flex; align-items: center; gap: 12px; }
+        .logo-block img { height: 44px; width: auto; }
+        .logo-text .title { font-size: 1.1rem; font-weight: 900; letter-spacing: 0.05em; }
+        .logo-text .subtitle { font-size: 0.65rem; font-weight: 700; color: #666; text-transform: uppercase; }
+        
+        .nav-links { display: flex; gap: 24px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
+        .nav-links a:hover { color: #555; }
+        .nav-links a.active { border-bottom: 2px solid #111; }
+
+        .page-hero { padding: 60px 0 40px; text-align: center; background: #fff; border-bottom: 1px solid #f0f0f0; }
+        .page-hero h1 { font-size: 2.8rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+        .page-hero p { font-size: 1rem; color: #666; max-width: 600px; margin: 0 auto; }
+
+        .section { padding: 60px 0; }
+        .featured-play { background: #fff; border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden; display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; margin-bottom: 50px; }
+        .play-poster img { width: 100%; height: 100%; object-fit: cover; }
+        .play-details { padding: 40px 40px 40px 0; display: flex; flex-direction: column; justify-content: center; }
+        .play-badge { display: inline-block; background: #004212; color: #fff; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 4px; text-transform: uppercase; margin-bottom: 16px; width: fit-content; }
+        .play-title { font-size: 2.2rem; font-weight: 900; text-transform: uppercase; margin-bottom: 12px; }
+        .play-quote { font-style: italic; color: #555; margin-bottom: 20px; font-size: 1.05rem; }
+        .play-info-list { margin-bottom: 24px; font-size: 0.95rem; }
+        .play-info-list li { margin-bottom: 8px; list-style: none; }
+        .play-info-list strong { color: #111; }
+        
+        .btn-ticket { display: inline-block; background: #111; color: #fff; padding: 12px 28px; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; border-radius: 4px; width: fit-content; transition: 0.2s; }
+        .btn-ticket:hover { background: #333; }
+
+        .roles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; font-size: 0.9rem; background: #f8f8f8; padding: 20px; border-radius: 6px; }
+
+        footer { background-color: #16181b; color: #fff; padding: 50px 0 30px; }
+        .footer-bottom { display: flex; justify-content: space-between; font-size: 0.75rem; color: #777; }
+
+        @media (max-width: 850px) {
+            .featured-play { grid-template-columns: 1fr; }
+            .play-details { padding: 24px; }
+            .header-inner { flex-direction: column; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo-block">
+                <img src="images/logrus-pic-logo-title-noline-2.png" alt="Logrus Logo" onerror="this.style.display='none'">
+                <div class="logo-text">
+                    <span class="title">LOGRUS RY</span>
+                    <span class="subtitle">International Youth Society</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="theatre.html" class="active">Театр</a>
+                <a href="projects.html">Проекты</a>
+                <a href="archive.html">Архив</a>
+                <a href="about.html">О нас</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Театр Logrus</h1>
+            <p>Театральная труппа, живые постановки, поиск сценического языка и сотрудничество с финскими и международными артистами.</p>
+        </div>
+    </section>
+
+    <main class="container section">
+        
+        <div class="featured-play">
+            <div class="play-poster">
+                <img src="images/Novechento.png" alt="Афиша NOVECENTO" onerror="this.src='https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800'">
+            </div>
+            <div class="play-details">
+                <span class="play-badge">Премьера спектакля</span>
+                <h2 class="play-title">NOVECENTO</h2>
+                <p class="play-quote">«Бесконечное пианино, как бескрайний океан, и человек, нашедший музыку, но не нашедший берег…»</p>
+                <p style="margin-bottom: 16px; font-size: 0.95rem; color: #444;">
+                    По одноимённой пьесе Алессандро Барикко. Совместная постановка театра Logrus и клуба DanceSport Studio. История музыканта, родившегося на лайнере и прожившего жизнь между морем и музыкой.
+                </p>
+                
+                <ul class="play-info-list">
+                    <li><strong>Режиссёр:</strong> Аквиле Рузгите</li>
+                    <li><strong>Сцена:</strong> Narri, Sörnäisten rantatie 31, Хельсинки</li>
+                    <li><strong>Хореография:</strong> Анастасия Угрюмова-Техников (DanceSport Studio)</li>
+                    <li><strong>Звук и свет:</strong> Александр Казаков, Кирилл Петюнин</li>
+                </ul>
+
+                <div class="roles-grid">
+                    <div>• <strong>Виталий Лайдинен:</strong> Новеченто</div>
+                    <div>• <strong>Сергей Сивульский:</strong> трубач</div>
+                    <div>• <strong>Наталия Силевич:</strong> танцовщица</div>
+                    <div>• <strong>Ольга Хилтунен:</strong> голос неба</div>
+                </div>
+
+                <a href="https://biletti.fi" target="_blank" class="btn-ticket">Купить билеты / Biletti.fi</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <div>© 2026 Logrus ry — Общество поддержки молодёжных инициатив</div>
+                <div>Все права защищены.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
