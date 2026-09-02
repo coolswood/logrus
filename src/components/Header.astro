@@ -5,6 +5,16 @@ interface Props {
 
 const { currentLang = 'ru' } = Astro.props;
 
+const currentPath = Astro.url.pathname;
+let pathWithoutLang = currentPath.replace(/^\/(en|fi)(\/|$)/, '/');
+if (!pathWithoutLang.startsWith('/')) pathWithoutLang = '/' + pathWithoutLang;
+if (pathWithoutLang === '//') pathWithoutLang = '/';
+
+const isTheatre = pathWithoutLang === '/theatre';
+const ruHref = pathWithoutLang;
+const enHref = isTheatre ? '/en' : (pathWithoutLang === '/' ? '/en' : `/en${pathWithoutLang}`);
+const fiHref = isTheatre ? '/fi' : (pathWithoutLang === '/' ? '/fi' : `/fi${pathWithoutLang}`);
+
 const homeHref = currentLang === 'ru' ? '/' : `/${currentLang}`;
 ---
 
@@ -27,7 +37,7 @@ const homeHref = currentLang === 'ru' ? '/' : `/${currentLang}`;
           LOGRUS RY
         </span>
         <span class="text-[10px] font-bold tracking-widest text-zinc-500 uppercase mt-1">
-          {currentLang === 'ru' ? 'International Youth Society' : currentLang === 'fi' ? 'Kansainvälinen nuorisoseura' : 'International Youth Society'}
+          {currentLang === 'ru' ? 'Общество поддержки молодёжных инициатив' : currentLang === 'fi' ? 'Kansainvälinen nuorisoseura' : 'International Youth Support Society'}
         </span>
       </div>
     </a>
@@ -95,21 +105,21 @@ const homeHref = currentLang === 'ru' ? '/' : `/${currentLang}`;
       <!-- Language Switcher -->
       <div class="flex items-center gap-1.5 text-xs font-bold tracking-wider">
         <a
-          href="/en"
+          href={enHref}
           class={`transition-colors ${currentLang === 'en' ? 'text-zinc-950 underline underline-offset-4' : 'text-zinc-400 hover:text-zinc-800'}`}
         >
           EN
         </a>
         <span class="text-zinc-300">|</span>
         <a
-          href="/fi"
+          href={fiHref}
           class={`transition-colors ${currentLang === 'fi' ? 'text-zinc-950 underline underline-offset-4' : 'text-zinc-400 hover:text-zinc-800'}`}
         >
           FI
         </a>
         <span class="text-zinc-300">|</span>
         <a
-          href="/"
+          href={ruHref}
           class={`transition-colors ${currentLang === 'ru' ? 'text-zinc-950 underline underline-offset-4' : 'text-zinc-400 hover:text-zinc-800'}`}
         >
           RU

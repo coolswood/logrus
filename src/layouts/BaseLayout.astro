@@ -17,7 +17,20 @@ const {
   ogImage = '/images/card-theatre.webp',
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://logrus.fi');
+const siteURL = Astro.site || new URL('https://logrus.fi');
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const ogImageURL = new URL(ogImage, siteURL).toString();
+
+// Calculate hreflang paths
+let currentSlug = Astro.url.pathname.replace(/^\/(en|fi)(\/|$)/, '/');
+if (!currentSlug.startsWith('/')) currentSlug = '/' + currentSlug;
+if (currentSlug === '//') currentSlug = '/';
+
+const ruURL = new URL(currentSlug === '/' ? '' : currentSlug.slice(1), siteURL).toString();
+const enURL = new URL(currentSlug === '/' ? 'en' : 'en' + currentSlug, siteURL).toString();
+const fiURL = new URL(currentSlug === '/' ? 'fi' : 'fi' + currentSlug, siteURL).toString();
+
+const ogLocale = lang === 'ru' ? 'ru_RU' : lang === 'fi' ? 'fi_FI' : 'en_US';
 ---
 
 <!doctype html>
@@ -26,14 +39,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://logrus.f
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Google Fonts Preconnect & Optimized Font Loading -->
+    <!-- Multilingual Hreflang Tags -->
+    <link rel="alternate" hreflang="ru" href={ruURL} />
+    <link rel="alternate" hreflang="en" href={enURL} />
+    <link rel="alternate" hreflang="fi" href={fiURL} />
+    <link rel="alternate" hreflang="x-default" href={ruURL} />
+
+    <!-- Google Fonts Preconnect & Optimized Font Loading (including weight 600) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
 
@@ -44,21 +64,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://logrus.f
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content={ogLocale} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageURL} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ogImage} />
+    <meta property="twitter:image" content={ogImageURL} />
   </head>
-  <body class="flex min-h-full flex-col bg-[#fcfbfa] text-zinc-950 antialiased selection:bg-zinc-900 selection:text-white">
+  <body class="flex min-h-screen min-h-[100dvh] flex-col bg-[#fcfbfa] text-zinc-950 antialiased selection:bg-zinc-900 selection:text-white">
     <Header currentLang={lang} />
-    <main class="flex-1">
+    <main class="flex-1 flex flex-col">
       <slot />
     </main>
     <Footer currentLang={lang} />
