@@ -32,6 +32,11 @@
     text-decoration: none;
     color: inherit;
   }
+
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
 
 /* Site Layout Container */

@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   lang?: 'ru' | 'en' | 'fi';
   ogImage?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description = 'LOGRUS ry: театр, молодежные творческие студии, танцевальные мастер-классы, фестивали и практика в Хельсинки, Финляндия.',
   lang = 'ru',
   ogImage = '/images/card-theatre.webp',
+  noindex = false,
 } = Astro.props;
 
 const siteURL = Astro.site || new URL('https://logrus.fi');
@@ -24,11 +26,13 @@ const ogImageURL = new URL(ogImage, siteURL).toString();
 // Calculate hreflang paths
 let currentSlug = Astro.url.pathname.replace(/^\/(en|fi)(\/|$)/, '/');
 if (!currentSlug.startsWith('/')) currentSlug = '/' + currentSlug;
+if (currentSlug.length > 1 && currentSlug.endsWith('/')) currentSlug = currentSlug.slice(0, -1);
 if (currentSlug === '//') currentSlug = '/';
 
+const isTheatre = currentSlug === '/theatre';
 const ruURL = new URL(currentSlug === '/' ? '' : currentSlug.slice(1), siteURL).toString();
-const enURL = new URL(currentSlug === '/' ? 'en' : 'en' + currentSlug, siteURL).toString();
-const fiURL = new URL(currentSlug === '/' ? 'fi' : 'fi' + currentSlug, siteURL).toString();
+const enURL = new URL(isTheatre ? 'en' : (currentSlug === '/' ? 'en' : 'en' + currentSlug), siteURL).toString();
+const fiURL = new URL(isTheatre ? 'fi' : (currentSlug === '/' ? 'fi' : 'fi' + currentSlug), siteURL).toString();
 
 const ogLocale = lang === 'ru' ? 'ru_RU' : lang === 'fi' ? 'fi_FI' : 'en_US';
 ---
@@ -42,12 +46,17 @@ const ogLocale = lang === 'ru' ? 'ru_RU' : lang === 'fi' ? 'fi_FI' : 'en_US';
     <link rel="alternate icon" href="/favicon.ico" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Multilingual Hreflang Tags -->
-    <link rel="alternate" hreflang="ru" href={ruURL} />
-    <link rel="alternate" hreflang="en" href={enURL} />
-    <link rel="alternate" hreflang="fi" href={fiURL} />
-    <link rel="alternate" hreflang="x-default" href={ruURL} />
+    {!noindex && (
+      <>
+        <link rel="alternate" hreflang="ru" href={ruURL} />
+        <link rel="alternate" hreflang="en" href={enURL} />
+        <link rel="alternate" hreflang="fi" href={fiURL} />
+        <link rel="alternate" hreflang="x-default" href={ruURL} />
+      </>
+    )}
 
     <!-- Google Fonts Preconnect & Optimized Font Loading (including weight 600) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
