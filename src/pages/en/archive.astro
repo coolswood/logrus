@@ -1,16 +1,15 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
-const archiveItems2025_2026 = [
+const archiveItemsFestivals = [
   {
-    tag: 'Theatre Play',
-    title: '«NOVECENTO»',
-    date: 'November 2025',
-    image: '/images/card-theatre.webp',
-    description: 'Stage production based on the novella by Alessandro Baricco in collaboration with DanceSport Studio. The story of a legendary pianist born at sea.',
+    tag: 'Festival / Camp',
+    title: 'Social Environment & Integration',
+    date: '2022 — 2024',
+    image: '/images/card-involved.webp',
+    description: 'A series of community meetups, language labs, and youth integration camps held across Finland.',
     meta: [
-      { label: 'Director', val: 'Akvile Ruzgyte' },
-      { label: 'Venue', val: 'Narri Stage, Sörnäisten rantatie 31, Helsinki' },
+      { label: 'Partners', val: 'Caisa, Kanneltalo, TE-toimisto' },
     ],
   },
   {
@@ -24,6 +23,20 @@ const archiveItems2025_2026 = [
       { label: 'Status', val: 'Successfully completed' },
     ],
   },
+];
+
+const archiveItemsPast = [
+  {
+    tag: 'Performance',
+    title: '«NOVECENTO»',
+    date: 'November 2025',
+    image: '/images/theatre-art.webp',
+    description: 'Stage production based on the novella by Alessandro Baricco in collaboration with DanceSport Studio. The story of a legendary pianist born at sea.',
+    meta: [
+      { label: 'Director', val: 'Akvile Ruzgyte' },
+      { label: 'Venue', val: 'Narri Stage, Sörnäisten rantatie 31, Helsinki' },
+    ],
+  },
   {
     tag: 'Theatre Play',
     title: '«SILVIA»',
@@ -35,9 +48,6 @@ const archiveItems2025_2026 = [
       { label: 'Stage', val: 'Narrin näyttämö' },
     ],
   },
-];
-
-const archiveItemsPast = [
   {
     tag: 'Family Show',
     title: '«Mystery of the Lost Ring»',
@@ -45,35 +55,25 @@ const archiveItemsPast = [
     image: '/images/card-about.webp',
     description: 'Interactive family performance by the youth theatre ensemble of the Helmi Center based on classic English tales.',
     meta: [
-      { label: 'Organizer', val: 'Logrus Ry / Helmi-keskus' },
-    ],
-  },
-  {
-    tag: 'Festival & Camp',
-    title: 'Social Environment & Integration',
-    date: '2022 — 2024',
-    image: '/images/card-involved.webp',
-    description: 'Series of intercultural events, language exchange sessions, and youth integration camps across Finland.',
-    meta: [
-      { label: 'Partners', val: 'Caisa, Kanneltalo, TE-toimisto' },
+      { label: 'Organizer', val: 'Logrus ry / Helmi Center' },
     ],
   },
   {
     tag: 'Drama',
-    title: '«Young Mistress of Niskavuori»',
+    title: '«The Young Mistress of Niskavuori»',
     date: '2021 — 2022',
     image: '/images/niskavuori.webp',
-    description: 'Classic Finnish drama by Hella Wuolijoki about tradition, duty, and passion at the Niskavuori estate.',
+    description: 'Classic Finnish drama by Hella Wuolijoki dealing with tradition, pride, and love at the Niskavuori estate.',
     meta: [
       { label: 'Theatre', val: 'Logrus Teatteri' },
     ],
   },
   {
     tag: 'Fashion Show',
-    title: '«The Hipsters» Runway Show',
+    title: 'Fashion Show «The Hipsters»',
     date: '2019',
     image: '/images/fashion-hipsters.webp',
-    description: 'Youth fashion performance featuring vintage and stylized costumes tailored in the Logrus workshop.',
+    description: 'Youth catwalk showcasing vintage and retro-inspired fashion crafted in the Logrus costume workshop.',
     meta: [
       { label: 'Organizer', val: 'Logrus ry' },
     ],
@@ -83,17 +83,17 @@ const archiveItemsPast = [
     title: 'International Festival «Art-Planet»',
     date: '2016 — 2018',
     image: '/images/art-planet-2020.webp',
-    description: 'Annual multigenre youth festival uniting performing ensembles from across the Baltic Sea region.',
+    description: 'Annual multicultural children and youth festival featuring talented ensembles from across Northern Europe.',
     meta: [
-      { label: 'Venue', val: 'Helsinki' },
+      { label: 'Host City', val: 'Helsinki' },
     ],
   },
   {
-    tag: 'Contest',
-    title: '«Gloria Star» Talent Competition',
+    tag: 'Competition',
+    title: 'Festival & Contest «Gloria Star»',
     date: '2013 — 2015',
     image: '/images/spektr-2016.webp',
-    description: 'Vocal and choreographic competition for emerging artists with international jury and masterclasses.',
+    description: 'Vocal and dance showcase offering masterclasses and stage experience for young aspiring performers.',
     meta: [
       { label: 'Organizer', val: 'Logrus ry' },
     ],
@@ -102,8 +102,8 @@ const archiveItemsPast = [
 ---
 
 <BaseLayout
-  title="Archive of Events & Shows — LOGRUS RY"
-  description="Archive of theatrical productions, festivals Gloria Star, Art-Planet, and youth projects of LOGRUS ry since 2012."
+  title="Event & Performance Archive — LOGRUS RY"
+  description="Historical archive of theatrical performances, festivals, and youth initiatives by LOGRUS ry in Finland since 2012."
   lang="en"
   ogImage="/images/card-archive.webp"
 >
@@ -114,7 +114,7 @@ const archiveItemsPast = [
         Event Archive
       </h1>
       <p class="text-sm sm:text-base text-zinc-600 max-w-xl mx-auto font-medium">
-        Chronicle of stage plays, international festivals, fashion shows, and youth projects since 2012.
+        Chronicle of theatrical productions, youth initiatives, fashion projects, and festivals since 2012.
       </p>
     </div>
   </section>
@@ -123,14 +123,14 @@ const archiveItemsPast = [
   <section class="py-14 sm:py-16">
     <div class="site-container">
       
-      <!-- Section: 2025 - 2026 -->
+      <!-- Section: Festivals & Workshops -->
       <div class="mb-16">
         <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-zinc-950 mb-8 border-b-2 border-zinc-950 pb-2 inline-block">
-          2025 — 2026
+          Festivals & Studios
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {archiveItems2025_2026.map((item) => (
+          {archiveItemsFestivals.map((item) => (
             <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden flex flex-col shadow-sm transition-transform duration-200 hover:-translate-y-1">
               <div class="h-56 relative bg-zinc-900 overflow-hidden">
                 <span class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-xs text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded z-10">
@@ -166,7 +166,7 @@ const archiveItemsPast = [
       <!-- Section: Past Seasons -->
       <div>
         <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-zinc-950 mb-8 border-b-2 border-zinc-950 pb-2 inline-block">
-          Earlier Repertoire & Projects
+          Earlier Repertoire
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">

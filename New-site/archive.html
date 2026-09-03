@@ -19,7 +19,7 @@
         header { padding: 24px 0; background: #fff; border-bottom: 1px solid #eaeaea; }
         .header-inner { display: flex; align-items: center; justify-content: space-between; }
         .logo-block { display: flex; align-items: center; gap: 12px; }
-        .logo-block img { height: 48px; width: auto; border-radius: 4px; display: block; object-fit: contain; }
+        .logo-block img { height: 54px; width: auto; display: block; object-fit: contain; transition: transform 0.2s ease; }
         .logo-text { display: flex; flex-direction: column; }
         .logo-text .title { font-size: 1.1rem; font-weight: 900; letter-spacing: 0.05em; }
         .logo-text .subtitle { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; color: #555; text-transform: uppercase; }
@@ -73,11 +73,7 @@
     <header>
         <div class="container header-inner">
             <a href="index.html" class="logo-block">
-                <img src="./images/logrus-pic-logo-title-noline-2.png" alt="LOGRUS RY Logo">
-                <div class="logo-text">
-                    <span class="title">LOGRUS RY</span>
-                    <span class="subtitle">International Youth Society</span>
-                </div>
+                <img src="./images/logrus-pic-logo-title-noline-2.png" alt="Логрус">
             </a>
 
             <div class="header-right">
@@ -107,23 +103,22 @@
 
     <main class="container archive-section">
 
-        <!-- 2025-2026 -->
+        <!-- Фестивали и студии -->
         <div class="year-block">
-            <h2 class="year-title">2025 — 2026</h2>
+            <h2 class="year-title">Фестивали и студии</h2>
             <div class="items-grid">
                 
                 <div class="archive-card">
                     <div class="card-img-wrap">
-                        <span class="card-tag">Спектакль</span>
-                        <img src="images/Novechento.png" alt="NOVECENTO" onerror="this.src='https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600'">
+                        <span class="card-tag">Фестиваль / Лагерь</span>
+                        <img src="images/120041242_767829627114593_2138231004363853000_n.jpg" alt="Молодежные проекты" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600'">
                     </div>
                     <div class="card-body">
-                        <div class="card-date">Ноябрь 2025</div>
-                        <h3 class="card-heading">«NOVECENTO»</h3>
-                        <p class="card-desc">Спектакль по пьесе Алессандро Барикко в сотрудничестве с клубом DanceSport Studio. История легендарного пианиста с океанского лайнера.</p>
+                        <div class="card-date">2022 — 2024</div>
+                        <h3 class="card-heading">«Общественная среда» и интеграция</h3>
+                        <p class="card-desc">Серия культурных встреч, языковых мастер-классов и молодежных интеграционных лагерей в Финляндии.</p>
                         <div class="card-meta">
-                            <div><strong>Режиссёр:</strong> Аквиле Рузгите</div>
-                            <div><strong>Сцена:</strong> Narri, Sörnäisten rantatie 31, Хельсинки</div>
+                            <div><strong>Партнеры:</strong> Caisa, Kanneltalo, TE-toimisto</div>
                         </div>
                     </div>
                 </div>
@@ -145,6 +140,30 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+
+        <!-- Предыдущие сезоны -->
+        <div class="year-block">
+            <h2 class="year-title">Ранее в репертуаре</h2>
+            <div class="items-grid">
+                
+                <div class="archive-card">
+                    <div class="card-img-wrap">
+                        <span class="card-tag">Спектакль</span>
+                        <img src="images/theatre-clean.png" alt="NOVECENTO" onerror="this.src='https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600'">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-date">Ноябрь 2025</div>
+                        <h3 class="card-heading">«NOVECENTO»</h3>
+                        <p class="card-desc">Спектакль по пьесе Алессандро Барикко в сотрудничестве с клубом DanceSport Studio. История легендарного пианиста с океанского лайнера.</p>
+                        <div class="card-meta">
+                            <div><strong>Режиссёр:</strong> Аквиле Рузгите</div>
+                            <div><strong>Сцена:</strong> Narri, Sörnäisten rantatie 31, Хельсинки</div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="archive-card">
                     <div class="card-img-wrap">
                         <span class="card-tag">Спектакль</span>
@@ -161,14 +180,6 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
-
-        <!-- Предыдущие сезоны -->
-        <div class="year-block">
-            <h2 class="year-title">Ранее в репертуаре</h2>
-            <div class="items-grid">
-                
                 <div class="archive-card">
                     <div class="card-img-wrap">
                         <span class="card-tag">Семейный спектакль</span>
@@ -180,21 +191,6 @@
                         <p class="card-desc">Семейный интерактивный спектакль молодежного театра центра Helmi по мотивам классических английских сказок.</p>
                         <div class="card-meta">
                             <div><strong>Организатор:</strong> Logrus Ry / Helmi-keskus</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="archive-card">
-                    <div class="card-img-wrap">
-                        <span class="card-tag">Фестиваль / Лагерь</span>
-                        <img src="images/120041242_767829627114593_2138231004363853000_n.jpg" alt="Молодежные проекты" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600'">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">2022 — 2024</div>
-                        <h3 class="card-heading">«Общественная среда» и интеграция</h3>
-                        <p class="card-desc">Серия культурных встреч, языковых мастер-классов и молодежных интеграционных лагерей в Финляндии.</p>
-                        <div class="card-meta">
-                            <div><strong>Партнеры:</strong> Caisa, Kanneltalo, TE-toimisto</div>
                         </div>
                     </div>
                 </div>
