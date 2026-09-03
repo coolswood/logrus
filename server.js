@@ -46,7 +46,7 @@ const server = Bun.serve({
     if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
       const ext = path.extname(filePath).toLowerCase();
       const headers = { ...securityHeaders };
-      const isImmutableAsset = /\.(webp|png|jpg|jpeg|svg|ico|woff2|woff|ttf|css|js)$/.test(ext) || pathname.includes('/_astro/');
+      const isImmutableAsset = pathname.includes('/_astro/');
 
       const mimeMap = {
         '.html': 'text/html; charset=utf-8',
