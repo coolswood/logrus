@@ -47,6 +47,7 @@ const server = Bun.serve({
       const ext = path.extname(filePath).toLowerCase();
       const headers = { ...securityHeaders };
       const isImmutableAsset = pathname.includes('/_astro/');
+      const isImage = /\.(webp|png|jpg|jpeg|ico|svg)$/i.test(ext);
 
       const mimeMap = {
         '.html': 'text/html; charset=utf-8',
@@ -72,6 +73,8 @@ const server = Bun.serve({
 
       if (isImmutableAsset) {
         headers['Cache-Control'] = 'public, max-age=31536000, immutable';
+      } else if (isImage) {
+        headers['Cache-Control'] = 'no-cache, must-revalidate';
       } else if (ext === '.html') {
         headers['Cache-Control'] = 'public, max-age=0, must-revalidate';
       } else if (ext === '.xml' || ext === '.txt') {
