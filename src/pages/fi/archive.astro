@@ -1,61 +1,61 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
-const archiveItems2025_2026 = [
+const archiveItemsFestivals = [
   {
-    tag: 'Teatteriesitys',
-    title: '«NOVECENTO»',
-    date: 'Marraskuu 2025',
-    image: '/images/card-theatre.webp',
-    description: 'Alessandro Bariccon pienoisromaaniin perustuva näytelmä yhteistyössä DanceSport Studion kanssa. Tarina valtamerilaivalla syntyneestä pianistista.',
+    tag: 'Festivaali / Leiri',
+    title: '«Yhteisöllinen ympäristö» ja kotouttaminen',
+    date: '2022 — 2024',
+    image: '/images/card-involved.webp',
+    description: 'Kulttuuritapaamisten sarja, kielityöpajat ja nuorten kotouttamisleirit Suomessa.',
     meta: [
-      { label: 'Ohjaaja', val: 'Akvile Ruzgyte' },
-      { label: 'Näyttämö', val: 'Narrin näyttämö, Sörnäisten rantatie 31, Helsinki' },
+      { label: 'Yhteistyössä', val: 'Caisa, Kanneltalo, TE-toimisto' },
     ],
   },
   {
-    tag: 'Nuorisotyöpajat',
-    title: 'Catwalk- ja tanssistudiot',
+    tag: 'Työpajat ja studiot',
+    title: 'Kävely- ja tanssistudiot',
     date: 'Kausi 2025 — 2026',
     image: '/images/card-initiatives.webp',
-    description: 'Maksuttomat luovat tunnit 14–25-vuotiaille. Esiintymistaito, perinteiset puvut ja valmistautuminen gaalaesitykseen.',
+    description: 'Maksutonta luovaa toimintaa 14–25-vuotiaille nuorille. Esiintymistaitojen harjoittelua perinteisissä puvuissa ja gaala.',
     meta: [
-      { label: 'Paikka', val: 'Kontulan nuorisotalo, Ostostie 4, Helsinki' },
-      { label: 'Tila', val: 'Projekti toteutettu menestyksekkäästi' },
-    ],
-  },
-  {
-    tag: 'Teatteriesitys',
-    title: '«SILVIA»',
-    date: '2026',
-    image: '/images/card-archive.webp',
-    description: 'A. R. Gurneyn lämminhenkinen ja nokkela Broadway-komedia ystävyydestä ja perhe-elämän käänteistä.',
-    meta: [
-      { label: 'Teatteri', val: 'Logrus Teatteri' },
-      { label: 'Näyttämö', val: 'Narrin näyttämö' },
+      { label: 'Paikka', val: 'Nuorisotalo Kontula, Ostostie 4, Helsinki' },
+      { label: 'Tila', val: 'Hanke on onnistuneesti toteutettu' },
     ],
   },
 ];
 
 const archiveItemsPast = [
   {
-    tag: 'Perhenäytelmä',
-    title: '«Kadonneen sormuksen salaisuus»',
-    date: 'Kausi 2024',
-    image: '/images/card-about.webp',
-    description: 'Helmi-keskuksen nuorisoteatterin interaktiivinen perhe-esitys klassisten englantilaisten satujen pohjalta.',
+    tag: 'Näytelmä',
+    title: '«NOVECENTO»',
+    date: 'Marraskuu 2025',
+    image: '/images/theatre-art.webp',
+    description: 'Alessandro Bariccon näytelmään perustuva esitys yhteistyössä DanceSport Studio -seuran kanssa. Tarina valtamerialuksen pianistista.',
     meta: [
-      { label: 'Järjestäjä', val: 'Logrus Ry / Helmi-keskus' },
+      { label: 'Ohjaaja', val: 'Akvile Ruzgyte' },
+      { label: 'Näyttämö', val: 'Narri, Sörnäisten rantatie 31, Helsinki' },
     ],
   },
   {
-    tag: 'Festivaali / Leiri',
-    title: 'Yhteiskunnallinen ilmapiiri & kotoutuminen',
-    date: '2022 — 2024',
-    image: '/images/card-involved.webp',
-    description: 'Kulttuurikohtaamisia, kielen oppimisen työpajoja ja nuorten integraatioleirejä Suomessa.',
+    tag: 'Näytelmä',
+    title: '«SILVIA»',
+    date: '2026',
+    image: '/images/card-archive.webp',
+    description: 'A. R. Gurneyn näytelmään pohjautuva komediallinen ja lämminhenkinen esitys ystävyydestä ja perheestä.',
     meta: [
-      { label: 'Yhteistyökumppanit', val: 'Caisa, Kanneltalo, TE-toimisto' },
+      { label: 'Teatteri', val: 'Logrus Teatteri' },
+      { label: 'Näyttämö', val: 'Narrin näyttämö' },
+    ],
+  },
+  {
+    tag: 'Perhenäytelmä',
+    title: '«Kadonneen sormuksen arvoitus»',
+    date: 'Kausi 2024',
+    image: '/images/card-about.webp',
+    description: 'Helmi-keskuksen nuorisoteatterin interaktiivinen perhenäytelmä klassisten satujen innoittamana.',
+    meta: [
+      { label: 'Järjestäjä', val: 'Logrus ry / Helmi-keskus' },
     ],
   },
   {
@@ -63,17 +63,17 @@ const archiveItemsPast = [
     title: '«Niskavuoren nuori emäntä»',
     date: '2021 — 2022',
     image: '/images/niskavuori.webp',
-    description: 'Hella Wuolijoen klassikkodraama velvollisuudesta, perinteistä ja rakkaudesta Niskavuoren tilalla.',
+    description: 'Hella Wuolijoen klassikkodraama perinteiden, vallan ja rakkauden ristiriidoista Niskavuoren tilalla.',
     meta: [
       { label: 'Teatteri', val: 'Logrus Teatteri' },
     ],
   },
   {
     tag: 'Muotinäytös',
-    title: '«The Hipsters» -catwalk',
+    title: 'Muotinäytös «The Hipsters»',
     date: '2019',
     image: '/images/fashion-hipsters.webp',
-    description: 'Nuorten vintage- ja tyylipukujen muotinäytös, jotka valmistettiin Logrus ry:n puvustamossa.',
+    description: 'Nuorten retro- ja vintage-asujen muotinäytös, puvut valmistettu Logrus ry:n pukutyöpajassa.',
     meta: [
       { label: 'Järjestäjä', val: 'Logrus ry' },
     ],
@@ -83,17 +83,17 @@ const archiveItemsPast = [
     title: 'Kansainvälinen festivaali «Art-Planet»',
     date: '2016 — 2018',
     image: '/images/art-planet-2020.webp',
-    description: 'Vuotuinen monitaiteinen nuorisofestivaali, joka kokosi esiintyjäryhmiä eri Itämeren maista.',
+    description: 'Monitaiteinen lasten ja nuorten festivaali, johon osallistui taiteilijoita Itämeren alueelta.',
     meta: [
       { label: 'Paikka', val: 'Helsinki' },
     ],
   },
   {
     tag: 'Kilpailu',
-    title: '«Gloria Star» -lahjakkuuskilpailu',
+    title: 'Festivaali-kilpailu «Gloria Star»',
     date: '2013 — 2015',
     image: '/images/spektr-2016.webp',
-    description: 'Laulu- ja tanssikilpailu nuorille lahjakkuuksille kansainvälisellä tuomaristolla.',
+    description: 'Laulu- ja tanssikatselmus nuorille lupauksille kansainvälisen tuomariston johdolla.',
     meta: [
       { label: 'Järjestäjä', val: 'Logrus ry' },
     ],
@@ -102,8 +102,8 @@ const archiveItemsPast = [
 ---
 
 <BaseLayout
-  title="Tapahtuma-arkisto — LOGRUS RY"
-  description="LOGRUS ry:n teatteriesitysten, Gloria Star- ja Art-Planet -festivaalien arkisto vuodesta 2012."
+  title="Tapahtuma- ja esitysarkisto — LOGRUS RY"
+  description="LOGRUS ry:n teatteriesitysten, festivaalien ja nuorisohankkeiden arkisto vuodesta 2012 alkaen."
   lang="fi"
   ogImage="/images/card-archive.webp"
 >
@@ -114,7 +114,7 @@ const archiveItemsPast = [
         Tapahtuma-arkisto
       </h1>
       <p class="text-sm sm:text-base text-zinc-600 max-w-xl mx-auto font-medium">
-        Teatteriesitysten, kansainvälisten festivaalien ja nuorisoaloitteiden kronikka vuodesta 2012.
+        Esitysten, festivaalien, muotiprojektien ja nuorisoaloitteiden kronikka vuodesta 2012 alkaen.
       </p>
     </div>
   </section>
@@ -123,14 +123,14 @@ const archiveItemsPast = [
   <section class="py-14 sm:py-16">
     <div class="site-container">
       
-      <!-- Section: 2025 - 2026 -->
+      <!-- Section: Festivals & Studios -->
       <div class="mb-16">
         <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-zinc-950 mb-8 border-b-2 border-zinc-950 pb-2 inline-block">
-          2025 — 2026
+          Festivaalit ja studiot
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {archiveItems2025_2026.map((item) => (
+          {archiveItemsFestivals.map((item) => (
             <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden flex flex-col shadow-sm transition-transform duration-200 hover:-translate-y-1">
               <div class="h-56 relative bg-zinc-900 overflow-hidden">
                 <span class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-xs text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded z-10">
@@ -166,7 +166,7 @@ const archiveItemsPast = [
       <!-- Section: Past Seasons -->
       <div>
         <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-zinc-950 mb-8 border-b-2 border-zinc-950 pb-2 inline-block">
-          Aiemmat esitykset ja projektit
+          Aiemmin ohjelmistossa
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">

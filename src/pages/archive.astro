@@ -1,16 +1,15 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
-const archiveItems2025_2026 = [
+const archiveItemsFestivals = [
   {
-    tag: 'Спектакль',
-    title: '«NOVECENTO»',
-    date: 'Ноябрь 2025',
-    image: '/images/card-theatre.webp',
-    description: 'Спектакль по пьесе Алессандро Барикко в сотрудничестве с клубом DanceSport Studio. История легендарного пианиста с океанского лайнера.',
+    tag: 'Фестиваль / Лагерь',
+    title: '«Общественная среда» и интеграция',
+    date: '2022 — 2024',
+    image: '/images/card-involved.webp',
+    description: 'Серия культурных встреч, языковых мастер-классов и молодежных интеграционных лагерей в Финляндии.',
     meta: [
-      { label: 'Режиссёр', val: 'Аквиле Рузгите' },
-      { label: 'Сцена', val: 'Narri, Sörnäisten rantatie 31, Хельсинки' },
+      { label: 'Партнеры', val: 'Caisa, Kanneltalo, TE-toimisto' },
     ],
   },
   {
@@ -24,6 +23,20 @@ const archiveItems2025_2026 = [
       { label: 'Статус', val: 'Проект успешно реализован' },
     ],
   },
+];
+
+const archiveItemsPast = [
+  {
+    tag: 'Спектакль',
+    title: '«NOVECENTO»',
+    date: 'Ноябрь 2025',
+    image: '/images/theatre-art.webp',
+    description: 'Спектакль по пьесе Алессандро Барикко в сотрудничестве с клубом DanceSport Studio. История легендарного пианиста с океанского лайнера.',
+    meta: [
+      { label: 'Режиссёр', val: 'Аквиле Рузгите' },
+      { label: 'Сцена', val: 'Narri, Sörnäisten rantatie 31, Хельсинки' },
+    ],
+  },
   {
     tag: 'Спектакль',
     title: '«SILVIA»',
@@ -35,9 +48,6 @@ const archiveItems2025_2026 = [
       { label: 'Сцена', val: 'Narrin näyttämö' },
     ],
   },
-];
-
-const archiveItemsPast = [
   {
     tag: 'Семейный спектакль',
     title: '«Тайна пропавшего кольца»',
@@ -46,16 +56,6 @@ const archiveItemsPast = [
     description: 'Семейный интерактивный спектакль молодежного театра центра Helmi по мотивам классических английских сказок.',
     meta: [
       { label: 'Организатор', val: 'Logrus Ry / Helmi-keskus' },
-    ],
-  },
-  {
-    tag: 'Фестиваль / Лагерь',
-    title: '«Общественная среда» и интеграция',
-    date: '2022 — 2024',
-    image: '/images/card-involved.webp',
-    description: 'Серия культурных встреч, языковых мастер-классов и молодежных интеграционных лагерей в Финляндии.',
-    meta: [
-      { label: 'Партнеры', val: 'Caisa, Kanneltalo, TE-toimisto' },
     ],
   },
   {
@@ -123,14 +123,14 @@ const archiveItemsPast = [
   <section class="py-14 sm:py-16">
     <div class="site-container">
       
-      <!-- Section: 2025 - 2026 -->
+      <!-- Section: Festivals & Studios -->
       <div class="mb-16">
         <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-zinc-950 mb-8 border-b-2 border-zinc-950 pb-2 inline-block">
-          2025 — 2026
+          Фестивали и студии
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {archiveItems2025_2026.map((item) => (
+          {archiveItemsFestivals.map((item) => (
             <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden flex flex-col shadow-sm transition-transform duration-200 hover:-translate-y-1">
               <div class="h-56 relative bg-zinc-900 overflow-hidden">
                 <span class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-xs text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded z-10">
@@ -166,7 +166,7 @@ const archiveItemsPast = [
       <!-- Section: Past Seasons -->
       <div>
         <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-zinc-950 mb-8 border-b-2 border-zinc-950 pb-2 inline-block">
-          Ранее в репертуаре и проектах
+          Ранее в репертуаре
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
