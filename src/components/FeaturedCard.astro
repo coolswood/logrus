@@ -40,7 +40,7 @@ const isDark = variant === 'dark';
     height="480"
     loading={priority ? 'eager' : 'lazy'}
     decoding="async"
-    fetchpriority={priority ? 'high' : 'auto'}
+    fetchpriority={priority ? 'high' : undefined}
     class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 z-[1]"
   />
 
