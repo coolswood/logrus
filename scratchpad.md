@@ -48,10 +48,12 @@
 ---
 
 ## 3. Репозиторий GitHub и Pull Requests
+* **Создать Pull Request в upstream (основной):** https://github.com/coolswood/logrus/compare/main...logrusfi-prog:logrus:feature/site-multilingual-and-style-updates?expand=1
+* **Создать PR через GitHub интерфейс:** https://github.com/logrusfi-prog/logrus/pull/new/feature/site-multilingual-and-style-updates
+* **Создать PR напрямую из main:** https://github.com/coolswood/logrus/compare/main...logrusfi-prog:logrus:main?expand=1
 * **Форк репозитория (origin):** https://github.com/logrusfi-prog/logrus
 * **Ветка main (origin):** https://github.com/logrusfi-prog/logrus/tree/main
 * **История коммитов (origin):** https://github.com/logrusfi-prog/logrus/commits/main
-* **Создание Pull Request в upstream:** https://github.com/logrusfi-prog/logrus/pull/new/feature/theatre-poster-update
 * **Основной upstream репозиторий:** https://github.com/coolswood/logrus
 
 ---
