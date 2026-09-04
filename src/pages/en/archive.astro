@@ -1,209 +1,967 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-
-const archiveItemsFestivals = [
-  {
-    tag: 'Festival / Camp',
-    title: 'Social Environment & Integration',
-    date: '2022 — 2024',
-    image: '/images/archive-community.webp',
-    description: 'A series of community meetups, language labs, and youth integration camps held across Finland.',
-    meta: [
-      { label: 'Partners', val: 'Caisa, Kanneltalo, TE-toimisto' },
-    ],
-  },
-  {
-    tag: 'Archived Workshop',
-    title: 'Catwalk & Chinese Dance Studio',
-    date: 'Season 2025 — 2026 (Completed)',
-    image: '/images/archive-studios.webp',
-    description: 'Free creative workshops for youth aged 14–25. Stage presence, traditional costumes, and preparation for the festive "January Encounters" gala concert.',
-    meta: [
-      { label: 'Location', val: 'Nuorisotalo Kontula, Ostostie 4, Helsinki' },
-      { label: 'Status', val: 'Successfully concluded' },
-    ],
-  },
-];
-
-const archiveItemsPast = [
-  {
-    tag: 'Performance',
-    title: '«NOVECENTO»',
-    date: 'November 2025',
-    image: '/images/theatre-clean.webp',
-    description: 'Stage production based on the novella by Alessandro Baricco in collaboration with DanceSport Studio. The story of a legendary pianist born at sea.',
-    meta: [
-      { label: 'Director', val: 'Akvile Ruzgyte' },
-      { label: 'Venue', val: 'Narri Stage, Sörnäisten rantatie 31, Helsinki' },
-    ],
-  },
-  {
-    tag: 'Theatre Play',
-    title: '«SILVIA»',
-    date: '2026',
-    image: '/images/archive-silvia.webp',
-    description: 'A witty and heartfelt Broadway comedy by A. R. Gurney about friendship, family, and unexpected bonds.',
-    meta: [
-      { label: 'Theatre', val: 'Logrus Teatteri' },
-      { label: 'Stage', val: 'Narrin näyttämö' },
-    ],
-  },
-  {
-    tag: 'Family Show',
-    title: '«Mystery of the Lost Ring»',
-    date: 'Season 2024',
-    image: '/images/archive-ring.webp',
-    description: 'Interactive family performance by the youth theatre ensemble of the Helmi Center based on classic English tales.',
-    meta: [
-      { label: 'Organizer', val: 'Logrus ry / Helmi Center' },
-    ],
-  },
-  {
-    tag: 'Drama',
-    title: '«The Young Mistress of Niskavuori»',
-    date: '2021 — 2022',
-    image: '/images/niskavuori.webp',
-    description: 'Classic Finnish drama by Hella Wuolijoki dealing with tradition, pride, and love at the Niskavuori estate.',
-    meta: [
-      { label: 'Theatre', val: 'Logrus Teatteri' },
-    ],
-  },
-  {
-    tag: 'Fashion Show',
-    title: 'Fashion Show «The Hipsters»',
-    date: '2019',
-    image: '/images/fashion-hipsters.webp',
-    description: 'Youth catwalk showcasing vintage and retro-inspired fashion crafted in the Logrus costume workshop.',
-    meta: [
-      { label: 'Organizer', val: 'Logrus ry' },
-    ],
-  },
-  {
-    tag: 'Festival',
-    title: 'International Festival «Art-Planet»',
-    date: '2016 — 2018',
-    image: '/images/art-planet-2020.webp',
-    description: 'Annual multicultural children and youth festival featuring talented ensembles from across Northern Europe.',
-    meta: [
-      { label: 'Host City', val: 'Helsinki' },
-    ],
-  },
-  {
-    tag: 'Competition',
-    title: 'Festival & Contest «Gloria Star»',
-    date: '2013 — 2015',
-    image: '/images/spektr-2016.webp',
-    description: 'Vocal and dance showcase offering masterclasses and stage experience for young aspiring performers.',
-    meta: [
-      { label: 'Organizer', val: 'Logrus ry' },
-    ],
-  },
-];
+import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Event & Performance Archive — LOGRUS RY"
-  description="Historical archive of theatrical performances, festivals, and youth initiatives by LOGRUS ry in Finland since 2012."
+  title="Chronicle and Archive of Events — LOGRUS RY"
+  description="Archive of theatrical productions, festivals, fashion shows, workshops, and youth initiatives by Logrus ry since 2010."
   lang="en"
   ogImage="/images/niskavuori.webp"
 >
   <!-- Page Hero -->
   <section class="bg-white border-b border-zinc-200 py-12 sm:py-16 text-center">
     <div class="site-container">
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase mb-3">
-        Event Archive
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase mb-3 text-zinc-950">
+        Archive of Events
       </h1>
-      <p class="text-sm sm:text-base text-zinc-600 max-w-xl mx-auto font-medium">
-        Chronicle of theatrical productions, youth initiatives, fashion projects, and festivals since 2012.
+      <p class="text-sm sm:text-base text-zinc-600 max-w-2xl mx-auto font-medium leading-relaxed">
+        Chronicle of performances, festivals, fashion showcases, masterclasses, and youth initiatives since 2010.
       </p>
     </div>
   </section>
 
-  <!-- Archive Timeline Section -->
-  <section class="py-14 sm:py-16">
-    <div class="site-container">
+  <!-- Controls: Search & Category Filter -->
+  <section class="py-8 bg-[#fcfbfa] border-b border-zinc-200/80 sticky top-[73px] z-30 backdrop-blur-md bg-[#fcfbfa]/95">
+    <div class="site-container flex flex-col md:flex-row items-center justify-between gap-4">
       
-      <!-- Section: Festivals & Workshops -->
-      <div class="mb-16">
-        <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-zinc-950 mb-8 border-b-2 border-zinc-950 pb-2 inline-block">
-          Festivals & Studios
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {archiveItemsFestivals.map((item, index) => (
-            <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden flex flex-col shadow-sm transition-transform duration-200 hover:-translate-y-1">
-              <div class="h-56 relative bg-zinc-900 overflow-hidden">
-                <span class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-xs text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded z-10">
-                  {item.tag}
-                </span>
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  width="480"
-                  height="320"
-                  loading={index === 0 ? "eager" : "lazy"}
-                  decoding="async"
-                  fetchpriority={index === 0 ? "high" : undefined}
-                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div class="p-6 flex flex-col flex-1 justify-between">
-                <div>
-                  <div class="text-xs font-bold text-zinc-600 mb-1.5">{item.date}</div>
-                  <h3 class="text-lg font-black uppercase text-zinc-950 mb-2.5 leading-snug">{item.title}</h3>
-                  <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-4">{item.description}</p>
-                </div>
-                <div class="pt-3 border-t border-zinc-100 text-xs text-zinc-600 space-y-1">
-                  {item.meta.map((m) => (
-                    <div><strong>{m.label}:</strong> {m.val}</div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      <!-- Search Input -->
+      <div class="w-full md:w-80 relative">
+        <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-400 pointer-events-none fill-none stroke-current stroke-2" width="16" height="16" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input
+          type="text"
+          id="archiveSearch"
+          placeholder="Search by title or description..."
+          aria-label="Search by title or description..."
+          class="w-full pl-10 pr-4 py-2.5 bg-white border border-zinc-200 rounded-lg text-xs font-semibold text-zinc-950 placeholder-zinc-400 focus:outline-none focus:border-zinc-950 focus:ring-1 focus:ring-zinc-950 transition-all shadow-xs"
+        />
       </div>
 
-      <!-- Section: Past Seasons -->
-      <div>
-        <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-zinc-950 mb-8 border-b-2 border-zinc-950 pb-2 inline-block">
-          Earlier Repertoire
-        </h2>
+      <!-- Category Filter Buttons -->
+      <div class="flex flex-wrap items-center gap-2" id="categoryFilters">
+        <button class="filter-btn active bg-zinc-950 text-white text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer shadow-xs" data-filter="all">All Entries</button>
+        <button class="filter-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer" data-filter="Theatre">Theatre</button>
+        <button class="filter-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer" data-filter="Fashion">Fashion</button>
+        <button class="filter-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer" data-filter="Festivals">Festivals</button>
+        <button class="filter-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer" data-filter="Events">Events</button>
+        <button class="filter-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer" data-filter="Education">Education</button>
+        <button class="filter-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer" data-filter="Studios">Studios</button>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {archiveItemsPast.map((item) => (
-            <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden flex flex-col shadow-sm transition-transform duration-200 hover:-translate-y-1">
-              <div class="h-56 relative bg-zinc-900 overflow-hidden">
-                <span class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-xs text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded z-10">
-                  {item.tag}
-                </span>
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  width="480"
-                  height="320"
-                  loading="lazy"
-                  decoding="async"
-                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div class="p-6 flex flex-col flex-1 justify-between">
-                <div>
-                  <div class="text-xs font-bold text-zinc-600 mb-1.5">{item.date}</div>
-                  <h3 class="text-lg font-black uppercase text-zinc-950 mb-2.5 leading-snug">{item.title}</h3>
-                  <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-4">{item.description}</p>
-                </div>
-                <div class="pt-3 border-t border-zinc-100 text-xs text-zinc-600 space-y-1">
-                  {item.meta.map((m) => (
-                    <div><strong>{m.label}:</strong> {m.val}</div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
 
     </div>
   </section>
+
+  <!-- Archive Content Stream -->
+  <section class="py-12 sm:py-16 flex-1">
+    <div class="site-container" id="archiveList">
+      
+      <!-- Year 2025 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2025">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2025
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Theatre">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Theatre
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  03.02.2025
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                🎭 Open Theatre Group at Logrus Theatre
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                The creative team of Logrus Theatre opens its doors to the fascinating world of theatrical art! A unique opportunity to immerse yourself in the magic of the stage, unleash your creative potential, and master the art of acting.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Group Enrollment</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2024 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2024">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2024
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Events">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Events
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  07.12.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Video Report: "Christmas Gatherings" in Helsinki
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                A joint event by Logrus ry and Encanta Oy. An extraordinary concert and holiday celebration: Sergey Florov ("shaman with a tambourine") opened the evening, filling the hall with warmth and New Year magic.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Celebration</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Theatre">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Theatre
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  15.09.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Family Play: "The Mystery of the Missing Ring"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                The Youth Theatre of the Helmi Center and Logrus Ry presented an engaging family play based on classic English fairy tales. We thank all participants and spectators for their support and magical atmosphere!
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Premiere</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Festivals">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Festivals
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  03.08.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Medieval Fair in Kouvola
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Logrus Ry took part in the traditional Medieval Fair in Kouvola. Historical dresses and handcrafted men's shirts made of natural linen and cotton were showcased.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Fair</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Events">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Events
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  10.05.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Helsinki Walk with Alexandre Vassiliev
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                A pleasant spring walk and informal gathering in Helsinki with world-renowned fashion historian and art scholar Alexandre Vassiliev, organized with Logrus ry and Encanta Oy.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Meeting</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Theatre">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Theatre
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  07.04.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Play "La Belle Vie" on Tour in Jyväskylä
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Logrus Theatre on tour in Jyväskylä with Jean Anouilh's revolutionary tragicomedy "La Belle Vie" (directed by Akvilė Ruzgaitė). Heartfelt thanks to our audience and partners for the warm reception!
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Tour</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Fashion">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Fashion
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  09.02.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Costume & Gown Rental for "Vanhat Tanssit" Ball
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Traditional high school Vanhat tanssit ball in Helsinki! Logrus ry and Encanta Oy offer ballroom gowns, tailcoats, and accessories at accessible prices with custom fittings.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Costumes</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Studios">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Studios
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  03.02.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Open Flamenco Dance Workshop
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Free introductory lesson "Flamenco for Beginners" led by instructor Raisat Gessel at the Luuppi youth center (Kontula, Helsinki). Exploring core rhythms, posture, and expressive dance grace.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Workshop</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Education">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Education
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  20.01.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Alla Novozhenina's Lecture Series: "The Devil Wears Prada"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                A lecture by voice artist, director, and educator Alla Novozhenina at the Narri Hall (Sörnäisten rantatie 31 A). An engaging analysis of the fashion world, stylistic dramaturgy, and screen psychology.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Lecture</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Internship">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Internship
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  Vocational Program
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Internship and Volunteering via Employment Services (TE-toimisto)
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Logrus ry welcomes trainees in: assistant director, costume designer/tailor, lighting and sound engineer, stylist assistant, and cultural project coordinator.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Internship</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2023 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2023">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2023
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Theatre">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Theatre
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  Repertoire Season
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Play "Novecento" (Alessandro Baricco)
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Based on Alessandro Baricco's legendary monologue "The Legend of 1900". A joint production by Logrus Theatre and DanceSport Studio on stage at Narri (Sörnäisten rantatie 31).
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Drama / Tango</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Education">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Education
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  24.09.2023
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Workshop: "Public Speaking for Adults"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Practical coaching on speech technique, overcoming stage fright, and confident presentation by Alla Novozhenina for community activists and theatre participants.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Workshop</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Photo & Art">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Photo & Art
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  08.05.2023
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Photoshoot: "Alice and Woland's Company"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Artistic photoshoot series by Logrus Theatre inspired by the mystical atmosphere of Bulgakov's "The Master and Margarita". A synthesis of vintage fashion, mystery, and portrait drama.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Photo Project</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Festivals">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Festivals
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  22.01.2023
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Grand Opening of "Art-Planet Festival 2023"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Logrus creative group opened the ART PLANET arts festival in Espoo! A vibrant runway showcase of our models, handcrafted costumes, choreography, and professional staging.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Festival</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Social Projects">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Social Projects
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  Support Program
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Psychological Support and Counseling for Youth
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Psychological and psychotherapeutic assistance for young people aged 17–30 in Finland: coping with anxiety, stress, burnout, and adapting to a new environment (including municipal Palveluseteli vouchers).
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Support</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2022 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2022">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2022
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Studios">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Studios
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  Ongoing Studio
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Contemporary Dance Studio (Jazz-Modern)
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Regular jazz-modern dance classes for youth and adults. Focusing on plastic movement, coordination development, and choreographing pieces for stage productions.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Dance</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2021 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2021">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2021
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Festivals">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Festivals
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  15.08.2021
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                First Video Festival of Musical and Theatrical Arts
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Digital youth arts online festival in Helsinki bringing together vocalists, reciters, and small theatrical forms from across Finland.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Competition</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Photo & Art">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Photo & Art
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  20.04.2021
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Artistic Photoshoot for "The Demon" Project
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Thematic photo project in Helsinki inspired by Lermontov's poem "The Demon". Dedicated costume, makeup, and acting work on intricate dramatic imagery.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Photo Project</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2020 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2020">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2020
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Fashion">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Fashion
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  27.09.2020
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Retro Project "The Hipsters — Stilyagi. Life in Retro Style"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                The finale gala of the retro course by Logrus ry and Encanta Oy: authentic 1950s–60s styling, vintage hairdressing masterclass with Helsingin Mactep salon, and dynamic photoshoot.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Retro Show</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2019 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2019">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2019
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Fashion">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Fashion
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  14.02.2019
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Fashion Showcase "Show La Bohème" in Helsinki
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Grand Valentine's Day runway show: presentation of Anna Bochkova's hand-painted shirt collection, the "Russian Collection", "La Bohème" evening wear, accompanied by live vocals by Tina Seppä.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Fashion Show</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2018 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2018">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2018
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Film & Media">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Film & Media
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  31.08.2018
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Premiere of Documentary "Designer of One's Own Life"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Ceremonial premiere screening at Cinema K-13 in Helsinki documenting participants of the youth empowerment initiative "Designer of One's Own Life".
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Film Premiere</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Festivals">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Festivals
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  06.05.2018
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Youth Talent Show "Gloria-Show 2018"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Grand finale show of "Designer of One's Own Life" at Culture Arena Gloria in central Helsinki: vocal performances, dance choreography, runway models, and award ceremony.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Gala Concert</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2017 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2017">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2017
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Events">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Events
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  11.11.2017
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                International Peace Evening "Living Language"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Commemorating the end of World War I: an evening of poetry, folk songs, and theatrical sketches in various world languages fostering mutual harmony and friendship.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Concert</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Theatre">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Theatre
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  Classic Drama
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Play "The Young Hostess of Niskavuori"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Based on Hella Wuolijoki's celebrated drama. A story about resilient Finnish character, difficult choices between duty and love, rural traditions, and family heritage.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Finnish Classic</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2016 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2016">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2016
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Theatre">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Theatre
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  30.09.2016
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Poetic & Musical Evening "Leaf Fall" at Caisa
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                An intimate evening of poetry and acoustic music at Cultural Centre CAISA featuring poets Olga Pussinen, Natalia Meri, Olga Svanberg, and Logrus studio actors.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Poetry</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Theatre">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Theatre
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  Drama
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Play by Maria Lado: "A Very Simple Story"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                A touching philosophical parable about loyalty, purity of heart, and love between young people witnessed by barnyard animals.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Parable</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Theatre">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Theatre
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  10.04.2016
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Premiere: "Tyttö ja Varis" ("The Girl and the Crow")
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Premiere of Logrus youth studio play based on L. Ustinov's fairy tale in Finnish at Theatre Sampo as part of the citywide Family Theatre Day. Directed by Akvilė Ruzgaitė.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">In Finnish</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2015 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2015">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2015
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Education">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Education
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  30.08.2015
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Culinary Club "The Sweet Art"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Hands-on baking and pastry arts course for youth at the Hapki center (Sörnäisten rantatie 31). Masterclasses taught by Maria Ilyina.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Studio</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Theatre">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Theatre
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  05.05.2015
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Play "The Inedible Dinner" after Tennessee Williams
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Experimental stage production by Logrus theatre group based on works by American dramatist Tennessee Williams, staged at Kanneltalo and Caisa cultural venues.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Drama</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2013 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2013">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2013
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Events">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Events
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  17.08.2013
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Youth Forum at Camp Ahtela
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                A week-long international forum of youth initiatives at seaside camp Ahtela in Finland: intercultural dialogue, project incubators, eco and sports programs.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Summer Forum</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Theatre">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Theatre
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  28.05.2013
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Jean Anouilh's "Antigone" in Finnish
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                A landmark bilingual project by Logrus: Jean Anouilh's tragedy "Antigone" translated and adapted into Finnish for general audiences.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Classics</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2012 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2012">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2012
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Events">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Events
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  07.09.2012
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Meeting with President of Finland Sauli Niinistö
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Logrus was honored with an invitation to meet the President of the Republic of Finland as part of the presidential initiative supporting youth facing social hardship.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Official</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Events">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Events
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  20.06.2012
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                International Youth Camp in Taivassalo
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Integration project "Minority Youth for a Stable Europe" hosting youth delegations from Finland, Denmark, Slovakia, and Latvia.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Euro Project</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Festivals">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Festivals
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  29.05.2012
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                1st International Talent Competition "Gloria-Star 2012"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Youth talent contest in Helsinki at Culture Arena Gloria bringing together young singers and performers from Finland and Baltic states, establishing an annual city festival.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Competition</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2010 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2010">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2010
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Film & Media">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Film & Media
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  11.12.2010
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Premiere of Short Film "Tomorrow for Two"
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Lyrical cinematic short story about love, interpersonal challenges, and finding harmony, produced by the creative team of Logrus studio.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Film Screening</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- No Results State -->
+      <div id="noResultsMsg" class="hidden text-center py-20 bg-white border border-dashed border-zinc-300 rounded-lg">
+        <p class="text-base font-bold text-zinc-700 uppercase tracking-wider mb-1">
+          No entries found matching your search.
+        </p>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<script>
+  // Client-side search and category filtering
+  const searchInput = document.getElementById('archiveSearch') as HTMLInputElement | null;
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const yearGroups = document.querySelectorAll('.year-group');
+  const noResultsMsg = document.getElementById('noResultsMsg');
+
+  let currentCategory = 'all';
+  let searchQuery = '';
+
+  function updateDisplay() {
+    let totalVisible = 0;
+
+    yearGroups.forEach((group) => {
+      const cards = group.querySelectorAll('.archive-card');
+      let visibleInGroup = 0;
+
+      cards.forEach((card) => {
+        const cat = card.getAttribute('data-category');
+        const text = (card as HTMLElement).innerText.toLowerCase();
+
+        const matchesCat = (currentCategory === 'all' || cat === currentCategory);
+        const matchesSearch = (!searchQuery || text.includes(searchQuery));
+
+        if (matchesCat && matchesSearch) {
+          (card as HTMLElement).style.display = 'flex';
+          visibleInGroup++;
+          totalVisible++;
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+
+      // Toggle group visibility
+      (group as HTMLElement).style.display = visibleInGroup > 0 ? 'block' : 'none';
+    });
+
+    if (noResultsMsg) {
+      noResultsMsg.style.display = totalVisible === 0 ? 'block' : 'none';
+    }
+  }
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach((b) => {
+        b.classList.remove('active', 'bg-zinc-950', 'text-white', 'shadow-xs');
+        b.classList.add('bg-zinc-100', 'text-zinc-700');
+      });
+      btn.classList.add('active', 'bg-zinc-950', 'text-white', 'shadow-xs');
+      btn.classList.remove('bg-zinc-100', 'text-zinc-700');
+      
+      currentCategory = btn.getAttribute('data-filter') || 'all';
+      updateDisplay();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = (e.target as HTMLInputElement).value.trim().toLowerCase();
+      updateDisplay();
+    });
+  }
+</script>

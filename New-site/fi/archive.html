@@ -3,68 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tapahtuma- ja esitysarkisto — LOGRUS RY</title>
+    <title>Tapahtuma-arkisto ja kronikka — LOGRUS RY</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Montserrat', sans-serif; background-color: #fcfbfa; color: #111; line-height: 1.6; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fcfbfa;
+            color: #09090b;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
         a { text-decoration: none; color: inherit; }
         .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
 
         /* HEADER */
-        header { padding: 24px 0; background: #fff; border-bottom: 1px solid #eaeaea; }
-        .header-inner { display: flex; align-items: center; justify-content: space-between; }
-        .logo-block { display: flex; align-items: center; gap: 12px; }
-        .logo-block img { height: 72px; width: auto; display: block; object-fit: contain; transition: transform 0.2s ease; }
-        .logo-text { display: flex; flex-direction: column; }
-        .logo-text .title { font-size: 1.1rem; font-weight: 900; letter-spacing: 0.05em; }
-        .logo-text .subtitle { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; color: #555; text-transform: uppercase; }
-        .header-right { display: flex; align-items: center; gap: 20px; }
-        .social-links { display: flex; gap: 12px; }
-        .social-links a { width: 34px; height: 34px; background: #111; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; transition: opacity 0.2s; }
-        .social-links a:hover { opacity: 0.75; }
-        .divider { width: 1px; height: 28px; background: #ccc; }
-        .lang-switch { font-size: 0.8rem; font-weight: 700; display: flex; gap: 8px; }
-        .lang-switch a { color: #777; }
-        .lang-switch a.active { color: #111; }
+        header {
+            padding: 20px 0;
+            background: #fff;
+            border-bottom: 1px solid #e4e4e7;
+            position: sticky;
+            top: 0;
+            z-index: 40;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-block img {
+            height: 72px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+        }
+        .logo-block:hover img {
+            transform: scale(1.03);
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: #09090b;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+        .social-links a:hover {
+            background: #3f3f46;
+            transform: scale(1.08);
+        }
+        .divider {
+            width: 1px;
+            height: 24px;
+            background: #d4d4d8;
+        }
+        .lang-switch {
+            font-size: 0.75rem;
+            font-weight: 800;
+            display: flex;
+            gap: 8px;
+            letter-spacing: 0.05em;
+        }
+        .lang-switch a {
+            color: #71717a;
+            transition: color 0.15s;
+        }
+        .lang-switch a.active {
+            color: #09090b;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .lang-switch a:hover:not(.active) {
+            color: #18181b;
+        }
 
-        /* PAGE HERO */
-        .page-hero { padding: 60px 0 40px; text-align: center; background: #fff; border-bottom: 1px solid #f0f0f0; }
-        .page-hero h1 { font-size: 2.8rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-        .page-hero p { font-size: 1rem; color: #666; max-width: 600px; margin: 0 auto; }
+        /* HERO */
+        .page-hero {
+            padding: 55px 0 40px;
+            text-align: center;
+            background: #fff;
+            border-bottom: 1px solid #e4e4e7;
+        }
+        .page-hero h1 {
+            font-size: 2.6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+            color: #09090b;
+        }
+        .page-hero p {
+            font-size: 0.95rem;
+            color: #52525b;
+            max-width: 620px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
 
-        /* FILTER / TIMELINE */
-        .archive-section { padding: 60px 0 80px; }
-        
-        .year-block { margin-bottom: 60px; }
-        .year-title { font-size: 2rem; font-weight: 900; letter-spacing: 0.05em; margin-bottom: 24px; padding-bottom: 8px; border-bottom: 2px solid #111; display: inline-block; }
+        /* CONTROLS BAR */
+        .controls-bar {
+            padding: 24px 0;
+            background: #fcfbfa;
+            border-bottom: 1px solid #e4e4e7;
+            position: sticky;
+            top: 113px;
+            z-index: 30;
+            backdrop-filter: blur(8px);
+            background: rgba(252, 251, 250, 0.95);
+        }
+        .controls-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .search-box {
+            flex: 1;
+            max-width: 320px;
+            min-width: 240px;
+            position: relative;
+        }
+        .search-box i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a1a1aa;
+            font-size: 0.85rem;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px 16px 10px 38px;
+            border: 1px solid #e4e4e7;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            font-family: inherit;
+            background: #fff;
+            color: #09090b;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .search-box input:focus {
+            border-color: #09090b;
+            box-shadow: 0 0 0 1px #09090b;
+        }
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .filter-btn {
+            background: #f4f4f5;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #3f3f46;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+        .filter-btn:hover {
+            background: #e4e4e7;
+            color: #09090b;
+        }
+        .filter-btn.active {
+            background: #09090b;
+            color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
 
-        .items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px; }
-        
-        .archive-card { background: #fff; border: 1px solid #e8e8e8; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
-        .archive-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); }
-        
-        .card-img-wrap { height: 220px; width: 100%; background: #eee; overflow: hidden; position: relative; }
-        .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-        .card-tag { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.75); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
+        /* TIMELINE & CARDS */
+        .archive-section {
+            padding: 50px 0 80px;
+            flex: 1;
+        }
+        .year-group {
+            margin-bottom: 60px;
+        }
+        .year-marker {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 26px;
+        }
+        .year-badge {
+            font-size: 0.85rem;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #fff;
+            background: #09090b;
+            padding: 6px 18px;
+            border-radius: 9999px;
+        }
+        .year-line {
+            flex: 1;
+            height: 1px;
+            background: #e4e4e7;
+        }
 
-        .card-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
-        .card-date { font-size: 0.8rem; font-weight: 700; color: #888; margin-bottom: 6px; }
-        .card-heading { font-size: 1.25rem; font-weight: 800; line-height: 1.3; margin-bottom: 12px; }
-        .card-desc { font-size: 0.9rem; color: #555; margin-bottom: 16px; flex-grow: 1; }
-        .card-meta { font-size: 0.8rem; color: #777; border-top: 1px solid #f0f0f0; padding-top: 12px; }
-        .card-meta strong { color: #222; }
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 26px;
+        }
+
+        .archive-card {
+            background: #fff;
+            border: 1px solid #e4e4e7;
+            border-top: 4px solid #09090b;
+            border-radius: 8px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+        .archive-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+        }
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .card-category {
+            background: #f4f4f5;
+            color: #18181b;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .card-date {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #71717a;
+        }
+        .card-title {
+            font-size: 1.12rem;
+            font-weight: 900;
+            line-height: 1.35;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #09090b;
+            transition: color 0.2s;
+        }
+        .archive-card:hover .card-title {
+            color: #3f3f46;
+        }
+        .card-summary {
+            font-size: 0.85rem;
+            color: #52525b;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            flex-grow: 1;
+            font-weight: 500;
+        }
+        .card-footer {
+            border-top: 1px solid #f4f4f5;
+            padding-top: 12px;
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #52525b;
+            background: #fafafa;
+            border: 1px solid #e4e4e7;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            background: #fff;
+            border: 1px dashed #d4d4d8;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #71717a;
+            letter-spacing: 0.05em;
+            display: none;
+        }
 
         /* FOOTER */
-        footer { background-color: #16181b; color: #fff; padding: 50px 0 30px; margin-top: 40px; }
-        .footer-bottom { display: flex; justify-content: space-between; font-size: 0.75rem; color: #777; }
+        footer {
+            background-color: #16181b;
+            color: #fff;
+            padding: 50px 0 30px;
+            margin-top: auto;
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #a1a1aa;
+        }
 
         @media (max-width: 768px) {
             .header-inner { flex-direction: column; gap: 16px; }
+            .page-hero h1 { font-size: 2rem; }
+            .controls-inner { flex-direction: column; align-items: stretch; }
+            .search-box { max-width: 100%; }
+            .archive-grid { grid-template-columns: 1fr; }
+            .controls-bar { top: 160px; }
         }
     </style>
 </head>
@@ -72,23 +362,23 @@
 
     <header>
         <div class="container header-inner">
-            <a href="index.html" class="logo-block">
-                <img src="../images/logrus-pic-logo-title-noline-2.png" alt="Logrus">
+            <a href="../index.html" class="logo-block">
+                <img src="../images/logrus-pic-logo-title-noline-2.png" alt="LOGRUS">
             </a>
 
             <div class="header-right">
                 <div class="social-links">
-                    <a href="https://www.facebook.com/logrusry" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/teat.rus" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://youtube.com/@logrusry2011" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/logrusry" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/teat.rus" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com/@logrusry2011" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
 
                 <div class="divider"></div>
 
                 <div class="lang-switch">
-                    <a href="../en/archive.html">EN</a> |
+                    <a href="../en/archive.html" class="">EN</a> |
                     <a href="archive.html" class="active">FI</a> |
-                    <a href="../archive.html">RU</a>
+                    <a href="../archive.html" class="">RU</a>
                 </div>
             </div>
         </div>
@@ -97,117 +387,626 @@
     <section class="page-hero">
         <div class="container">
             <h1>Tapahtuma-arkisto</h1>
-            <p>Logrus ry:n teatteriesitysten, festivaalien, luovien kurssien ja kulttuurihankkeiden historia.</p>
+            <p>Logrus ry:n teatteriesitysten, festivaalien, muotinäytösten, työpajojen ja nuorisoprojektien historia vuodesta 2010.</p>
         </div>
     </section>
 
-    <main class="container archive-section">
-
-        <!-- Festivaalit ja työpajat -->
-        <div class="year-block">
-            <h2 class="year-title">Festivaalit ja studiot</h2>
-            <div class="items-grid">
-                
-                <div class="archive-card">
-                    <div class="card-img-wrap">
-                        <span class="card-tag">Festivaali / Leiri</span>
-                        <img src="../images/120041242_767829627114593_2138231004363853000_n.jpg" alt="Nuorisotoiminta" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600'">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">2022 — 2024</div>
-                        <h3 class="card-heading">«Yhteisöllinen ympäristö» ja kotouttaminen</h3>
-                        <p class="card-desc">Kulttuuritapaamisten sarja, kielityöpajat ja nuorten kotouttamisleirit Suomessa.</p>
-                        <div class="card-meta">
-                            <div><strong>Yhteistyössä:</strong> Caisa, Kanneltalo, TE-toimisto</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SIIRRETTY TYÖPAJA/STUDIO -->
-                <div class="archive-card">
-                    <div class="card-img-wrap">
-                        <span class="card-tag">Arkistoitu projekti</span>
-                        <img src="../images/Курсы-Импровизации.png" alt="Kävely- ja tanssistudiot" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600'">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">Kausi 2025 — 2026 (Päättynyt)</div>
-                        <h3 class="card-heading">Kävely- ja kiinalaisen tanssin studiot</h3>
-                        <p class="card-desc">Maksutonta luovaa toimintaa 14–25-vuotiaille nuorille. Esiintymistaitojen harjoittelua perinteisissä puvuissa ja valmistautumista «Tammikuun tapaamiset» -gaalakonserttiin.</p>
-                        <div class="card-meta">
-                            <div><strong>Paikka:</strong> Nuorisotalo Kontula, Ostostie 4, Helsinki</div>
-                            <div><strong>Tila:</strong> Hanke on onnistuneesti toteutettu</div>
-                        </div>
-                    </div>
-                </div>
+    <section class="controls-bar">
+        <div class="container controls-inner">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="archiveSearch" placeholder="Hae nimellä tai kuvauksella..." aria-label="Hae nimellä tai kuvauksella...">
+            </div>
+            <div class="category-filters" id="categoryFilters">
+                <button class="filter-btn active" data-filter="all">Kaikki merkinnät</button>
+            <button class="filter-btn" data-filter="Teatteri">Teatteri</button>
+            <button class="filter-btn" data-filter="Muoti">Muoti</button>
+            <button class="filter-btn" data-filter="Festivals">Festivals</button>
+            <button class="filter-btn" data-filter="Tapahtumat">Tapahtumat</button>
+            <button class="filter-btn" data-filter="Koulutus">Koulutus</button>
+            <button class="filter-btn" data-filter="Studiot">Studiot</button>
 
             </div>
         </div>
+    </section>
 
-        <!-- Aiemmat kaudet -->
-        <div class="year-block">
-            <h2 class="year-title">Aiemmin ohjelmistossa</h2>
-            <div class="items-grid">
-                
-                <div class="archive-card">
-                    <div class="card-img-wrap">
-                        <span class="card-tag">Näytelmä</span>
-                        <img src="../images/theatre-clean.png" alt="NOVECENTO" onerror="this.src='https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600'">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">Marraskuu 2025</div>
-                        <h3 class="card-heading">«NOVECENTO»</h3>
-                        <p class="card-desc">Alessandro Bariccon näytelmään perustuva esitys yhteistyössä DanceSport Studio -seuran kanssa. Tarina valtamerialuksella kasvaneesta legendaarisesta pianistista.</p>
-                        <div class="card-meta">
-                            <div><strong>Ohjaaja:</strong> Akvilė Ruzgaitė</div>
-                            <div><strong>Näyttämö:</strong> Narri, Sörnäisten rantatie 31, Helsinki</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="archive-card">
-                    <div class="card-img-wrap">
-                        <span class="card-tag">Näytelmä</span>
-                        <img src="../images/gloria-star-2013.jpg" alt="Silvia" onerror="this.src='https://images.unsplash.com/photo-1469488865564-c2de10f69f96?w=600'">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">2026</div>
-                        <h3 class="card-heading">«SILVIA»</h3>
-                        <p class="card-desc">Albert Ramsdell Gurney Jr.:n tekstiin pohjautuva komediallinen ja lämminhenkinen esitys ystävyydestä, perheestä ja uskollisuudesta.</p>
-                        <div class="card-meta">
-                            <div><strong>Teatteri:</strong> Logrus Teatteri</div>
-                            <div><strong>Näyttämö:</strong> Narrin näyttämö</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="archive-card">
-                    <div class="card-img-wrap">
-                        <span class="card-tag">Perhenäytelmä</span>
-                        <img src="../images/Istoria_new.jpg" alt="Kadonneen sormuksen arvoitus" onerror="this.src='https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=600'">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">Kausi 2024</div>
-                        <h3 class="card-heading">«Kadonneen sormuksen arvoitus»</h3>
-                        <p class="card-desc">Helmi-keskuksen nuorisoteatterin interaktiivinen perhenäytelmä klassisten satujen innoittamana.</p>
-                        <div class="card-meta">
-                            <div><strong>Järjestäjä:</strong> Logrus ry / Helmi-keskus</div>
-                        </div>
-                    </div>
-                </div>
-
+    <main class="container archive-section" id="archiveList">
+        
+        <!-- Year 2025 -->
+        <section class="year-group" data-year="2025">
+            <div class="year-marker">
+                <span class="year-badge">2025</span>
+                <div class="year-line"></div>
             </div>
-        </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Teatteri">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Teatteri</span>
+                            <span class="card-date">03.02.2025</span>
+                        </div>
+                        <h3 class="card-title">🎭 Avoin teatteriryhmä Logrus-teatterissa</h3>
+                        <p class="card-summary">Logrus-teatterin luova tiimi avaa ovensa teatteritaiteen kiehtovaan maailmaan! Ainutlaatuinen tilaisuus sukeltaa näyttämön taikaan, vapauttaa luova potentiaalisi ja oppia näyttelijäntyön perusteet.</p>
+                        <div class="card-footer"><span class="card-badge">Ryhmähaku</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2024 -->
+        <section class="year-group" data-year="2024">
+            <div class="year-marker">
+                <span class="year-badge">2024</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Tapahtumat">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Tapahtumat</span>
+                            <span class="card-date">07.12.2024</span>
+                        </div>
+                        <h3 class="card-title">Videokooste: "Joulutapaamiset" Helsingissä</h3>
+                        <p class="card-summary">Logrus ry:n ja Encanta Oy:n yhteistapahtuma. Upea konsertti ja juhla: Sergei Florov ("shamaani tamburiinilla") avasi illan luoden tilaan lämpimän tunnelman ja uudenvuoden taikaa.</p>
+                        <div class="card-footer"><span class="card-badge">Juhla</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Teatteri">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Teatteri</span>
+                            <span class="card-date">15.09.2024</span>
+                        </div>
+                        <h3 class="card-title">Koko perheen näytelmä: "Kadonnut sormus"</h3>
+                        <p class="card-summary">Helmi-keskuksen nuorisoteatteri ja Logrus Ry esittivät vauhdikkaan koko perheen näytelmän klassisten englantilaisten satujen pohjalta. Kiitämme osallistujia ja katsojia lämpimästä tuesta ja satumaisesta tunnelmasta!</p>
+                        <div class="card-footer"><span class="card-badge">Ensi-ilta</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Festivals">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Festivals</span>
+                            <span class="card-date">03.08.2024</span>
+                        </div>
+                        <h3 class="card-title">Kouvolan keskiaikamarkkinat</h3>
+                        <p class="card-summary">Logrus Ry osallistui Kouvolan perinteisille keskiaikamarkkinoille. Esittelyssä oli aidoista luonnonpellavasta ja puuvillasta käsin valmistettuja historiallisia mekkoja ja paitoja.</p>
+                        <div class="card-footer"><span class="card-badge">Markkinat</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Tapahtumat">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Tapahtumat</span>
+                            <span class="card-date">10.05.2024</span>
+                        </div>
+                        <h3 class="card-title">Kävelykierros Helsingissä Alexandre Vassilievin kanssa</h3>
+                        <p class="card-summary">Keväinen kävelyretki ja vapaamuotoinen tapaaminen Helsingissä maailmankuulun muotihistorioitsijan ja taiteentutkijan Alexandre Vassilievin kanssa yhteistyössä Logrus ry:n ja Encanta Oy:n kanssa.</p>
+                        <div class="card-footer"><span class="card-badge">Tapaaminen</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Teatteri">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Teatteri</span>
+                            <span class="card-date">07.04.2024</span>
+                        </div>
+                        <h3 class="card-title">Näytelmä "Kaunis elämä" kiertueella Jyväskylässä</h3>
+                        <p class="card-summary">Logrus-teatterin kiertue-esitys Jyväskylässä Jean Anouilhin vallankumouksellisella tragikomedialla "Kaunis elämä" (ohjaus Akvilė Ruzgaitė). Lämpimät kiitokset yleisölle ja kumppaneille!</p>
+                        <div class="card-footer"><span class="card-badge">Kiertue</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Muoti">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Muoti</span>
+                            <span class="card-date">09.02.2024</span>
+                        </div>
+                        <h3 class="card-title">Vanhojen tanssien pukuvuokraus</h3>
+                        <p class="card-summary">Perinteiset lukion Vanhojen tanssit Helsingissä! Logrus ry ja Encanta Oy tarjoavat laajan valikoiman tanssiaismekkoja, frakkeja ja asusteita edulliseen hintaan yksilöllisellä sovituksella.</p>
+                        <div class="card-footer"><span class="card-badge">Puvut</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Studiot">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Studiot</span>
+                            <span class="card-date">03.02.2024</span>
+                        </div>
+                        <h3 class="card-title">Avoin flamencotanssin työpaja</h3>
+                        <p class="card-summary">Maksuton alkeistunti "Flamencoa aloittelijoille" opettaja Raisat Gesselin johdolla nuorisokeskus Luupissa (Kontula, Helsinki). Tutustuminen perusrytmeihin, ryhtiin ja tanssin ilmaisuun.</p>
+                        <div class="card-footer"><span class="card-badge">Työpaja</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Koulutus">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Koulutus</span>
+                            <span class="card-date">20.01.2024</span>
+                        </div>
+                        <h3 class="card-title">Alla Novozheninan luentosarja: "Paholainen pukeutuu Pradaan"</h3>
+                        <p class="card-summary">Ohjaajan ja puhekouluttajan Alla Novozheninan luento Narri-salissa (Sörnäisten rantatie 31 A). Kiehtova katsaus muotimaailman lainalaisuuksiin, tyylidramaturgiaan ja ruutuhahmojen psykologiaan.</p>
+                        <div class="card-footer"><span class="card-badge">Luento</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Työharjoittelu">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Työharjoittelu</span>
+                            <span class="card-date">Harjoitteluohjelma</span>
+                        </div>
+                        <h3 class="card-title">Työharjoittelu ja vapaaehtoistyö TE-toimiston kautta</h3>
+                        <p class="card-summary">Logrus ry tarjoaa harjoittelupaikkoja: apulaisohjaaja, puvustaja/ompelija, valo- ja ääniteknikko, stailistin avustaja sekä kulttuuriprojektien koordinaattori.</p>
+                        <div class="card-footer"><span class="card-badge">Työharjoittelu</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2023 -->
+        <section class="year-group" data-year="2023">
+            <div class="year-marker">
+                <span class="year-badge">2023</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Teatteri">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Teatteri</span>
+                            <span class="card-date">Ohjelmistokausi</span>
+                        </div>
+                        <h3 class="card-title">Näytelmä "Novecento" (Alessandro Baricco)</h3>
+                        <p class="card-summary">Alessandro Bariccon legendaariseen teokseen "1900" perustuva esitys. Logrus-teatterin ja DanceSport-studion yhteistuotanto Narrin näyttämöllä (Sörnäisten rantatie 31).</p>
+                        <div class="card-footer"><span class="card-badge">Draama / Tango</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Koulutus">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Koulutus</span>
+                            <span class="card-date">24.09.2023</span>
+                        </div>
+                        <h3 class="card-title">Työpaja: "Esiintymistaito aikuisille"</h3>
+                        <p class="card-summary">Käytännön puhetekniikkavalmennus, esiintymisjännityksen purkaminen ja itsevarma esiintyminen Alla Novozheninan johdolla kulttuuriaktiiveille ja teatteriharrastajille.</p>
+                        <div class="card-footer"><span class="card-badge">Työpaja</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Valokuva ja taide">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Valokuva ja taide</span>
+                            <span class="card-date">08.05.2023</span>
+                        </div>
+                        <h3 class="card-title">Valokuvaussessio: "Liisa ja Wolandin seurue"</h3>
+                        <p class="card-summary">Logrus-teatterin taiteellinen valokuvasarja, joka on saanut inspiraationsa romaanin "Saatana saapuu Moskovaan" mystisestä tunnelmasta. Vintage-pukujen ja dramaattisen muotokuvan liitto.</p>
+                        <div class="card-footer"><span class="card-badge">Valokuvaprojekti</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Festivals">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Festivals</span>
+                            <span class="card-date">22.01.2023</span>
+                        </div>
+                        <h3 class="card-title">"Art-Planet Festival 2023" -festivaalin avajaiset</h3>
+                        <p class="card-summary">Logrus-ryhmä avasi ART PLANET -taidefestivaalin Espoossa! Malliemme näyttävä muotinäytös, uniikit asut, koreografia ja esiintyjien ammattimainen tyyli.</p>
+                        <div class="card-footer"><span class="card-badge">Festivaali</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Sosiaaliset projektit">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Sosiaaliset projektit</span>
+                            <span class="card-date">Tukiohjelma</span>
+                        </div>
+                        <h3 class="card-title">Nuorten psykologinen tuki ja neuvonta</h3>
+                        <p class="card-summary">Psykologista ja psykoterapeuttista tukea 17–30-vuotiaille nuorille Suomessa: apua ahdistukseen, stressiin, uupumukseen ja sopeutumiseen (myös kaupungin palveluseteleillä).</p>
+                        <div class="card-footer"><span class="card-badge">Tuki</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2022 -->
+        <section class="year-group" data-year="2022">
+            <div class="year-marker">
+                <span class="year-badge">2022</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Studiot">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Studiot</span>
+                            <span class="card-date">Jatkuva studio</span>
+                        </div>
+                        <h3 class="card-title">Nykytanssistudio (Jazz-Modern)</h3>
+                        <p class="card-summary">Säännölliset jazz-modern -tanssitunnit nuorille ja aikuisille. Kehonhallinnan, koordinaation ja teatteriesitysten tanssinumeroiden harjoittelua.</p>
+                        <div class="card-footer"><span class="card-badge">Tanssi</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2021 -->
+        <section class="year-group" data-year="2021">
+            <div class="year-marker">
+                <span class="year-badge">2021</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Festivals">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Festivals</span>
+                            <span class="card-date">15.08.2021</span>
+                        </div>
+                        <h3 class="card-title">Ensimmäinen musiikki- ja teatteritaiteen videofestivaali</h3>
+                        <p class="card-summary">Helsingissä järjestetty digitaalinen nuorisotaiteen verkkofestivaali, joka kokosi yhteen laulajia, lausujia ja pieniä teatteriryhmiä ympäri Suomen.</p>
+                        <div class="card-footer"><span class="card-badge">Kilpailu</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Valokuva ja taide">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Valokuva ja taide</span>
+                            <span class="card-date">20.04.2021</span>
+                        </div>
+                        <h3 class="card-title">Taiteellinen valokuvaus "Demoni"-projektia varten</h3>
+                        <p class="card-summary">Lermontovin "Demoni"-runoelman innoittama teemallinen valokuvaus Helsingissä. Puvustajien, maskeeraajien ja näyttelijöiden taidokas työ hahmojen luomisessa.</p>
+                        <div class="card-footer"><span class="card-badge">Valokuvaprojekti</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2020 -->
+        <section class="year-group" data-year="2020">
+            <div class="year-marker">
+                <span class="year-badge">2020</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Muoti">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Muoti</span>
+                            <span class="card-date">27.09.2020</span>
+                        </div>
+                        <h3 class="card-title">Retroprojekti "The Hipsters — Elämää retrotyylissä"</h3>
+                        <p class="card-summary">Logrus ry:n ja Encanta Oy:n retrokurssin päätösgaala: värikkäitä 50–60-lukujen asuja, Helsingin Mactep -kampaamon työpaja ja energinen valokuvaussessio.</p>
+                        <div class="card-footer"><span class="card-badge">Retro-show</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2019 -->
+        <section class="year-group" data-year="2019">
+            <div class="year-marker">
+                <span class="year-badge">2019</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Muoti">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Muoti</span>
+                            <span class="card-date">14.02.2019</span>
+                        </div>
+                        <h3 class="card-title">Muotinäytös "Show La Bohème" Helsingissä</h3>
+                        <p class="card-summary">Suuri ystävänpäivän muotinäytös: Anna Botškovan käsinmaalattujen paitojen kokoelma, "Venäläinen kokoelma", "La Bohème" -iltapuvut sekä Tina Sepän live-laulu.</p>
+                        <div class="card-footer"><span class="card-badge">Muotinäytös</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2018 -->
+        <section class="year-group" data-year="2018">
+            <div class="year-marker">
+                <span class="year-badge">2018</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Elokuva ja media">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Elokuva ja media</span>
+                            <span class="card-date">31.08.2018</span>
+                        </div>
+                        <h3 class="card-title">Dokumenttielokuvan "Oman elämänsä muotoilija" ensi-ilta</h3>
+                        <p class="card-summary">Nuorten kehitysprojektin osallistujista kertovan dokumenttielokuvan juhlallinen ensi-iltaelokuvanäytös helsinkiläisessä K-13 -elokuvateatterissa.</p>
+                        <div class="card-footer"><span class="card-badge">Elokuvan ensi-ilta</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Festivals">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Festivals</span>
+                            <span class="card-date">06.05.2018</span>
+                        </div>
+                        <h3 class="card-title">Nuorten kykykilpailu "Gloria-Show 2018"</h3>
+                        <p class="card-summary">"Oman elämänsä muotoilija" -hankkeen finaaligaala Kulttuuriareena Gloriassa Helsingin keskustassa: laulua, tanssia, muotinäytös ja palkintojenjako.</p>
+                        <div class="card-footer"><span class="card-badge">Galakonsertti</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2017 -->
+        <section class="year-group" data-year="2017">
+            <div class="year-marker">
+                <span class="year-badge">2017</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Tapahtumat">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Tapahtumat</span>
+                            <span class="card-date">11.11.2017</span>
+                        </div>
+                        <h3 class="card-title">Kansainvälinen rauhanilta "Elävä kieli"</h3>
+                        <p class="card-summary">Ensimmäisen maailmansodan päättymisen muistoksi: runoutta, kansanlauluja ja teatterillisia tuokioita eri kielillä rauhan ja ystävyyden puolesta.</p>
+                        <div class="card-footer"><span class="card-badge">Konsertti</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Teatteri">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Teatteri</span>
+                            <span class="card-date">Klassikkonäytelmä</span>
+                        </div>
+                        <h3 class="card-title">Näytelmä "Niskavuoren nuori emäntä"</h3>
+                        <p class="card-summary">Hella Wuolijoen klassikkonäytelmän pohjalta. Kertomus vahvasta suomalaisesta luonteesta, velvollisuuden ja tunteiden ristiriidasta sekä maalaistalon perinteistä.</p>
+                        <div class="card-footer"><span class="card-badge">Suomalainen klassikko</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2016 -->
+        <section class="year-group" data-year="2016">
+            <div class="year-marker">
+                <span class="year-badge">2016</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Teatteri">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Teatteri</span>
+                            <span class="card-date">30.09.2016</span>
+                        </div>
+                        <h3 class="card-title">Musiikki- ja runoilta "Lehtisade" Caisassa</h3>
+                        <p class="card-summary">Tunnelmallinen runon ja musiikin ilta kulttuurikeskus CAISAssa. Esiintyjinä runoilijat Olga Pussinen, Natalia Meri, Olga Svanberg sekä Logrus-studion näyttelijät.</p>
+                        <div class="card-footer"><span class="card-badge">Runous</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Teatteri">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Teatteri</span>
+                            <span class="card-date">Draama</span>
+                        </div>
+                        <h3 class="card-title">Maria Ladon näytelmä: "Hyvin yksinkertainen tarina"</h3>
+                        <p class="card-summary">Koskettava filosofinen vertauskuva uskollisuudesta, sydämen puhtaudesta ja nuorten rakkaudesta maalaistalon eläinten silmin nähtynä.</p>
+                        <div class="card-footer"><span class="card-badge">Vertauskuva</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Teatteri">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Teatteri</span>
+                            <span class="card-date">10.04.2016</span>
+                        </div>
+                        <h3 class="card-title">Ensi-ilta: "Tyttö ja Varis"</h3>
+                        <p class="card-summary">Logrus-nuorisostudion suomenkielinen näytelmä L. Ustinovin sadun pohjalta Teatteri Sampossa osana Helsingin perheiden teatteripäivää. Ohjaus Akvilė Ruzgaitė.</p>
+                        <div class="card-footer"><span class="card-badge">Suomeksi</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2015 -->
+        <section class="year-group" data-year="2015">
+            <div class="year-marker">
+                <span class="year-badge">2015</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Koulutus">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Koulutus</span>
+                            <span class="card-date">30.08.2015</span>
+                        </div>
+                        <h3 class="card-title">Kokkikerho "Makea taide"</h3>
+                        <p class="card-summary">Nuorten leivonta- ja konditoriatyöpaja Hapki-keskuksessa (Sörnäisten rantatie 31). Työpajojen ohjaajana Maria Iljina.</p>
+                        <div class="card-footer"><span class="card-badge">Studio</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Teatteri">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Teatteri</span>
+                            <span class="card-date">05.05.2015</span>
+                        </div>
+                        <h3 class="card-title">Näytelmä "Kelvoton illallinen" Tennessee Williamsin mukaan</h3>
+                        <p class="card-summary">Logrus-teatterin kokeellinen näyttämöteos amerikkalaisen näytelmäkirjailijan T. Williamsin teosten pohjalta Kanneltalossa ja Caisassa.</p>
+                        <div class="card-footer"><span class="card-badge">Draama</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2013 -->
+        <section class="year-group" data-year="2013">
+            <div class="year-marker">
+                <span class="year-badge">2013</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Tapahtumat">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Tapahtumat</span>
+                            <span class="card-date">17.08.2013</span>
+                        </div>
+                        <h3 class="card-title">Nuorisofoorumi Ahtelan leirikeskuksessa</h3>
+                        <p class="card-summary">Viikon kestänyt kansainvälinen nuorisoaloitteiden leirifoorumi Ahtelan merellisessä leirikeskuksessa: kulttuurienvälinen vuoropuhelu, työpajat, ekologia ja urheilu.</p>
+                        <div class="card-footer"><span class="card-badge">Kesäfoorumi</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Teatteri">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Teatteri</span>
+                            <span class="card-date">28.05.2013</span>
+                        </div>
+                        <h3 class="card-title">Jean Anouilhin "Antigone" suomeksi</h3>
+                        <p class="card-summary">Logrus-studion merkittävä suomenkielinen teatterihanke: Jean Anouilhin tragedia "Antigone" käännettynä ja sovitettuna suomeksi laajalle yleisölle.</p>
+                        <div class="card-footer"><span class="card-badge">Klassikko</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2012 -->
+        <section class="year-group" data-year="2012">
+            <div class="year-marker">
+                <span class="year-badge">2012</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Tapahtumat">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Tapahtumat</span>
+                            <span class="card-date">07.09.2012</span>
+                        </div>
+                        <h3 class="card-title">Tapaaminen tasavallan presidentti Sauli Niinistön kanssa</h3>
+                        <p class="card-summary">Logrus ry kutsuttiin tapaamaan tasavallan presidenttiä osana nuorten syrjäytymisen ehkäisyyn ja tukemiseen tähtäävää presidentillistä ohjelmaa.</p>
+                        <div class="card-footer"><span class="card-badge">Virallinen</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Tapahtumat">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Tapahtumat</span>
+                            <span class="card-date">20.06.2012</span>
+                        </div>
+                        <h3 class="card-title">Kansainvälinen nuorisoleiri Taivassalossa</h3>
+                        <p class="card-summary">Kotoutumishanke "Vähemmistönuoret vakaan Euroopan puolesta", johon osallistui nuorisoryhmiä Suomesta, Tanskasta, Slovakiasta ja Latviasta.</p>
+                        <div class="card-footer"><span class="card-badge">Eurooppa-projekti</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Festivals">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Festivals</span>
+                            <span class="card-date">29.05.2012</span>
+                        </div>
+                        <h3 class="card-title">I Kansainvälinen kykykilpailu "Gloria-Star 2012"</h3>
+                        <p class="card-summary">Nuorten laulajien ja esiintyjien kilpailu Kulttuuriareena Gloriassa Helsingissä, josta sai alkunsa vuosittainen kaupunkifestivaali.</p>
+                        <div class="card-footer"><span class="card-badge">Kilpailu</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2010 -->
+        <section class="year-group" data-year="2010">
+            <div class="year-marker">
+                <span class="year-badge">2010</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Elokuva ja media">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Elokuva ja media</span>
+                            <span class="card-date">11.12.2010</span>
+                        </div>
+                        <h3 class="card-title">Lyhytelokuvan "Huominen kahdelle" ensi-ilta</h3>
+                        <p class="card-summary">Lyyrinen lyhytelokuva rakkaudesta, yhteisymmärryksen vaikeudesta ja harmonian etsimisestä, Logrus-studion luovan tiimin toteuttamana.</p>
+                        <div class="card-footer"><span class="card-badge">Elokuvanäytös</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
 
+        <div id="noResultsMsg" class="no-results">
+            Hakuehdoilla ei löytynyt merkintöjä.
+        </div>
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                <div>© 2026 Logrus ry — Kansainvälinen nuorisoaloitteiden tukiyhdistys</div>
-                <div>Kaikki oikeudet pidätetään.</div>
+                <div>© 2026 Logrus ry — Kansainvälinen nuorisoseura. Kaikki oikeudet pidätetään.</div>
+                <div>Logrus ry</div>
             </div>
         </div>
     </footer>
 
+    <script>
+        const searchInput = document.getElementById('archiveSearch');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const yearGroups = document.querySelectorAll('.year-group');
+        const noResultsMsg = document.getElementById('noResultsMsg');
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function updateDisplay() {
+            let totalVisible = 0;
+
+            yearGroups.forEach(group => {
+                const cards = group.querySelectorAll('.archive-card');
+                let visibleInGroup = 0;
+
+                cards.forEach(card => {
+                    const cat = card.getAttribute('data-category');
+                    const text = card.innerText.toLowerCase();
+
+                    const matchesCat = (currentCategory === 'all' || cat === currentCategory);
+                    const matchesSearch = (!searchQuery || text.includes(searchQuery));
+
+                    if (matchesCat && matchesSearch) {
+                        card.style.display = 'flex';
+                        visibleInGroup++;
+                        totalVisible++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                group.style.display = visibleInGroup > 0 ? 'block' : 'none';
+            });
+
+            if (noResultsMsg) {
+                noResultsMsg.style.display = totalVisible === 0 ? 'block' : 'none';
+            }
+        }
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentCategory = btn.getAttribute('data-filter');
+                updateDisplay();
+            });
+        });
+
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.trim().toLowerCase();
+                updateDisplay();
+            });
+        }
+    </script>
 </body>
 </html>

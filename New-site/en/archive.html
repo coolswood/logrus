@@ -3,68 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event & Performance Archive — LOGRUS RY</title>
+    <title>Chronicle and Archive of Events — LOGRUS RY</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Montserrat', sans-serif; background-color: #fcfbfa; color: #111; line-height: 1.6; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fcfbfa;
+            color: #09090b;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
         a { text-decoration: none; color: inherit; }
         .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
 
         /* HEADER */
-        header { padding: 24px 0; background: #fff; border-bottom: 1px solid #eaeaea; }
-        .header-inner { display: flex; align-items: center; justify-content: space-between; }
-        .logo-block { display: flex; align-items: center; gap: 12px; }
-        .logo-block img { height: 72px; width: auto; display: block; object-fit: contain; transition: transform 0.2s ease; }
-        .logo-text { display: flex; flex-direction: column; }
-        .logo-text .title { font-size: 1.1rem; font-weight: 900; letter-spacing: 0.05em; }
-        .logo-text .subtitle { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; color: #555; text-transform: uppercase; }
-        .header-right { display: flex; align-items: center; gap: 20px; }
-        .social-links { display: flex; gap: 12px; }
-        .social-links a { width: 34px; height: 34px; background: #111; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; transition: opacity 0.2s; }
-        .social-links a:hover { opacity: 0.75; }
-        .divider { width: 1px; height: 28px; background: #ccc; }
-        .lang-switch { font-size: 0.8rem; font-weight: 700; display: flex; gap: 8px; }
-        .lang-switch a { color: #777; }
-        .lang-switch a.active { color: #111; }
+        header {
+            padding: 20px 0;
+            background: #fff;
+            border-bottom: 1px solid #e4e4e7;
+            position: sticky;
+            top: 0;
+            z-index: 40;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-block img {
+            height: 72px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+        }
+        .logo-block:hover img {
+            transform: scale(1.03);
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: #09090b;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+        .social-links a:hover {
+            background: #3f3f46;
+            transform: scale(1.08);
+        }
+        .divider {
+            width: 1px;
+            height: 24px;
+            background: #d4d4d8;
+        }
+        .lang-switch {
+            font-size: 0.75rem;
+            font-weight: 800;
+            display: flex;
+            gap: 8px;
+            letter-spacing: 0.05em;
+        }
+        .lang-switch a {
+            color: #71717a;
+            transition: color 0.15s;
+        }
+        .lang-switch a.active {
+            color: #09090b;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .lang-switch a:hover:not(.active) {
+            color: #18181b;
+        }
 
-        /* PAGE HERO */
-        .page-hero { padding: 60px 0 40px; text-align: center; background: #fff; border-bottom: 1px solid #f0f0f0; }
-        .page-hero h1 { font-size: 2.8rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-        .page-hero p { font-size: 1rem; color: #666; max-width: 600px; margin: 0 auto; }
+        /* HERO */
+        .page-hero {
+            padding: 55px 0 40px;
+            text-align: center;
+            background: #fff;
+            border-bottom: 1px solid #e4e4e7;
+        }
+        .page-hero h1 {
+            font-size: 2.6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+            color: #09090b;
+        }
+        .page-hero p {
+            font-size: 0.95rem;
+            color: #52525b;
+            max-width: 620px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
 
-        /* FILTER / TIMELINE */
-        .archive-section { padding: 60px 0 80px; }
-        
-        .year-block { margin-bottom: 60px; }
-        .year-title { font-size: 2rem; font-weight: 900; letter-spacing: 0.05em; margin-bottom: 24px; padding-bottom: 8px; border-bottom: 2px solid #111; display: inline-block; }
+        /* CONTROLS BAR */
+        .controls-bar {
+            padding: 24px 0;
+            background: #fcfbfa;
+            border-bottom: 1px solid #e4e4e7;
+            position: sticky;
+            top: 113px;
+            z-index: 30;
+            backdrop-filter: blur(8px);
+            background: rgba(252, 251, 250, 0.95);
+        }
+        .controls-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .search-box {
+            flex: 1;
+            max-width: 320px;
+            min-width: 240px;
+            position: relative;
+        }
+        .search-box i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a1a1aa;
+            font-size: 0.85rem;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px 16px 10px 38px;
+            border: 1px solid #e4e4e7;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            font-family: inherit;
+            background: #fff;
+            color: #09090b;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .search-box input:focus {
+            border-color: #09090b;
+            box-shadow: 0 0 0 1px #09090b;
+        }
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .filter-btn {
+            background: #f4f4f5;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #3f3f46;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+        .filter-btn:hover {
+            background: #e4e4e7;
+            color: #09090b;
+        }
+        .filter-btn.active {
+            background: #09090b;
+            color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
 
-        .items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px; }
-        
-        .archive-card { background: #fff; border: 1px solid #e8e8e8; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
-        .archive-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); }
-        
-        .card-img-wrap { height: 220px; width: 100%; background: #eee; overflow: hidden; position: relative; }
-        .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-        .card-tag { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.75); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
+        /* TIMELINE & CARDS */
+        .archive-section {
+            padding: 50px 0 80px;
+            flex: 1;
+        }
+        .year-group {
+            margin-bottom: 60px;
+        }
+        .year-marker {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 26px;
+        }
+        .year-badge {
+            font-size: 0.85rem;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #fff;
+            background: #09090b;
+            padding: 6px 18px;
+            border-radius: 9999px;
+        }
+        .year-line {
+            flex: 1;
+            height: 1px;
+            background: #e4e4e7;
+        }
 
-        .card-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
-        .card-date { font-size: 0.8rem; font-weight: 700; color: #888; margin-bottom: 6px; }
-        .card-heading { font-size: 1.25rem; font-weight: 800; line-height: 1.3; margin-bottom: 12px; }
-        .card-desc { font-size: 0.9rem; color: #555; margin-bottom: 16px; flex-grow: 1; }
-        .card-meta { font-size: 0.8rem; color: #777; border-top: 1px solid #f0f0f0; padding-top: 12px; }
-        .card-meta strong { color: #222; }
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 26px;
+        }
+
+        .archive-card {
+            background: #fff;
+            border: 1px solid #e4e4e7;
+            border-top: 4px solid #09090b;
+            border-radius: 8px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+        .archive-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+        }
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .card-category {
+            background: #f4f4f5;
+            color: #18181b;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .card-date {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #71717a;
+        }
+        .card-title {
+            font-size: 1.12rem;
+            font-weight: 900;
+            line-height: 1.35;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #09090b;
+            transition: color 0.2s;
+        }
+        .archive-card:hover .card-title {
+            color: #3f3f46;
+        }
+        .card-summary {
+            font-size: 0.85rem;
+            color: #52525b;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            flex-grow: 1;
+            font-weight: 500;
+        }
+        .card-footer {
+            border-top: 1px solid #f4f4f5;
+            padding-top: 12px;
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #52525b;
+            background: #fafafa;
+            border: 1px solid #e4e4e7;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            background: #fff;
+            border: 1px dashed #d4d4d8;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #71717a;
+            letter-spacing: 0.05em;
+            display: none;
+        }
 
         /* FOOTER */
-        footer { background-color: #16181b; color: #fff; padding: 50px 0 30px; margin-top: 40px; }
-        .footer-bottom { display: flex; justify-content: space-between; font-size: 0.75rem; color: #777; }
+        footer {
+            background-color: #16181b;
+            color: #fff;
+            padding: 50px 0 30px;
+            margin-top: auto;
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #a1a1aa;
+        }
 
         @media (max-width: 768px) {
             .header-inner { flex-direction: column; gap: 16px; }
+            .page-hero h1 { font-size: 2rem; }
+            .controls-inner { flex-direction: column; align-items: stretch; }
+            .search-box { max-width: 100%; }
+            .archive-grid { grid-template-columns: 1fr; }
+            .controls-bar { top: 160px; }
         }
     </style>
 </head>
@@ -72,23 +362,23 @@
 
     <header>
         <div class="container header-inner">
-            <a href="index.html" class="logo-block">
-                <img src="../images/logrus-pic-logo-title-noline-2.png" alt="Logrus">
+            <a href="../index.html" class="logo-block">
+                <img src="../images/logrus-pic-logo-title-noline-2.png" alt="LOGRUS">
             </a>
 
             <div class="header-right">
                 <div class="social-links">
-                    <a href="https://www.facebook.com/logrusry" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/teat.rus" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://youtube.com/@logrusry2011" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/logrusry" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/teat.rus" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com/@logrusry2011" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
 
                 <div class="divider"></div>
 
                 <div class="lang-switch">
                     <a href="archive.html" class="active">EN</a> |
-                    <a href="../fi/archive.html">FI</a> |
-                    <a href="../archive.html">RU</a>
+                    <a href="../fi/archive.html" class="">FI</a> |
+                    <a href="../archive.html" class="">RU</a>
                 </div>
             </div>
         </div>
@@ -96,118 +386,627 @@
 
     <section class="page-hero">
         <div class="container">
-            <h1>Event Archive</h1>
-            <p>History of theatrical productions, youth initiatives, workshops, and festivals by Logrus ry.</p>
+            <h1>Archive of Events</h1>
+            <p>Chronicle of performances, festivals, fashion showcases, masterclasses, and youth initiatives by Logrus ry since 2010.</p>
         </div>
     </section>
 
-    <main class="container archive-section">
-
-        <!-- Festivals and Workshops -->
-        <div class="year-block">
-            <h2 class="year-title">Festivals & Studios</h2>
-            <div class="items-grid">
-                
-                <div class="archive-card">
-                    <div class="card-img-wrap">
-                        <span class="card-tag">Festival / Camp</span>
-                        <img src="../images/120041242_767829627114593_2138231004363853000_n.jpg" alt="Youth Projects" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600'">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">2022 — 2024</div>
-                        <h3 class="card-heading">Social Environment & Integration</h3>
-                        <p class="card-desc">A series of community meetups, language labs, and youth integration camps held across Finland.</p>
-                        <div class="card-meta">
-                            <div><strong>Partners:</strong> Caisa, Kanneltalo, TE-toimisto</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- COMPLETED WORKSHOP STUDIO -->
-                <div class="archive-card">
-                    <div class="card-img-wrap">
-                        <span class="card-tag">Archived Workshop</span>
-                        <img src="../images/Курсы-Импровизации.png" alt="Catwalk & Chinese Dance Studio" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600'">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">Season 2025 — 2026 (Completed)</div>
-                        <h3 class="card-heading">Catwalk & Chinese Dance Studio</h3>
-                        <p class="card-desc">Free creative workshops for youth aged 14–25. Stage presence, traditional costumes, and preparation for the festive "January Encounters" gala concert.</p>
-                        <div class="card-meta">
-                            <div><strong>Location:</strong> Nuorisotalo Kontula, Ostostie 4, Helsinki</div>
-                            <div><strong>Status:</strong> Successfully concluded</div>
-                        </div>
-                    </div>
-                </div>
+    <section class="controls-bar">
+        <div class="container controls-inner">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="archiveSearch" placeholder="Search by title or description..." aria-label="Search by title or description...">
+            </div>
+            <div class="category-filters" id="categoryFilters">
+                <button class="filter-btn active" data-filter="all">All Entries</button>
+            <button class="filter-btn" data-filter="Theatre">Theatre</button>
+            <button class="filter-btn" data-filter="Fashion">Fashion</button>
+            <button class="filter-btn" data-filter="Festivals">Festivals</button>
+            <button class="filter-btn" data-filter="Events">Events</button>
+            <button class="filter-btn" data-filter="Education">Education</button>
+            <button class="filter-btn" data-filter="Studios">Studios</button>
 
             </div>
         </div>
+    </section>
 
-        <!-- Past Seasons -->
-        <div class="year-block">
-            <h2 class="year-title">Earlier Repertoire</h2>
-            <div class="items-grid">
-                
-                <div class="archive-card">
-                    <div class="card-img-wrap">
-                        <span class="card-tag">Performance</span>
-                        <img src="../images/theatre-clean.png" alt="NOVECENTO" onerror="this.src='https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600'">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">November 2025</div>
-                        <h3 class="card-heading">«NOVECENTO»</h3>
-                        <p class="card-desc">Production based on the play by Alessandro Baricco in collaboration with DanceSport Studio. The story of a legendary pianist born and raised aboard an ocean liner.</p>
-                        <div class="card-meta">
-                            <div><strong>Director:</strong> Akvilė Ruzgaitė</div>
-                            <div><strong>Venue:</strong> Narri Stage, Sörnäisten rantatie 31, Helsinki</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="archive-card">
-                    <div class="card-img-wrap">
-                        <span class="card-tag">Play</span>
-                        <img src="../images/gloria-star-2013.jpg" alt="Silvia" onerror="this.src='https://images.unsplash.com/photo-1469488865564-c2de10f69f96?w=600'">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">2026</div>
-                        <h3 class="card-heading">«SILVIA»</h3>
-                        <p class="card-desc">A heartwarming comedy based on A. R. Gurney's classic play about friendship, family values, and loyalty.</p>
-                        <div class="card-meta">
-                            <div><strong>Theatre:</strong> Logrus Teatteri</div>
-                            <div><strong>Stage:</strong> Narri Stage</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="archive-card">
-                    <div class="card-img-wrap">
-                        <span class="card-tag">Family Play</span>
-                        <img src="../images/Istoria_new.jpg" alt="Mystery of the Lost Ring" onerror="this.src='https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=600'">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-date">Season 2024</div>
-                        <h3 class="card-heading">«Mystery of the Lost Ring»</h3>
-                        <p class="card-desc">An interactive family production by the Helmi Center youth theatre based on classic folk tales.</p>
-                        <div class="card-meta">
-                            <div><strong>Organizer:</strong> Logrus ry / Helmi Center</div>
-                        </div>
-                    </div>
-                </div>
-
+    <main class="container archive-section" id="archiveList">
+        
+        <!-- Year 2025 -->
+        <section class="year-group" data-year="2025">
+            <div class="year-marker">
+                <span class="year-badge">2025</span>
+                <div class="year-line"></div>
             </div>
-        </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Theatre">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Theatre</span>
+                            <span class="card-date">03.02.2025</span>
+                        </div>
+                        <h3 class="card-title">🎭 Open Theatre Group at Logrus Theatre</h3>
+                        <p class="card-summary">The creative team of Logrus Theatre opens its doors to the fascinating world of theatrical art! A unique opportunity to immerse yourself in the magic of the stage, unleash your creative potential, and master the art of acting.</p>
+                        <div class="card-footer"><span class="card-badge">Group Enrollment</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2024 -->
+        <section class="year-group" data-year="2024">
+            <div class="year-marker">
+                <span class="year-badge">2024</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Events">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Events</span>
+                            <span class="card-date">07.12.2024</span>
+                        </div>
+                        <h3 class="card-title">Video Report: "Christmas Gatherings" in Helsinki</h3>
+                        <p class="card-summary">A joint event by Logrus ry and Encanta Oy. An extraordinary concert and holiday celebration: Sergey Florov ("shaman with a tambourine") opened the evening, filling the hall with warmth and New Year magic.</p>
+                        <div class="card-footer"><span class="card-badge">Celebration</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Theatre">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Theatre</span>
+                            <span class="card-date">15.09.2024</span>
+                        </div>
+                        <h3 class="card-title">Family Play: "The Mystery of the Missing Ring"</h3>
+                        <p class="card-summary">The Youth Theatre of the Helmi Center and Logrus Ry presented an engaging family play based on classic English fairy tales. We thank all participants and spectators for their support and magical atmosphere!</p>
+                        <div class="card-footer"><span class="card-badge">Premiere</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Festivals">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Festivals</span>
+                            <span class="card-date">03.08.2024</span>
+                        </div>
+                        <h3 class="card-title">Medieval Fair in Kouvola</h3>
+                        <p class="card-summary">Logrus Ry took part in the traditional Medieval Fair in Kouvola. Historical dresses and handcrafted men's shirts made of natural linen and cotton were showcased.</p>
+                        <div class="card-footer"><span class="card-badge">Fair</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Events">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Events</span>
+                            <span class="card-date">10.05.2024</span>
+                        </div>
+                        <h3 class="card-title">Helsinki Walk with Alexandre Vassiliev</h3>
+                        <p class="card-summary">A pleasant spring walk and informal gathering in Helsinki with world-renowned fashion historian and art scholar Alexandre Vassiliev, organized with Logrus ry and Encanta Oy.</p>
+                        <div class="card-footer"><span class="card-badge">Meeting</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Theatre">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Theatre</span>
+                            <span class="card-date">07.04.2024</span>
+                        </div>
+                        <h3 class="card-title">Play "La Belle Vie" on Tour in Jyväskylä</h3>
+                        <p class="card-summary">Logrus Theatre on tour in Jyväskylä with Jean Anouilh's revolutionary tragicomedy "La Belle Vie" (directed by Akvilė Ruzgaitė). Heartfelt thanks to our audience and partners for the warm reception!</p>
+                        <div class="card-footer"><span class="card-badge">Tour</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Fashion">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Fashion</span>
+                            <span class="card-date">09.02.2024</span>
+                        </div>
+                        <h3 class="card-title">Costume & Gown Rental for "Vanhat Tanssit" Ball</h3>
+                        <p class="card-summary">Traditional high school Vanhat tanssit ball in Helsinki! Logrus ry and Encanta Oy offer ballroom gowns, tailcoats, and accessories at accessible prices with custom fittings.</p>
+                        <div class="card-footer"><span class="card-badge">Costumes</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Studios">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Studios</span>
+                            <span class="card-date">03.02.2024</span>
+                        </div>
+                        <h3 class="card-title">Open Flamenco Dance Workshop</h3>
+                        <p class="card-summary">Free introductory lesson "Flamenco for Beginners" led by instructor Raisat Gessel at the Luuppi youth center (Kontula, Helsinki). Exploring core rhythms, posture, and expressive dance grace.</p>
+                        <div class="card-footer"><span class="card-badge">Workshop</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Education">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Education</span>
+                            <span class="card-date">20.01.2024</span>
+                        </div>
+                        <h3 class="card-title">Alla Novozhenina's Lecture Series: "The Devil Wears Prada"</h3>
+                        <p class="card-summary">A lecture by voice artist, director, and educator Alla Novozhenina at the Narri Hall (Sörnäisten rantatie 31 A). An engaging analysis of the fashion world, stylistic dramaturgy, and screen psychology.</p>
+                        <div class="card-footer"><span class="card-badge">Lecture</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Internship">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Internship</span>
+                            <span class="card-date">Vocational Program</span>
+                        </div>
+                        <h3 class="card-title">Internship and Volunteering via Employment Services (TE-toimisto)</h3>
+                        <p class="card-summary">Logrus ry welcomes trainees in: assistant director, costume designer/tailor, lighting and sound engineer, stylist assistant, and cultural project coordinator.</p>
+                        <div class="card-footer"><span class="card-badge">Internship</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2023 -->
+        <section class="year-group" data-year="2023">
+            <div class="year-marker">
+                <span class="year-badge">2023</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Theatre">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Theatre</span>
+                            <span class="card-date">Repertoire Season</span>
+                        </div>
+                        <h3 class="card-title">Play "Novecento" (Alessandro Baricco)</h3>
+                        <p class="card-summary">Based on Alessandro Baricco's legendary monologue "The Legend of 1900". A joint production by Logrus Theatre and DanceSport Studio on stage at Narri (Sörnäisten rantatie 31).</p>
+                        <div class="card-footer"><span class="card-badge">Drama / Tango</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Education">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Education</span>
+                            <span class="card-date">24.09.2023</span>
+                        </div>
+                        <h3 class="card-title">Workshop: "Public Speaking for Adults"</h3>
+                        <p class="card-summary">Practical coaching on speech technique, overcoming stage fright, and confident presentation by Alla Novozhenina for community activists and theatre participants.</p>
+                        <div class="card-footer"><span class="card-badge">Workshop</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Photo & Art">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Photo & Art</span>
+                            <span class="card-date">08.05.2023</span>
+                        </div>
+                        <h3 class="card-title">Photoshoot: "Alice and Woland's Company"</h3>
+                        <p class="card-summary">Artistic photoshoot series by Logrus Theatre inspired by the mystical atmosphere of Bulgakov's "The Master and Margarita". A synthesis of vintage fashion, mystery, and portrait drama.</p>
+                        <div class="card-footer"><span class="card-badge">Photo Project</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Festivals">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Festivals</span>
+                            <span class="card-date">22.01.2023</span>
+                        </div>
+                        <h3 class="card-title">Grand Opening of "Art-Planet Festival 2023"</h3>
+                        <p class="card-summary">Logrus creative group opened the ART PLANET arts festival in Espoo! A vibrant runway showcase of our models, handcrafted costumes, choreography, and professional staging.</p>
+                        <div class="card-footer"><span class="card-badge">Festival</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Social Projects">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Social Projects</span>
+                            <span class="card-date">Support Program</span>
+                        </div>
+                        <h3 class="card-title">Psychological Support and Counseling for Youth</h3>
+                        <p class="card-summary">Psychological and psychotherapeutic assistance for young people aged 17–30 in Finland: coping with anxiety, stress, burnout, and adapting to a new environment (including municipal Palveluseteli vouchers).</p>
+                        <div class="card-footer"><span class="card-badge">Support</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2022 -->
+        <section class="year-group" data-year="2022">
+            <div class="year-marker">
+                <span class="year-badge">2022</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Studios">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Studios</span>
+                            <span class="card-date">Ongoing Studio</span>
+                        </div>
+                        <h3 class="card-title">Contemporary Dance Studio (Jazz-Modern)</h3>
+                        <p class="card-summary">Regular jazz-modern dance classes for youth and adults. Focusing on plastic movement, coordination development, and choreographing pieces for stage productions.</p>
+                        <div class="card-footer"><span class="card-badge">Dance</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2021 -->
+        <section class="year-group" data-year="2021">
+            <div class="year-marker">
+                <span class="year-badge">2021</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Festivals">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Festivals</span>
+                            <span class="card-date">15.08.2021</span>
+                        </div>
+                        <h3 class="card-title">First Video Festival of Musical and Theatrical Arts</h3>
+                        <p class="card-summary">Digital youth arts online festival in Helsinki bringing together vocalists, reciters, and small theatrical forms from across Finland.</p>
+                        <div class="card-footer"><span class="card-badge">Competition</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Photo & Art">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Photo & Art</span>
+                            <span class="card-date">20.04.2021</span>
+                        </div>
+                        <h3 class="card-title">Artistic Photoshoot for "The Demon" Project</h3>
+                        <p class="card-summary">Thematic photo project in Helsinki inspired by Lermontov's poem "The Demon". Dedicated costume, makeup, and acting work on intricate dramatic imagery.</p>
+                        <div class="card-footer"><span class="card-badge">Photo Project</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2020 -->
+        <section class="year-group" data-year="2020">
+            <div class="year-marker">
+                <span class="year-badge">2020</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Fashion">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Fashion</span>
+                            <span class="card-date">27.09.2020</span>
+                        </div>
+                        <h3 class="card-title">Retro Project "The Hipsters — Stilyagi. Life in Retro Style"</h3>
+                        <p class="card-summary">The finale gala of the retro course by Logrus ry and Encanta Oy: authentic 1950s–60s styling, vintage hairdressing masterclass with Helsingin Mactep salon, and dynamic photoshoot.</p>
+                        <div class="card-footer"><span class="card-badge">Retro Show</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2019 -->
+        <section class="year-group" data-year="2019">
+            <div class="year-marker">
+                <span class="year-badge">2019</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Fashion">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Fashion</span>
+                            <span class="card-date">14.02.2019</span>
+                        </div>
+                        <h3 class="card-title">Fashion Showcase "Show La Bohème" in Helsinki</h3>
+                        <p class="card-summary">Grand Valentine's Day runway show: presentation of Anna Bochkova's hand-painted shirt collection, the "Russian Collection", "La Bohème" evening wear, accompanied by live vocals by Tina Seppä.</p>
+                        <div class="card-footer"><span class="card-badge">Fashion Show</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2018 -->
+        <section class="year-group" data-year="2018">
+            <div class="year-marker">
+                <span class="year-badge">2018</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Film & Media">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Film & Media</span>
+                            <span class="card-date">31.08.2018</span>
+                        </div>
+                        <h3 class="card-title">Premiere of Documentary "Designer of One's Own Life"</h3>
+                        <p class="card-summary">Ceremonial premiere screening at Cinema K-13 in Helsinki documenting participants of the youth empowerment initiative "Designer of One's Own Life".</p>
+                        <div class="card-footer"><span class="card-badge">Film Premiere</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Festivals">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Festivals</span>
+                            <span class="card-date">06.05.2018</span>
+                        </div>
+                        <h3 class="card-title">Youth Talent Show "Gloria-Show 2018"</h3>
+                        <p class="card-summary">Grand finale show of "Designer of One's Own Life" at Culture Arena Gloria in central Helsinki: vocal performances, dance choreography, runway models, and award ceremony.</p>
+                        <div class="card-footer"><span class="card-badge">Gala Concert</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2017 -->
+        <section class="year-group" data-year="2017">
+            <div class="year-marker">
+                <span class="year-badge">2017</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Events">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Events</span>
+                            <span class="card-date">11.11.2017</span>
+                        </div>
+                        <h3 class="card-title">International Peace Evening "Living Language"</h3>
+                        <p class="card-summary">Commemorating the end of World War I: an evening of poetry, folk songs, and theatrical sketches in various world languages fostering mutual harmony and friendship.</p>
+                        <div class="card-footer"><span class="card-badge">Concert</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Theatre">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Theatre</span>
+                            <span class="card-date">Classic Drama</span>
+                        </div>
+                        <h3 class="card-title">Play "The Young Hostess of Niskavuori"</h3>
+                        <p class="card-summary">Based on Hella Wuolijoki's celebrated drama. A story about resilient Finnish character, difficult choices between duty and love, rural traditions, and family heritage.</p>
+                        <div class="card-footer"><span class="card-badge">Finnish Classic</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2016 -->
+        <section class="year-group" data-year="2016">
+            <div class="year-marker">
+                <span class="year-badge">2016</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Theatre">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Theatre</span>
+                            <span class="card-date">30.09.2016</span>
+                        </div>
+                        <h3 class="card-title">Poetic & Musical Evening "Leaf Fall" at Caisa</h3>
+                        <p class="card-summary">An intimate evening of poetry and acoustic music at Cultural Centre CAISA featuring poets Olga Pussinen, Natalia Meri, Olga Svanberg, and Logrus studio actors.</p>
+                        <div class="card-footer"><span class="card-badge">Poetry</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Theatre">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Theatre</span>
+                            <span class="card-date">Drama</span>
+                        </div>
+                        <h3 class="card-title">Play by Maria Lado: "A Very Simple Story"</h3>
+                        <p class="card-summary">A touching philosophical parable about loyalty, purity of heart, and love between young people witnessed by barnyard animals.</p>
+                        <div class="card-footer"><span class="card-badge">Parable</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Theatre">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Theatre</span>
+                            <span class="card-date">10.04.2016</span>
+                        </div>
+                        <h3 class="card-title">Premiere: "Tyttö ja Varis" ("The Girl and the Crow")</h3>
+                        <p class="card-summary">Premiere of Logrus youth studio play based on L. Ustinov's fairy tale in Finnish at Theatre Sampo as part of the citywide Family Theatre Day. Directed by Akvilė Ruzgaitė.</p>
+                        <div class="card-footer"><span class="card-badge">In Finnish</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2015 -->
+        <section class="year-group" data-year="2015">
+            <div class="year-marker">
+                <span class="year-badge">2015</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Education">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Education</span>
+                            <span class="card-date">30.08.2015</span>
+                        </div>
+                        <h3 class="card-title">Culinary Club "The Sweet Art"</h3>
+                        <p class="card-summary">Hands-on baking and pastry arts course for youth at the Hapki center (Sörnäisten rantatie 31). Masterclasses taught by Maria Ilyina.</p>
+                        <div class="card-footer"><span class="card-badge">Studio</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Theatre">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Theatre</span>
+                            <span class="card-date">05.05.2015</span>
+                        </div>
+                        <h3 class="card-title">Play "The Inedible Dinner" after Tennessee Williams</h3>
+                        <p class="card-summary">Experimental stage production by Logrus theatre group based on works by American dramatist Tennessee Williams, staged at Kanneltalo and Caisa cultural venues.</p>
+                        <div class="card-footer"><span class="card-badge">Drama</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2013 -->
+        <section class="year-group" data-year="2013">
+            <div class="year-marker">
+                <span class="year-badge">2013</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Events">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Events</span>
+                            <span class="card-date">17.08.2013</span>
+                        </div>
+                        <h3 class="card-title">Youth Forum at Camp Ahtela</h3>
+                        <p class="card-summary">A week-long international forum of youth initiatives at seaside camp Ahtela in Finland: intercultural dialogue, project incubators, eco and sports programs.</p>
+                        <div class="card-footer"><span class="card-badge">Summer Forum</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Theatre">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Theatre</span>
+                            <span class="card-date">28.05.2013</span>
+                        </div>
+                        <h3 class="card-title">Jean Anouilh's "Antigone" in Finnish</h3>
+                        <p class="card-summary">A landmark bilingual project by Logrus: Jean Anouilh's tragedy "Antigone" translated and adapted into Finnish for general audiences.</p>
+                        <div class="card-footer"><span class="card-badge">Classics</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2012 -->
+        <section class="year-group" data-year="2012">
+            <div class="year-marker">
+                <span class="year-badge">2012</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Events">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Events</span>
+                            <span class="card-date">07.09.2012</span>
+                        </div>
+                        <h3 class="card-title">Meeting with President of Finland Sauli Niinistö</h3>
+                        <p class="card-summary">Logrus was honored with an invitation to meet the President of the Republic of Finland as part of the presidential initiative supporting youth facing social hardship.</p>
+                        <div class="card-footer"><span class="card-badge">Official</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Events">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Events</span>
+                            <span class="card-date">20.06.2012</span>
+                        </div>
+                        <h3 class="card-title">International Youth Camp in Taivassalo</h3>
+                        <p class="card-summary">Integration project "Minority Youth for a Stable Europe" hosting youth delegations from Finland, Denmark, Slovakia, and Latvia.</p>
+                        <div class="card-footer"><span class="card-badge">Euro Project</span></div>
+                    </div>
+                </article>
+                <article class="archive-card" data-category="Festivals">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Festivals</span>
+                            <span class="card-date">29.05.2012</span>
+                        </div>
+                        <h3 class="card-title">1st International Talent Competition "Gloria-Star 2012"</h3>
+                        <p class="card-summary">Youth talent contest in Helsinki at Culture Arena Gloria bringing together young singers and performers from Finland and Baltic states, establishing an annual city festival.</p>
+                        <div class="card-footer"><span class="card-badge">Competition</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Year 2010 -->
+        <section class="year-group" data-year="2010">
+            <div class="year-marker">
+                <span class="year-badge">2010</span>
+                <div class="year-line"></div>
+            </div>
+            <div class="archive-grid">
+                
+                <article class="archive-card" data-category="Film & Media">
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">Film & Media</span>
+                            <span class="card-date">11.12.2010</span>
+                        </div>
+                        <h3 class="card-title">Premiere of Short Film "Tomorrow for Two"</h3>
+                        <p class="card-summary">Lyrical cinematic short story about love, interpersonal challenges, and finding harmony, produced by the creative team of Logrus studio.</p>
+                        <div class="card-footer"><span class="card-badge">Film Screening</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
 
+        <div id="noResultsMsg" class="no-results">
+            No entries found matching your search.
+        </div>
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                <div>© 2026 Logrus ry — International Youth Support Society</div>
-                <div>All rights reserved.</div>
+                <div>© 2026 Logrus ry — International Youth Support Society. All rights reserved.</div>
+                <div>Logrus ry</div>
             </div>
         </div>
     </footer>
 
+    <script>
+        const searchInput = document.getElementById('archiveSearch');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const yearGroups = document.querySelectorAll('.year-group');
+        const noResultsMsg = document.getElementById('noResultsMsg');
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function updateDisplay() {
+            let totalVisible = 0;
+
+            yearGroups.forEach(group => {
+                const cards = group.querySelectorAll('.archive-card');
+                let visibleInGroup = 0;
+
+                cards.forEach(card => {
+                    const cat = card.getAttribute('data-category');
+                    const text = card.innerText.toLowerCase();
+
+                    const matchesCat = (currentCategory === 'all' || cat === currentCategory);
+                    const matchesSearch = (!searchQuery || text.includes(searchQuery));
+
+                    if (matchesCat && matchesSearch) {
+                        card.style.display = 'flex';
+                        visibleInGroup++;
+                        totalVisible++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                group.style.display = visibleInGroup > 0 ? 'block' : 'none';
+            });
+
+            if (noResultsMsg) {
+                noResultsMsg.style.display = totalVisible === 0 ? 'block' : 'none';
+            }
+        }
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentCategory = btn.getAttribute('data-filter');
+                updateDisplay();
+            });
+        });
+
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.trim().toLowerCase();
+                updateDisplay();
+            });
+        }
+    </script>
 </body>
 </html>
