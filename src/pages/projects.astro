@@ -3,19 +3,19 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Проекты и студии — LOGRUS RY"
-  description="Бесплатные студии дефиле и китайского танца в Хельсинки (Контула), молодежные инициативы и практика TE-toimisto."
+  title="Проекты и инициативы — LOGRUS RY"
+  description="Программа официальной практики TE-toimisto, молодежные инициативы и архив завершенных курсов общества LOGRUS ry в Хельсинки."
   lang="ru"
-  ogImage="/images/card-initiatives.webp"
+  ogImage="/images/card-involved.webp"
 >
   <!-- Page Hero -->
   <section class="bg-white border-b border-zinc-200 py-12 sm:py-16 text-center">
     <div class="site-container">
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase mb-3">
-        Проекты и студии
+        Проекты и инициативы
       </h1>
       <p class="text-sm sm:text-base text-zinc-600 max-w-xl mx-auto font-medium">
-        Творческие программы, бесплатные студии для молодежи и практика в Хельсинки.
+        Текущие возможности, программы интеграции и молодежные инициативы в Хельсинки.
       </p>
     </div>
   </section>
@@ -24,12 +24,12 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   <section class="py-14 sm:py-16">
     <div class="site-container max-w-4xl space-y-12">
       
-      <!-- Project 1: Kontula Studios -->
+      <!-- Project: TE-toimisto Practice -->
       <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden shadow-sm flex flex-col md:flex-row">
         <div class="md:w-5/12 h-64 md:h-auto relative bg-zinc-950">
           <img
-            src="/images/card-initiatives.webp"
-            alt="Студии танца и дефиле"
+            src="/images/card-involved.webp"
+            alt="Практика TE-toimisto"
             width="600"
             height="400"
             loading="eager"
@@ -41,61 +41,19 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         <div class="md:w-7/12 p-7 sm:p-9 flex flex-col justify-between">
           <div>
             <span class="text-xs font-black uppercase tracking-wider text-emerald-800 mb-1.5 block">
-              Бесплатно для молодежи 14–25 лет
-            </span>
-            <h2 class="text-2xl font-black uppercase text-zinc-950 mb-3">
-              Студии дефиле и танца
-            </h2>
-            <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-5">
-              Регулярные занятия пластикой, сценической походкой, современным и традиционным китайским танцем. Развитие осанки, уверенности на сцене и участие в показах и фестивалях.
-            </p>
-
-            <div class="bg-zinc-50 border border-zinc-200 rounded p-4 mb-6 text-xs text-zinc-700 space-y-1.5">
-              <div><strong>Локация:</strong> Nuorisotalo Kontula (Ostostie 4, Helsinki)</div>
-              <div><strong>Стоимость:</strong> Бесплатно (при поддержке города Хельсинки)</div>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap gap-3">
-            <a
-              href="mailto:info@logrus.fi?subject=Запись в молодежную студию Kontula"
-              class="inline-flex items-center gap-2 bg-zinc-950 text-white text-xs font-bold uppercase tracking-wider px-5 py-3 rounded hover:bg-zinc-800 transition-colors"
-            >
-              Написать на Email
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2: TE-toimisto Practice -->
-      <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden shadow-sm flex flex-col md:flex-row">
-        <div class="md:w-5/12 h-64 md:h-auto relative bg-zinc-950">
-          <img
-            src="/images/card-involved.webp"
-            alt="Практика TE-toimisto"
-            width="600"
-            height="400"
-            loading="lazy"
-            decoding="async"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div class="md:w-7/12 p-7 sm:p-9 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-black uppercase tracking-wider text-emerald-800 mb-1.5 block">
-              Интеграция и стажировки
+              Интеграция и практика
             </span>
             <h2 class="text-2xl font-black uppercase text-zinc-950 mb-3">
               Практика от TE-toimisto
             </h2>
             <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-5">
-              Официальная практика в сфере культуры и театра. Реальный опыт в подготовке спектаклей, костюмерном цехе, работе со светом и звуком с получением официального подтверждения/сертификата.
+              Официальная трудовая практика в сфере культуры и театра. Реальный сценический опыт в подготовке постановок, работе с костюмами и сценическим оборудованием с получением официального подтверждения/сертификата.
             </p>
 
             <div class="bg-zinc-50 border border-zinc-200 rounded p-4 mb-6 text-xs text-zinc-700 space-y-1.5">
-              <div><strong>Направления:</strong> Швея/костюмер, ассистент художника, свет и звук</div>
-              <div><strong>Условия:</strong> Официальный договор через TE-palvelut (työkokeilu / harjoittelu)</div>
-              <div><strong>Офис:</strong> Sibeliuksenkatu 19B, Helsinki</div>
+              <div><strong>Направления:</strong> Швея/костюмер, помощник стилиста, сценический свет и звук</div>
+              <div><strong>Условия:</strong> Гибкий график, официальный договор через TE-palvelut (työkokeilu / harjoittelu)</div>
+              <div><strong>Офис координации:</strong> Sibeliuksenkatu 19B, Helsinki</div>
             </div>
           </div>
 
@@ -110,7 +68,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
               href="/archive"
               class="inline-flex items-center gap-2 bg-transparent border border-zinc-300 text-zinc-800 text-xs font-bold uppercase tracking-wider px-5 py-3 rounded hover:bg-zinc-100 transition-colors"
             >
-              Архив мероприятий
+              Посмотреть завершённые курсы в архиве &rarr;
             </a>
           </div>
         </div>
