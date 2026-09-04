@@ -1,209 +1,967 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-
-const archiveItemsFestivals = [
-  {
-    tag: 'Фестиваль / Лагерь',
-    title: '«Общественная среда» и интеграция',
-    date: '2022 — 2024',
-    image: '/images/archive-community.webp',
-    description: 'Серия культурных встреч, языковых мастер-классов и молодежных интеграционных лагерей в Финляндии.',
-    meta: [
-      { label: 'Партнеры', val: 'Caisa, Kanneltalo, TE-toimisto' },
-    ],
-  },
-  {
-    tag: 'Архив студий',
-    title: 'Студии дефиле и китайского танца',
-    date: 'Сезон 2025 — 2026 (Завершён)',
-    image: '/images/archive-studios.webp',
-    description: 'Бесплатные творческие занятия для подростков и молодежи 14–25 лет. Отработка сценических номеров, дефиле в традиционных костюмах и подготовка к праздничному гала-концерту «Январские встречи».',
-    meta: [
-      { label: 'Локация', val: 'Nuorisotalo Kontula, Ostostie 4, Helsinki' },
-      { label: 'Статус', val: 'Проект успешно реализован' },
-    ],
-  },
-];
-
-const archiveItemsPast = [
-  {
-    tag: 'Спектакль',
-    title: '«NOVECENTO»',
-    date: 'Ноябрь 2025',
-    image: '/images/theatre-clean.webp',
-    description: 'Спектакль по пьесе Алессандро Барикко в сотрудничестве с клубом DanceSport Studio. История легендарного пианиста с океанского лайнера.',
-    meta: [
-      { label: 'Режиссёр', val: 'Аквиле Рузгите' },
-      { label: 'Сцена', val: 'Narri, Sörnäisten rantatie 31, Хельсинки' },
-    ],
-  },
-  {
-    tag: 'Спектакль',
-    title: '«SILVIA»',
-    date: '2026',
-    image: '/images/archive-silvia.webp',
-    description: 'Комедийная и трогательная постановка по пьесе Альберта Рамсделла Герни-младшего о дружбе, семье и преданности.',
-    meta: [
-      { label: 'Театр', val: 'Logrus Teatteri' },
-      { label: 'Сцена', val: 'Narrin näyttämö' },
-    ],
-  },
-  {
-    tag: 'Семейный спектакль',
-    title: '«Тайна пропавшего кольца»',
-    date: 'Сезон 2024',
-    image: '/images/archive-ring.webp',
-    description: 'Семейный интерактивный спектакль молодежного театра центра Helmi по мотивам классических английских сказок.',
-    meta: [
-      { label: 'Организатор', val: 'Logrus Ry / Helmi-keskus' },
-    ],
-  },
-  {
-    tag: 'Драма',
-    title: '«Молодая хозяйка Нискавуори»',
-    date: '2021 — 2022',
-    image: '/images/niskavuori.webp',
-    description: 'Классическая финская драма Хеллы Вуолийоки о борьбе традиций, любви и долга в родовом поместье Нискавуори.',
-    meta: [
-      { label: 'Театр', val: 'Logrus Teatteri' },
-    ],
-  },
-  {
-    tag: 'Показ мод',
-    title: 'Показ мод «The Hipsters»',
-    date: '2019',
-    image: '/images/fashion-hipsters.webp',
-    description: 'Молодежный показ мод винтажных и стилизованных костюмов, созданных в костюмерной мастерской Logrus ry.',
-    meta: [
-      { label: 'Организатор', val: 'Logrus ry' },
-    ],
-  },
-  {
-    tag: 'Фестиваль',
-    title: 'Международный фестиваль «Art-Planet»',
-    date: '2016 — 2018',
-    image: '/images/art-planet-2020.webp',
-    description: 'Ежегодный многожанровый фестиваль детского и молодежного творчества, объединивший коллективы из стран Балтийского региона.',
-    meta: [
-      { label: 'Площадка', val: 'Helsinki' },
-    ],
-  },
-  {
-    tag: 'Конкурс',
-    title: 'Фестиваль-конкурс «Gloria Star»',
-    date: '2013 — 2015',
-    image: '/images/spektr-2016.webp',
-    description: 'Вокально-хореографический конкурс для талантливой молодежи с участием международных судей и мастер-классами.',
-    meta: [
-      { label: 'Организатор', val: 'Logrus ry' },
-    ],
-  },
-];
+import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Архив событий и постановок — LOGRUS RY"
-  description="Архив театральных постановок, фестивалей Gloria Star, Art-Planet и молодежных проектов общества LOGRUS ry с 2012 года."
+  title="Хроника и архив мероприятий — LOGRUS RY"
+  description="Архив театральных постановок, фестивалей, показов мод, мастер-классов и молодежных проектов Logrus ry с 2010 года."
   lang="ru"
   ogImage="/images/niskavuori.webp"
 >
   <!-- Page Hero -->
   <section class="bg-white border-b border-zinc-200 py-12 sm:py-16 text-center">
     <div class="site-container">
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase mb-3">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase mb-3 text-zinc-950">
         Архив событий
       </h1>
-      <p class="text-sm sm:text-base text-zinc-600 max-w-xl mx-auto font-medium">
-        Хроника спектаклей, фестивалей, показов мод и молодежных проектов с 2012 года.
+      <p class="text-sm sm:text-base text-zinc-600 max-w-2xl mx-auto font-medium leading-relaxed">
+        Хроника спектаклей, фестивалей, показов мод, мастер-классов и молодежных проектов с 2010 года.
       </p>
     </div>
   </section>
 
-  <!-- Archive Timeline Section -->
-  <section class="py-14 sm:py-16">
-    <div class="site-container">
+  <!-- Controls: Search & Category Filter -->
+  <section class="py-8 bg-[#fcfbfa] border-b border-zinc-200/80 sticky top-[73px] z-30 backdrop-blur-md bg-[#fcfbfa]/95">
+    <div class="site-container flex flex-col md:flex-row items-center justify-between gap-4">
       
-      <!-- Section: Festivals & Studios -->
-      <div class="mb-16">
-        <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-zinc-950 mb-8 border-b-2 border-zinc-950 pb-2 inline-block">
-          Фестивали и студии
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {archiveItemsFestivals.map((item, index) => (
-            <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden flex flex-col shadow-sm transition-transform duration-200 hover:-translate-y-1">
-              <div class="h-56 relative bg-zinc-900 overflow-hidden">
-                <span class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-xs text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded z-10">
-                  {item.tag}
-                </span>
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  width="480"
-                  height="320"
-                  loading={index === 0 ? "eager" : "lazy"}
-                  decoding="async"
-                  fetchpriority={index === 0 ? "high" : undefined}
-                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div class="p-6 flex flex-col flex-1 justify-between">
-                <div>
-                  <div class="text-xs font-bold text-zinc-600 mb-1.5">{item.date}</div>
-                  <h3 class="text-lg font-black uppercase text-zinc-950 mb-2.5 leading-snug">{item.title}</h3>
-                  <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-4">{item.description}</p>
-                </div>
-                <div class="pt-3 border-t border-zinc-100 text-xs text-zinc-600 space-y-1">
-                  {item.meta.map((m) => (
-                    <div><strong>{m.label}:</strong> {m.val}</div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      <!-- Search Input -->
+      <div class="w-full md:w-80 relative">
+        <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-400 pointer-events-none fill-none stroke-current stroke-2" width="16" height="16" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input
+          type="text"
+          id="archiveSearch"
+          placeholder="Поиск по названию или описанию..."
+          aria-label="Поиск по названию или описанию..."
+          class="w-full pl-10 pr-4 py-2.5 bg-white border border-zinc-200 rounded-lg text-xs font-semibold text-zinc-950 placeholder-zinc-400 focus:outline-none focus:border-zinc-950 focus:ring-1 focus:ring-zinc-950 transition-all shadow-xs"
+        />
       </div>
 
-      <!-- Section: Past Seasons -->
-      <div>
-        <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-zinc-950 mb-8 border-b-2 border-zinc-950 pb-2 inline-block">
-          Ранее в репертуаре
-        </h2>
+      <!-- Category Filter Buttons -->
+      <div class="flex flex-wrap items-center gap-2" id="categoryFilters">
+        <button class="filter-btn active bg-zinc-950 text-white text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer shadow-xs" data-filter="all">Все записи</button>
+        <button class="filter-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer" data-filter="Театр">Театр</button>
+        <button class="filter-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer" data-filter="Мода">Мода</button>
+        <button class="filter-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer" data-filter="Фестивали">Фестивали</button>
+        <button class="filter-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer" data-filter="События">События</button>
+        <button class="filter-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer" data-filter="Образование">Образование</button>
+        <button class="filter-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 text-xs font-black uppercase tracking-wider px-4 py-2 rounded-full transition-all cursor-pointer" data-filter="Студии">Студии</button>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {archiveItemsPast.map((item) => (
-            <div class="bg-white border border-zinc-200 rounded-lg overflow-hidden flex flex-col shadow-sm transition-transform duration-200 hover:-translate-y-1">
-              <div class="h-56 relative bg-zinc-900 overflow-hidden">
-                <span class="absolute top-3 left-3 bg-zinc-950/80 backdrop-blur-xs text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded z-10">
-                  {item.tag}
-                </span>
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  width="480"
-                  height="320"
-                  loading="lazy"
-                  decoding="async"
-                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div class="p-6 flex flex-col flex-1 justify-between">
-                <div>
-                  <div class="text-xs font-bold text-zinc-600 mb-1.5">{item.date}</div>
-                  <h3 class="text-lg font-black uppercase text-zinc-950 mb-2.5 leading-snug">{item.title}</h3>
-                  <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-4">{item.description}</p>
-                </div>
-                <div class="pt-3 border-t border-zinc-100 text-xs text-zinc-600 space-y-1">
-                  {item.meta.map((m) => (
-                    <div><strong>{m.label}:</strong> {m.val}</div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
 
     </div>
   </section>
+
+  <!-- Archive Content Stream -->
+  <section class="py-12 sm:py-16 flex-1">
+    <div class="site-container" id="archiveList">
+      
+      <!-- Year 2025 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2025">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2025
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Театр">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Театр
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  03.02.2025
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                🎭 Открытая театральная группа в театре «Логрус»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Творческая команда театра «Логрус» открывает двери в увлекательный мир театрального искусства! Это уникальная возможность погрузиться в магию сцены, раскрыть свой творческий потенциал и овладеть искусством актёрской игры.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Набор в группу</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2024 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2024">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2024
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="События">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  События
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  07.12.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Видеоотчет «Рождественские встречи» в Хельсинки
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Совместное мероприятие Logrus ry и Encanta Oy. Состоялся удивительный концерт и праздник: Сергей Флоров («шаман с бубном») открыл вечер, наполнив пространство теплой атмосферой и предновогодним волшебством.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Праздник</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Театр">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Театр
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  15.09.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Семейный спектакль «Тайна пропавшего перстня»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Молодёжный театр центра «Жемчужина» и Logrus Ry представили увлекательный семейный спектакль по мотивам классических английских сказок. Благодарим участников и зрителей за поддержку и сказочную атмосферу!
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Премьера</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Фестивали">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Фестивали
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  03.08.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Средневековая ярмарка в городе Коувола
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Logrus Ry принял участие в традиционной средневековой ярмарке в Коуволе. Были представлены исторические женские платья и мужские рубашки из натурального льна и хлопка ручной работы.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Ярмарка</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="События">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  События
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  10.05.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Прогулка по Хельсинки с Александром Васильевым
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Небольшая весенняя прогулка и неформальная встреча в Хельсинки со всемирно известным историком моды и искусствоведом Александром Васильевым при участии команды Logrus ry и Encanta Oy.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Встреча</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Театр">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Театр
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  07.04.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Спектакль «Красивая жизнь» на гастролях в Ювяскюля
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Гастрольный выезд театра «Логрус» в Ювяскюля с революционной трагикомедией Жана Ануя «Красивая жизнь» (режиссер Аквиле Рузгите). Выражаем искреннюю благодарность зрителям и партнерам за теплый прием!
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Гастроли</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Мода">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Мода
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  09.02.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Аренда образов и нарядов на бал «Vanhat Tanssit»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Традиционный бал гимназистов Vanhat tanssit в Хельсинки! Logrus ry и Encanta Oy предлагают коллекцию бальных платьев, фраков и аксессуаров по доступным ценам с индивидуальной подгонкой образа.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Костюмы</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Студии">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Студии
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  03.02.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Открытый мастер-класс по фламенко
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Бесплатный открытый урок «Фламенко для начинающих» от преподавателя Раисат Гессель в молодежном центре Luuppi (Kontula, Helsinki). Знакомство с базовыми ритмами, осанкой и пластикой танца.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Мастер-класс</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Образование">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Образование
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  20.01.2024
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Курс авторских лекций Аллы Новожениной «Дьявол носит Prada»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Лекция диктора, режиссера и педагога Аллы Новожениной в зале Нарри (Sörnäisten rantatie 31 A). Увлекательный разбор законов мира моды, драматургии стиля и психологии экранных образов.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Лекция</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Практика">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Практика
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  Программа вакансий
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Практика и волонтерство через службу занятости (TE-toimisto)
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Logrus ry приглашает практикантов по направлениям: ассистент режиссера, костюмер/швея, художник по свету и звукорежиссер, помощник стилиста и координатор культурных проектов.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Стажировка</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2023 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2023">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2023
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Театр">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Театр
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  Театральный репертуар
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Спектакль «Novecento» (Алессандро Барикко)
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                По легендарной пьесе Алессандро Барикко «Легенда о пианисте». Совместная постановка театра Logrus и студии DanceSport на сцене зала Narri (Sörnäisten rantatie 31).
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Драма / Танго</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Образование">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Образование
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  24.09.2023
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Мастер-класс «Ораторское мастерство для взрослых»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Практический тренинг по технике речи, снятию зажимов перед аудиторией и уверенной подаче материала от Аллы Новожениной для активистов и участников театральных проектов.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Мастер-класс</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Фото и Арт">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Фото и Арт
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  08.05.2023
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Фотосессия «Алиса и компания Воланда»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Серия художественных фотографий от театра «Логрус», вдохновленных мистической атмосферой романа «Мастер и Маргарита». Переплетение винтажных костюмов, мистики и драматического портрета.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Фотопроект</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Фестивали">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Фестивали
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  22.01.2023
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Открытие музыкального фестиваля «Art-Planet Festival 2023»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Творческая группа Logrus открывала фестиваль искусств ART PLANET в Эспоо! Яркое сценическое дефиле наших моделей, авторские костюмы, хореография и профессиональный образ участников.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Фестиваль</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Социальные проекты">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Социальные проекты
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  Программа помощи
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Психологическая поддержка и консультации для молодежи
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Психологическая и психотерапевтическая поддержка для молодых людей от 17 до 30 лет в Финляндии: помощь при тревожности, стрессе, выгорании и адаптации в новой среде (включая городские ваучеры Palveluseteli).
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Поддержка</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2022 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2022">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2022
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Студии">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Студии
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  Постоянная студия
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Студия современного танца (Джаз-Модерн)
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Регулярные занятия по направлению jazz-modern для молодежи и взрослых. Постановка пластики, развитие координации и подготовка танцевальных номеров для театральных спектаклей.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Танец</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2021 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2021">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2021
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Фестивали">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Фестивали
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  15.08.2021
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Первый видео-фестиваль музыкально-театрального искусства
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Музыкально-театральный онлайн-фестиваль молодежного творчества в Хельсинки в цифровом формате, объединивший вокалистов, чтецов и малые сценические формы со всей Финляндии.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Конкурс</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Фото и Арт">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Фото и Арт
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  20.04.2021
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Художественная фотосессия для проекта «Демон»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Яркая тематическая фотосессия по мотивам поэмы М. Ю. Лермонтова «Демон» в Хельсинки. Работа костюмеров, гримеров и актеров над сложными драматическими образами.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Фотопроект</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2020 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2020">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2020
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Мода">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Мода
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  27.09.2020
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Ретро-проект «The Hipsters — Стиляги. Elämä retrotyylissä»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Заключительное шоу ретро-курса Logrus ry и Encanta Oy: колоритные платья 50-60х годов, мастер-класс парикмахерского искусства салона Helsingin Mactep и динамичная фотосессия.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Ретро-шоу</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2019 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2019">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2019
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Мода">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Мода
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  14.02.2019
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Модный показ «Show La Bohème» в Хельсинки
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Масштабное дефиле ко Дню святого Валентина: презентация молодежной коллекции рубашек с ручной росписью Анны Бочковой, «Русской коллекции», линии «La Boheme» и вечерних платьев под живой вокал Тины Сеппя.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Показ мод</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2018 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2018">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2018
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Кино и Медиа">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Кино и Медиа
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  31.08.2018
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Премьера документального фильма «Дизайнер своей жизни»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                В столичном кинотеатре «К-13» состоялся торжественный премьерный показ документального фильма об участниках молодежного развивающего проекта «Дизайнер своей жизни».
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Премьера фильма</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Фестивали">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Фестивали
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  06.05.2018
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Молодежное шоу талантов «Глория-Шоу 2018»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Финальное шоу проекта «Дизайнер своей жизни» на культурной арене «Gloria» в центре Хельсинки: вокальные номера, хореографические постановки, подиумное дефиле и вручение наград.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Гала-концерт</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2017 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2017">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2017
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="События">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  События
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  11.11.2017
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Международный вечер мира «Живой язык»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Ко Дню окончания Первой мировой войны: вечер стихов, народных песен и театрализованных зарисовок на языках народов мира во имя согласия и дружбы.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Концерт</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Театр">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Театр
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  Классика драматургии
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Спектакль «Молодая хозяйка Нискавуори»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                По мотивам пьесы Хеллы Вуолийоки. Постановка о сильном финском характере, непростом выборе между долгом и чувствами, традициях и укладе сельской жизни.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Финская классика</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2016 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2016">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2016
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Театр">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Театр
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  30.09.2016
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Музыкально-поэтический спектакль «Листопад» в Caisa
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Камерный вечер поэзии и музыки в Культурном центре CAISA с участием поэтов Ольги Пуссинен, Натальи Мери, Ольги Сванберг и актеров театральной студии «Логрус».
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Поэзия</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Театр">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Театр
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  Спектакль
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Спектакль М. Ладо «Очень простая история»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Трогательная философская притча о верности, чистоте помыслов и любви между молодыми людьми, свидетелями которой становятся обитатели деревенского хлева.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Притча</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Театр">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Театр
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  10.04.2016
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Премьера спектакля «Tyttö ja Varis» («Девочка и ворона»)
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Премьера спектакля молодежной студии «Логрус» по сказке Л. Устинова на финском языке в столичном театре Sampo в рамках общегородского семейного театрального дня. Режиссер Аквиле Рузгите.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">На финском языке</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2015 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2015">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2015
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Образование">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Образование
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  30.08.2015
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Кулинарный клуб «Сладкое искусство»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Практический курс кондитерского мастерства и выпечки для молодежи в центре Hapki (Sörnäisten rantatie 31). Ведущая мастер-классов — Мария Ильина.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Студия</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Театр">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Театр
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  05.05.2015
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Спектакль «Несъедобный ужин» по пьесе Теннесси Уильямса
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Экспериментальная постановка театрального коллектива «Логрус» по мотивам произведений классика американской драматургии Т. Уильямса, показанная также на культурных площадках Каннелтало и Кайса.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Драма</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2013 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2013">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2013
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="События">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  События
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  17.08.2013
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Молодежный форум соотечественников в лагере Ahtela
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Недельный международный форум молодежных инициатив в финском лагере Ahtela на побережье: межкультурный диалог, проектные мастерские, экологические и спортивные активности.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Летний форум</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Театр">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Театр
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  28.05.2013
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Спектакль Жана Ануя «Антигона» на финском языке
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Уникальный двуязычный проект студии «Логрус»: трагедия Жана Ануя «Антигона» в переводе и адаптации на финский язык для широкого зрительского круга.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Классика</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2012 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2012">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2012
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="События">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  События
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  07.09.2012
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Встреча с президентом Финляндии Саули Ниинистё
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Общество «Логрус» было приглашено на встречу с Президентом Республики в рамках президентской программы поддержки молодежи, оказавшейся в сложных социальных условиях.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Официально</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="События">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  События
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  20.06.2012
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Международный молодежный лагерь в Taivassalo
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Интеграционный проект «Молодежь меньшинств в поддержку стабильной Европы» с участием молодежных делегаций из Финляндии, Дании, Словакии и Латвии.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Европроект</span></div>
+          </article>
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Фестивали">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Фестивали
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  29.05.2012
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                I Международный конкурс талантов «Gloria-Star 2012»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Конкурс юных вокалистов и исполнителей из Финляндии и стран Балтии на культурной арене «Глория» в Хельсинки, положивший начало ежегодному городскому фестивалю.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Конкурс</span></div>
+          </article>
+        </div>
+      </section>
+      <!-- Year 2010 -->
+      <section class="year-group mb-14 sm:mb-16" data-year="2010">
+        <div class="flex items-center gap-4 mb-6 sm:mb-8">
+          <span class="bg-zinc-950 text-white text-xs sm:text-sm font-black tracking-widest uppercase px-4 py-1.5 rounded-full">
+            2010
+          </span>
+          <div class="flex-1 h-px bg-zinc-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          
+          <article class="archive-card bg-white border border-zinc-200 rounded-lg p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border-t-4 border-t-zinc-950" data-category="Кино и Медиа">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="bg-zinc-100 text-zinc-800 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded">
+                  Кино и Медиа
+                </span>
+                <span class="text-xs font-semibold text-zinc-500">
+                  11.12.2010
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black uppercase text-zinc-950 leading-snug mb-2.5 group-hover:text-zinc-700 transition-colors">
+                Премьера короткометражного фильма «Завтра для двоих»
+              </h3>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed font-medium mb-4 flex-1">
+                Лирическая киноновелла о любви, сложностях взаимопонимания и поиске гармонии, созданная творческой группой студии «Логрус».
+              </p>
+            </div>
+            <div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-2 mt-auto"><span class="text-[11px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/80 px-2.5 py-1 rounded">Кинопоказ</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- No Results State -->
+      <div id="noResultsMsg" class="hidden text-center py-20 bg-white border border-dashed border-zinc-300 rounded-lg">
+        <p class="text-base font-bold text-zinc-700 uppercase tracking-wider mb-1">
+          Ничего не найдено по вашему запросу.
+        </p>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<script>
+  // Client-side search and category filtering
+  const searchInput = document.getElementById('archiveSearch') as HTMLInputElement | null;
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const yearGroups = document.querySelectorAll('.year-group');
+  const noResultsMsg = document.getElementById('noResultsMsg');
+
+  let currentCategory = 'all';
+  let searchQuery = '';
+
+  function updateDisplay() {
+    let totalVisible = 0;
+
+    yearGroups.forEach((group) => {
+      const cards = group.querySelectorAll('.archive-card');
+      let visibleInGroup = 0;
+
+      cards.forEach((card) => {
+        const cat = card.getAttribute('data-category');
+        const text = (card as HTMLElement).innerText.toLowerCase();
+
+        const matchesCat = (currentCategory === 'all' || cat === currentCategory);
+        const matchesSearch = (!searchQuery || text.includes(searchQuery));
+
+        if (matchesCat && matchesSearch) {
+          (card as HTMLElement).style.display = 'flex';
+          visibleInGroup++;
+          totalVisible++;
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+
+      // Toggle group visibility
+      (group as HTMLElement).style.display = visibleInGroup > 0 ? 'block' : 'none';
+    });
+
+    if (noResultsMsg) {
+      noResultsMsg.style.display = totalVisible === 0 ? 'block' : 'none';
+    }
+  }
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach((b) => {
+        b.classList.remove('active', 'bg-zinc-950', 'text-white', 'shadow-xs');
+        b.classList.add('bg-zinc-100', 'text-zinc-700');
+      });
+      btn.classList.add('active', 'bg-zinc-950', 'text-white', 'shadow-xs');
+      btn.classList.remove('bg-zinc-100', 'text-zinc-700');
+      
+      currentCategory = btn.getAttribute('data-filter') || 'all';
+      updateDisplay();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = (e.target as HTMLInputElement).value.trim().toLowerCase();
+      updateDisplay();
+    });
+  }
+</script>
