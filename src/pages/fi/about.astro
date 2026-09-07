@@ -1,158 +1,174 @@
----
+﻿---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Meistä ja yhteystiedot — LOGRUS RY"
-  description="LOGRUS ry nuorisoaloitteiden tukiyhdistyksen missio, toimipisteet ja yhteystiedot Helsingissä."
+  title="Meistä — Logrus ry"
+  description="Logrus ry (Y-tunnus 2040144-2) on vuonna 2006 perustettu yleishyödyllinen kulttuuriyhdistys: esittävä taide, teatteripedagogiikka ja kulttuurienvälinen vuoropuhelu Helsingissä."
   lang="fi"
 >
   <!-- Page Hero -->
-  <section class="bg-white border-b border-zinc-200 py-12 sm:py-16 text-center">
+  <section class="w-full bg-white border-b border-zinc-200 py-12 sm:py-16 text-center">
     <div class="site-container">
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase mb-3">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-zinc-950 mb-3">
         Meistä
       </h1>
-      <p class="text-sm sm:text-base text-zinc-600 max-w-xl mx-auto font-medium">
-        Kansainvälinen nuorisoaloitteiden tukiyhdistys «LOGRUS ry» Helsingissä.
+      <p class="text-sm sm:text-base text-zinc-600 max-w-2xl mx-auto font-medium">
+        Kulttuuriyhdistys Logrus ry (Helsinki)
       </p>
     </div>
   </section>
 
-  <!-- Main Content Section -->
-  <section class="py-14 sm:py-16">
-    <div class="site-container">
-      <!-- Mission & Contacts Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 mb-16">
-        <!-- Left: Mission & Details -->
-        <div class="lg:col-span-7 flex flex-col gap-6">
-          <div class="rounded-lg overflow-hidden border border-zinc-200 bg-zinc-950 aspect-[16/10] mb-2 shadow-sm">
-            <img
-              src="/images/about.webp"
-              alt="LOGRUS RY Teatteriyhdistys"
-              width="800"
-              height="500"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight uppercase text-zinc-950 mb-4">
-              Missiomme
-            </h2>
-            <div class="space-y-4 text-sm sm:text-base text-zinc-700 leading-relaxed font-normal">
-              <p>
-                <strong class="font-bold text-zinc-950">LOGRUS ry</strong> on kansalaisjärjestö, jonka tavoitteena on yhdistää nuoria, kehittää luovia taitoja, edistää kulttuurien välistä vuorovaikutusta sekä tukea nuorten esittävän taiteen aloitteita Suomessa.
-              </p>
-              <p>
-                Tuotamme kulttuuri- ja teatteriesityksiä, järjestämme säännöllisiä työpajoja, tanssi- ja taidestudioita sekä organisoimme nuorisofestivaaleja ja luovia leirejä.
-              </p>
-              <p>
-                Teemme aktiivista yhteistyötä Helsingin kulttuurikeskusten ja nuorisotilojen kanssa (Caisa, Kanneltalo, Kontulan nuorisotalo) ja tarjoamme virallisia työkokeilu- ja harjoittelupaikkoja TE-toimiston kautta.
-              </p>
-            </div>
-          </div>
+  <!-- Main Content -->
+  <section class="py-12 sm:py-16 bg-[#fcfbfa]">
+    <div class="site-container max-w-5xl">
+      <div class="bg-white border border-zinc-200 rounded-lg p-6 sm:p-10 md:p-12 shadow-sm space-y-10">
+        
+        <!-- Lead Paragraph -->
+        <p class="text-base sm:text-lg text-zinc-800 leading-relaxed">
+          <strong class="font-bold text-zinc-950">Logrus ry</strong> on vuonna 2006 Helsingissä perustettu rekisteröity yleishyödyllinen kulttuuriyhdistys (Y-tunnus 2040144-2). Yhdistys on toiminut pääkaupunkiseudulla yli 20 vuotta esittävän taiteen, teatteripedagogiikan ja kulttuurienvälisen vuoropuhelun kentällä.
+        </p>
 
-          <!-- Key Areas -->
-          <div class="bg-white border border-zinc-200 rounded-lg p-6 sm:p-8">
-            <h3 class="text-lg font-bold text-zinc-950 uppercase tracking-wide mb-3">
-              Keskeiset toiminta-alueet
-            </h3>
-            <ul class="space-y-2.5 text-xs sm:text-sm text-zinc-600">
-              <li class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-zinc-950 shrink-0"></span>
-                <span>Teatteritoiminta ja festivaaliesitykset Suomessa ja Baltiassa</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-zinc-950 shrink-0"></span>
-                <span>Maksuttomat luovat studiot ja nuorten työpajat 14–25-vuotiaille nuorille</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-zinc-950 shrink-0"></span>
-                <span>Virallinen työkokeilu ja harjoittelu TE-palveluiden kautta</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-zinc-950 shrink-0"></span>
-                <span>Kansainväliset taidefestivaalit («Gloria Star», «Art-Planet»)</span>
-              </li>
-            </ul>
+        <!-- Metrics Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6 bg-[#faf9f7] border border-zinc-200 rounded-lg">
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">20 vuotta</div>
+            <div class="text-xs text-zinc-600 leading-snug">jatkuvaa kulttuuritoimintaa pääkaupunkiseudulla (vuodesta 2006)</div>
+          </div>
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">25+ produktiota</div>
+            <div class="text-xs text-zinc-600 leading-snug">itsenäistä teatteriproduktiota, luovaa laboratoriota ja hanketta</div>
+          </div>
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">15 000+</div>
+            <div class="text-xs text-zinc-600 leading-snug">katsojaa ja eri sukupolvien osallistujaa</div>
+          </div>
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">100%</div>
+            <div class="text-xs text-zinc-600 leading-snug">hallinnon läpinäkyvyys ja tarkka hankeraportointi</div>
           </div>
         </div>
 
-        <!-- Right: Contact Box -->
-        <div class="lg:col-span-5">
-          <div class="bg-white border border-zinc-200 rounded-lg p-7 sm:p-9 sticky top-28 shadow-sm">
-            <h3 class="text-xl font-black uppercase tracking-wide mb-6 text-zinc-950">
-              Yhteystiedot
-            </h3>
-
-            <div class="space-y-5 text-sm text-zinc-700">
-              <!-- Location -->
-              <div class="flex items-start gap-3.5">
-                <svg class="h-5 w-5 text-zinc-950 shrink-0 mt-0.5" width="20" height="20" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <div>
-                  <strong class="font-bold text-zinc-950 block mb-1">Toimipisteet:</strong>
-                  <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed">
-                    • Narrin näyttämö: Sörnäisten rantatie 31, Helsinki<br>
-                    • Kontulan nuorisotalo: Ostostie 4, Helsinki<br>
-                    • Yhdistyksen toimisto: Sibeliuksenkatu 19B, Helsinki
-                  </p>
-                </div>
-              </div>
-
-              <!-- Email -->
-              <div class="flex items-start gap-3.5">
-                <svg class="h-5 w-5 text-zinc-950 shrink-0 mt-0.5" width="20" height="20" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <div>
-                  <strong class="font-bold text-zinc-950 block mb-1">Sähköposti:</strong>
-                  <a href="mailto:info@logrus.fi" class="text-xs sm:text-sm text-zinc-900 hover:underline">
-                    info@logrus.fi
-                  </a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TE-toimisto Collaboration Section -->
-      <div id="involved" class="bg-white border border-zinc-200 rounded-lg overflow-hidden grid grid-cols-1 md:grid-cols-12 items-center">
-        <div class="md:col-span-5 h-72 md:h-full relative bg-zinc-900">
-          <img
-            src="/images/card-involved.webp"
-            alt="Harjoittelu Logrus ry:ssä"
-            width="600"
-            height="400"
-            loading="lazy"
-            decoding="async"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div class="md:col-span-7 p-8 sm:p-10">
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-2 block">
-            Harjoittelu ja yhteistyö
-          </span>
-          <h3 class="text-2xl font-black uppercase text-zinc-950 mb-3 leading-tight">
-            Virallinen työkokeilu TE-palveluiden kautta
-          </h3>
-          <p class="text-sm text-zinc-600 mb-4 leading-relaxed">
-            Tarjoamme virallisia työkokeilu- ja työharjoittelupaikkoja ompelijoille, puvustajille, valo- ja ääniteknikoille sekä kulttuurituotannon avustajille. Erinomainen tilaisuus saada aitoa kokemusta Suomen kulttuurialalta.
+        <!-- Mission and Priorities -->
+        <div class="space-y-4">
+          <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
+            Toiminta-ajatus ja strategiset painopisteet
+          </h2>
+          <p class="text-sm sm:text-base text-zinc-700 leading-relaxed">
+            Logrus ry:n tavoitteena on olla avoin, osallistava ja turvallinen kulttuuriyhteisö, jossa esittävä taide toimii kotoutumisen, hyvinvoinnin, sukupolvien välisen dialogin ja yhteisöllisyyden rakentajana.
           </p>
-          <a
-            href="mailto:info@logrus.fi?subject=Hakemus TE-palveluiden harjoitteluun"
-            class="inline-flex items-center gap-2 bg-zinc-950 text-white text-xs font-bold uppercase tracking-wider px-5 py-3 rounded hover:bg-zinc-800 transition-colors"
-          >
-            Hae harjoitteluun &rarr;
-          </a>
+          <ul class="space-y-3 text-sm sm:text-base text-zinc-700">
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Taiteellinen laatu ja jatkuvuus:</strong> Uusien näyttämöteosten tuottaminen ja esittäminen yhteistyössä pääkaupunkiseudun kulttuurikeskusten sekä ammattitaiteilijoiden kanssa.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Matalan kynnyksen saavutettavuus:</strong> Taidekasvatuksen, kielituen ja työpajojen tarjoaminen esteettömästi ja taloudellisesti saavutettavasti eri-ikäisille.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Kotoutuminen taiteen keinoin:</strong> Moninaisuuden, sosiaalisen osallisuuden ja eri kieliryhmien välisen vuorovaikutuksen vahvistaminen yhteisen luovan toiminnan kautta.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Turvallisemman tilan periaatteet:</strong> Yhdistyksen hyväksymän Yhdenvertaisuus- ja saavutettavuussuunnitelman (2026–2028) aktiivinen noudattaminen, syrjimättömyys ja nimetyn häirintäyhdyshenkilön tuki.</span>
+            </li>
+          </ul>
         </div>
+
+        <!-- Main Activities -->
+        <div class="space-y-4">
+          <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
+            Toimintamuodot
+          </h2>
+          <ul class="space-y-3 text-sm sm:text-base text-zinc-700">
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Esittävä taide ja teatterituotanto:</strong> Monikieliset, visuaaliset ja fyysisen teatterin näyttämöteokset, jotka tekstitetään suomeksi tai hyödyntävät universaalia kehollista ilmaisua. Virallinen teatterisivusto: <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener noreferrer" class="underline hover:text-zinc-950">teatterilogrus.fi</a>.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Taidekasvatus ja säännöllinen kerhotoiminta:</strong> Teatteri- ja ilmaisutaidon kurssit, ekomuotikoulu, tanssi- ja liikeilmaisupajat sekä suomen kielen ja kulttuurin toiminnalliset tukipisteet lapsille, nuorille ja aikuisille.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Yhteistyö- ja kumppanuushankkeet:</strong> Yhteistuotannot pääkaupunkiseudun kulttuurikeskusten (kuten Caisa, Kanneltalo) kanssa ja osallistuminen taidefestivaaleihin Suomessa.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Institutional Transparency -->
+        <div class="space-y-4">
+          <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
+            Hallinto ja avoimuus
+          </h2>
+          <p class="text-sm sm:text-base text-zinc-700 leading-relaxed">
+            Yhdistyksen toiminta noudattaa tarkasti Suomen yhdistyslakia ja hyvää hallintotapaa. Keskeiset asiakirjat ovat avoimesti saatavilla yhteistyökumppaneille ja rahoittajille:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
+            <a
+              href="/docs/saannot.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between p-4 bg-[#faf9f7] border border-zinc-200 rounded-md hover:bg-[#f3f1ee] hover:border-zinc-400 transition-all group"
+            >
+              <div class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-red-600 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+                </svg>
+                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">Yhdistyksen säännöt</span>
+              </div>
+              <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
+            </a>
+
+            <a
+              href="/docs/toimintasuunnitelma.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between p-4 bg-[#faf9f7] border border-zinc-200 rounded-md hover:bg-[#f3f1ee] hover:border-zinc-400 transition-all group"
+            >
+              <div class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-red-600 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+                </svg>
+                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">Toimintasuunnitelma</span>
+              </div>
+              <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
+            </a>
+
+            <a
+              href="/docs/yhdenvertaisuus.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between p-4 bg-[#faf9f7] border border-zinc-200 rounded-md hover:bg-[#f3f1ee] hover:border-zinc-400 transition-all group"
+            >
+              <div class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-red-600 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+                </svg>
+                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">Yhdenvertaisuus</span>
+              </div>
+              <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Official Details -->
+        <div class="space-y-4">
+          <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
+            Viralliset rekisteritiedot ja yhteystiedot
+          </h2>
+          <div class="p-6 bg-[#faf9f7] border border-zinc-200 rounded-lg text-sm sm:text-base text-zinc-700 space-y-2 leading-relaxed">
+            <p><strong class="font-bold text-zinc-950">Yhdistys:</strong> Logrus ry (Kulttuuriyhdistys Logrus ry)</p>
+            <p><strong class="font-bold text-zinc-950">Y-tunnus:</strong> 2040144-2</p>
+            <p><strong class="font-bold text-zinc-950">Perustamisvuosi:</strong> 2006</p>
+            <p><strong class="font-bold text-zinc-950">Kotipaikka ja osoite:</strong> Sibeliuksenkatu 19B, 00250 Helsinki</p>
+            <p><strong class="font-bold text-zinc-950">Sähköposti:</strong> <a href="mailto:info@logrus.fi" class="underline hover:text-zinc-950">info@logrus.fi</a></p>
+            <p><strong class="font-bold text-zinc-950">Teatterin verkkosivusto:</strong> <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener noreferrer" class="underline hover:text-zinc-950">www.teatterilogrus.fi</a></p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

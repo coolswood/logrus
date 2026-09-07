@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meistä ja yhteystiedot — LOGRUS RY</title>
+    <title>Meistä — Logrus ry</title>
+    <meta name="description" content="Logrus ry (Y-tunnus 2040144-2) on vuonna 2006 perustettu yleishyödyllinen kulttuuriyhdistys: esittävä taide, teatteripedagogiikka ja kulttuurienvälinen vuoropuhelu Helsingissä.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Montserrat', sans-serif; background-color: #fcfbfa; color: #111; line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #fcfbfa; color: #111111; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; transition: opacity 0.2s ease, color 0.2s ease; }
+        a:hover { opacity: 0.75; }
         .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
 
         /* HEADER */
@@ -20,42 +22,82 @@
         .header-inner { display: flex; align-items: center; justify-content: space-between; }
         .logo-block { display: flex; align-items: center; gap: 12px; }
         .logo-block img { height: 72px; width: auto; display: block; object-fit: contain; transition: transform 0.2s ease; }
-        .logo-text { display: flex; flex-direction: column; }
-        .logo-text .title { font-size: 1.1rem; font-weight: 900; letter-spacing: 0.05em; }
-        .logo-text .subtitle { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; color: #555; text-transform: uppercase; }
+        .logo-block:hover img { transform: scale(1.02); }
         .header-right { display: flex; align-items: center; gap: 20px; }
         .social-links { display: flex; gap: 12px; }
-        .social-links a { width: 34px; height: 34px; background: #111; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; transition: opacity 0.2s; }
-        .social-links a:hover { opacity: 0.75; }
+        .social-links a { width: 34px; height: 34px; background: #111; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; transition: opacity 0.2s, transform 0.2s; }
+        .social-links a:hover { opacity: 0.85; transform: scale(1.05); }
         .divider { width: 1px; height: 28px; background: #ccc; }
         .lang-switch { font-size: 0.8rem; font-weight: 700; display: flex; gap: 8px; }
         .lang-switch a { color: #777; }
-        .lang-switch a.active { color: #111; }
+        .lang-switch a.active { color: #111; text-decoration: underline; text-underline-offset: 4px; }
 
-        .page-hero { padding: 60px 0 40px; text-align: center; background: #fff; border-bottom: 1px solid #f0f0f0; }
-        .page-hero h1 { font-size: 2.8rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-        .page-hero p { font-size: 1rem; color: #666; max-width: 600px; margin: 0 auto; }
+        /* HERO SECTION */
+        .page-hero { padding: 50px 0 36px; text-align: center; background: #fff; border-bottom: 1px solid #f0f0f0; }
+        .page-hero h1 { font-size: 2.6rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+        .page-hero p { font-size: 1.05rem; color: #666; max-width: 700px; margin: 0 auto; }
 
-        .section { padding: 60px 0; }
-        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; margin-bottom: 60px; }
-        .about-text h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 16px; }
-        .about-text p { font-size: 0.95rem; color: #444; margin-bottom: 16px; }
+        /* MAIN CONTENT */
+        main { padding: 48px 0 64px; }
+        .content-box { background: #ffffff; border: 1px solid #eaeaea; padding: 44px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); }
 
-        .contact-box { background: #fff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 36px; }
-        .contact-box h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; }
-        .contact-item { display: flex; gap: 14px; margin-bottom: 16px; font-size: 0.95rem; }
-        .contact-item i { font-size: 1.2rem; color: #004212; margin-top: 2px; }
+        .lead-text { font-size: 1.05rem; line-height: 1.75; color: #222; margin-bottom: 36px; }
 
-        footer { background-color: #16181b; color: #fff; padding: 50px 0 30px; }
-        .footer-bottom { display: flex; justify-content: space-between; font-size: 0.75rem; color: #777; }
+        /* METRICS ROW */
+        .metrics-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 40px; padding: 28px; background: #faf9f7; border: 1px solid #eaeaea; border-radius: 4px; }
+        .metric-item .val { font-size: 1.75rem; font-weight: 900; color: #111; margin-bottom: 4px; letter-spacing: -0.01em; }
+        .metric-item .lbl { font-size: 0.85rem; color: #555; line-height: 1.45; }
 
-        @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; }
+        /* SECTIONS */
+        .section-block { margin-bottom: 40px; }
+        .section-block:last-child { margin-bottom: 0; }
+        .section-block h2 { font-size: 1.35rem; font-weight: 800; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid #eaeaea; text-transform: uppercase; letter-spacing: 0.02em; color: #111; }
+        .section-block p { font-size: 0.95rem; color: #444; margin-bottom: 16px; line-height: 1.7; }
+        .section-block ul { list-style: none; padding: 0; }
+        .section-block ul li { position: relative; padding-left: 22px; margin-bottom: 14px; font-size: 0.95rem; color: #444; line-height: 1.65; }
+        .section-block ul li::before { content: "—"; position: absolute; left: 0; color: #111; font-weight: 700; }
+        .section-block ul li strong { color: #111; }
+
+        /* DOCS GRID */
+        .docs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 18px; }
+        .doc-card { border: 1px solid #eaeaea; padding: 18px 20px; background: #faf9f7; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; font-weight: 600; border-radius: 4px; transition: border-color 0.2s, transform 0.2s, background 0.2s; }
+        .doc-card:hover { border-color: #bbb; background: #f3f1ee; transform: translateY(-2px); opacity: 1; }
+        .doc-card-left { display: flex; align-items: center; gap: 12px; }
+        .doc-card-left i { font-size: 1.25rem; color: #d9383a; }
+        .doc-badge { font-size: 0.7rem; font-weight: 800; background: #e5e5e5; color: #333; padding: 3px 8px; border-radius: 3px; letter-spacing: 0.05em; }
+
+        /* CONTACT INFO */
+        .contact-info { background: #faf9f7; border: 1px solid #eaeaea; padding: 28px; border-radius: 4px; font-size: 0.92rem; line-height: 1.9; color: #444; }
+        .contact-info strong { color: #111; }
+        .contact-info a { color: #111; text-decoration: underline; }
+
+        /* FOOTER */
+        footer { background-color: #16181b; color: #ffffff; padding: 60px 0 30px; margin-top: 40px; }
+        .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid #2a2d32; }
+        .footer-col h4 { font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
+        .footer-contact-item { display: flex; align-items: center; gap: 12px; font-size: 0.85rem; color: #bbb; margin-bottom: 12px; }
+        .footer-contact-item i { width: 16px; color: #fff; }
+        .footer-socials { display: flex; gap: 12px; }
+        .footer-socials a { width: 40px; height: 40px; border: 1px solid #444; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem; transition: 0.2s; }
+        .footer-socials a:hover { background: #fff; color: #111; }
+        .newsletter-desc { font-size: 0.85rem; color: #bbb; margin-bottom: 14px; }
+        .newsletter-form { display: flex; }
+        .newsletter-form input[type="email"] { background: #212529; border: 1px solid #333; padding: 12px 16px; color: #fff; font-size: 0.85rem; flex-grow: 1; outline: none; }
+        .newsletter-form button { background: #fff; color: #111; font-weight: 800; font-size: 0.75rem; letter-spacing: 0.08em; border: none; padding: 0 20px; cursor: pointer; text-transform: uppercase; transition: background 0.2s; }
+        .newsletter-form button:hover { background: #ddd; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; font-size: 0.75rem; color: #777; }
+
+        @media (max-width: 900px) {
+            .footer-top { grid-template-columns: 1fr; }
             .header-inner { flex-direction: column; gap: 16px; }
+            .content-box { padding: 24px; }
+            .page-hero h1 { font-size: 2.1rem; }
         }
     </style>
 </head>
 <body>
+
+    <!-- PÄÄPALKKI / HEADER -->
     <header>
         <div class="container header-inner">
             <a href="index.html" class="logo-block">
@@ -64,9 +106,7 @@
 
             <div class="header-right">
                 <div class="social-links">
-                    <a href="https://www.facebook.com/logrusry" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/teat.rus" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://youtube.com/@logrusry2011" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/teat.rus" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 </div>
 
                 <div class="divider"></div>
@@ -80,61 +120,154 @@
         </div>
     </header>
 
+    <!-- HERO-OSIO -->
     <section class="page-hero">
         <div class="container">
             <h1>Meistä</h1>
-            <p>Kansainvälinen nuorisoaloitteiden tukiyhdistys «LOGRUS ry» Helsingissä.</p>
+            <p>Kulttuuriyhdistys Logrus ry (Helsinki)</p>
         </div>
     </section>
 
-    <main class="container section">
-        <div class="about-grid">
+    <!-- PÄÄSISÄLTÖ -->
+    <main class="container">
+        <div class="content-box">
             
-            <div class="about-text">
-                <div style="margin-bottom: 24px; border-radius: 8px; overflow: hidden; border: 1px solid #e4e4e7; box-shadow: 0 1px 3px rgba(0,0,0,0.1);"><img src="../images/about.jpg" alt="Logrus" style="width: 100%; height: auto; display: block;"></div>
-                <h2>Missiomme</h2>
-                <p>
-                    <strong>LOGRUS ry</strong> on kansalaisjärjestö, jonka tavoitteena on yhdistää nuoria, tukea luovaa kasvua, edistää kulttuurienvälistä integraatiota sekä kehittää esittävän taiteen aloitteita Suomessa.
-                </p>
-                <p>
-                    Tuotamme teatteri- ja kulttuuriesityksiä, järjestämme säännöllisiä työpajoja, tanssi- ja taidestudioita sekä organisoimme festivaaleja ja nuorten luovia leirejä.
-                </p>
-                <p>
-                    Teemme aktiivista yhteistyötä suomalaisten kulttuurikeskusten ja nuorisotilojen kanssa (Caisa, Kanneltalo, Nuorisotilat) sekä tarjoamme virallisia työkokeilu- ja harjoittelupaikkoja TE-toimiston kautta.
-                </p>
+            <p class="lead-text">
+                <strong>Logrus ry</strong> on vuonna 2006 Helsingissä perustettu rekisteröity yleishyödyllinen kulttuuriyhdistys (Y-tunnus 2040144-2). Yhdistys on toiminut pääkaupunkiseudulla yli 20 vuotta esittävän taiteen, teatteripedagogiikan ja kulttuurienvälisen vuoropuhelun kentällä.
+            </p>
+
+            <!-- AVAINLUVUT JA LUOTTAMUS -->
+            <div class="metrics-row">
+                <div class="metric-item">
+                    <div class="val">20 vuotta</div>
+                    <div class="lbl">jatkuvaa kulttuuritoimintaa pääkaupunkiseudulla (vuodesta 2006)</div>
+                </div>
+                <div class="metric-item">
+                    <div class="val">25+ produktiota</div>
+                    <div class="lbl">itsenäistä teatteriproduktiota, luovaa laboratoriota ja hanketta</div>
+                </div>
+                <div class="metric-item">
+                    <div class="val">15 000+</div>
+                    <div class="lbl">katsojaa ja eri sukupolvien osallistujaa</div>
+                </div>
+                <div class="metric-item">
+                    <div class="val">100%</div>
+                    <div class="lbl">hallinnon läpinäkyvyys ja tarkka hankeraportointi</div>
+                </div>
             </div>
 
-            <div class="contact-box">
-                <h3>Yhteystiedot</h3>
-                
-                <div class="contact-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div>
-                        <strong>Toimipisteet:</strong><br>
-                        • Narrin näyttämö: Sörnäisten rantatie 31, Helsinki<br>
-                        • Toimisto: Sibeliuksenkatu 19B, Helsinki
-                    </div>
-                </div>
+            <!-- TOIMINTA-AJATUS JA STRATEGISET PAINOPISTEET -->
+            <div class="section-block">
+                <h2>Toiminta-ajatus ja strategiset painopisteet</h2>
+                <p>
+                    Logrus ry:n tavoitteena on olla avoin, osallistava ja turvallinen kulttuuriyhteisö, jossa esittävä taide toimii kotoutumisen, hyvinvoinnin, sukupolvien välisen dialogin ja yhteisöllisyyden rakentajana.
+                </p>
+                <ul>
+                    <li><strong>Taiteellinen laatu ja jatkuvuus:</strong> Uusien näyttämöteosten tuottaminen ja esittäminen yhteistyössä pääkaupunkiseudun kulttuurikeskusten sekä ammattitaiteilijoiden kanssa.</li>
+                    <li><strong>Matalan kynnyksen saavutettavuus:</strong> Taidekasvatuksen, kielituen ja työpajojen tarjoaminen esteettömästi ja taloudellisesti saavutettavasti eri-ikäisille.</li>
+                    <li><strong>Kotoutuminen taiteen keinoin:</strong> Moninaisuuden, sosiaalisen osallisuuden ja eri kieliryhmien välisen vuorovaikutuksen vahvistaminen yhteisen luovan toiminnan kautta.</li>
+                    <li><strong>Turvallisemman tilan periaatteet:</strong> Yhdistyksen hyväksymän Yhdenvertaisuus- ja saavutettavuussuunnitelman (2026–2028) aktiivinen noudattaminen, syrjimättömyys ja nimetyn häirintäyhdyshenkilön tuki.</li>
+                </ul>
+            </div>
 
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <div>
-                        <strong>Sähköposti:</strong><br>
-                        <a href="mailto:info@logrus.fi">info@logrus.fi</a>
-                    </div>
+            <!-- TOIMINTAMUODOT -->
+            <div class="section-block">
+                <h2>Toimintamuodot</h2>
+                <ul>
+                    <li><strong>Esittävä taide ja teatterituotanto:</strong> Monikieliset, visuaaliset ja fyysisen teatterin näyttämöteokset, jotka tekstitetään suomeksi tai hyödyntävät universaalia kehollista ilmaisua. Virallinen teatterisivusto: <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener" style="text-decoration: underline;">teatterilogrus.fi</a>.</li>
+                    <li><strong>Taidekasvatus ja säännöllinen kerhotoiminta:</strong> Teatteri- ja ilmaisutaidon kurssit, ekomuotikoulu, tanssi- ja liikeilmaisupajat sekä suomen kielen ja kulttuurin toiminnalliset tukipisteet lapsille, nuorille ja aikuisille.</li>
+                    <li><strong>Yhteistyö- ja kumppanuushankkeet:</strong> Yhteistuotannot pääkaupunkiseudun kulttuurikeskusten (kuten Caisa, Kanneltalo) kanssa ja osallistuminen taidefestivaaleihin Suomessa.</li>
+                </ul>
+            </div>
+
+            <!-- HALLINTO JA AVOIMUUS -->
+            <div class="section-block">
+                <h2>Hallinto ja avoimuus</h2>
+                <p>
+                    Yhdistyksen toiminta noudattaa tarkasti Suomen yhdistyslakia ja hyvää hallintotapaa. Keskeiset asiakirjat ovat avoimesti saatavilla yhteistyökumppaneille ja rahoittajille:
+                </p>
+                <div class="docs-grid">
+                    <a href="../docs/saannot.pdf" target="_blank" class="doc-card">
+                        <div class="doc-card-left">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Yhdistyksen säännöt (Säännöt)</span>
+                        </div>
+                        <span class="doc-badge">PDF</span>
+                    </a>
+                    <a href="../docs/toimintasuunnitelma.pdf" target="_blank" class="doc-card">
+                        <div class="doc-card-left">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Toimintasuunnitelma (Toimintasuunnitelma)</span>
+                        </div>
+                        <span class="doc-badge">PDF</span>
+                    </a>
+                    <a href="../docs/yhdenvertaisuus.pdf" target="_blank" class="doc-card">
+                        <div class="doc-card-left">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Yhdenvertaisuussuunnitelma (2026–2028)</span>
+                        </div>
+                        <span class="doc-badge">PDF</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- VIRALLISET REKISTERITIEDOT JA YHTEYSTIEDOT -->
+            <div class="section-block">
+                <h2>Viralliset rekisteritiedot ja yhteystiedot</h2>
+                <div class="contact-info">
+                    <p><strong>Yhdistys:</strong> Logrus ry (Kulttuuriyhdistys Logrus ry)</p>
+                    <p><strong>Y-tunnus:</strong> 2040144-2</p>
+                    <p><strong>Perustamisvuosi:</strong> 2006</p>
+                    <p><strong>Kotipaikka ja osoite:</strong> Sibeliuksenkatu 19B, 00250 Helsinki</p>
+                    <p><strong>Sähköposti:</strong> <a href="mailto:info@logrus.fi">info@logrus.fi</a></p>
+                    <p><strong>Teatterin verkkosivusto:</strong> <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener">www.teatterilogrus.fi</a></p>
                 </div>
             </div>
 
         </div>
     </main>
 
+    <!-- ALAPALKKI / FOOTER -->
     <footer>
         <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h4>Yhteystiedot</h4>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Sibeliuksenkatu 19B, 00250 Helsinki</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@logrus.fi</span>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Sosiaalinen media</h4>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/teat.rus" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Uutiset ja tapahtumat</h4>
+                    <p class="newsletter-desc">Tilaa uutiskirjeemme saadaksesi tietoa tulevista esityksistä ja hankkeista.</p>
+                    <form class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="d339e2be-fcc3-44e3-bce8-cfa7d2a89bfd">
+                        <input type="hidden" name="subject" value="Uusi uutiskirjeen tilaaja (Logrus ry)">
+                        <input type="email" name="email" placeholder="Sähköpostiosoitteesi" required>
+                        <button type="submit">Tilaa</button>
+                    </form>
+                </div>
+            </div>
+
             <div class="footer-bottom">
-                <div>© 2026 Logrus ry — Kansainvälinen nuorisoaloitteiden tukiyhdistys</div>
-                <div>Kaikki oikeudet pidätetään.</div>
+                <div>© 2006–2026 Logrus ry (Y-tunnus 2040144-2). Kaikki oikeudet pidätetään.</div>
+                <div>Rekisteröity kulttuuriyhdistys Suomessa.</div>
             </div>
         </div>
     </footer>
+
 </body>
 </html>

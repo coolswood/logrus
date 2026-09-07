@@ -1,158 +1,174 @@
----
+﻿---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="О нас и контакты — LOGRUS RY"
-  description="Миссия общества поддержки молодежных инициатив LOGRUS ry в Финляндии, руководство, площадки и контакты."
+  title="О нас — Logrus ry"
+  description="Культурная некоммерческая ассоциация Logrus ry (Y-tunnus 2040144-2): сценическое искусство, театральная педагогика и диалог культур в Хельсинки с 2006 года."
   lang="ru"
 >
   <!-- Page Hero -->
-  <section class="bg-white border-b border-zinc-200 py-12 sm:py-16 text-center">
+  <section class="w-full bg-white border-b border-zinc-200 py-12 sm:py-16 text-center">
     <div class="site-container">
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase mb-3">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-zinc-950 mb-3">
         О нас
       </h1>
-      <p class="text-sm sm:text-base text-zinc-600 max-w-xl mx-auto font-medium">
-        Международное общество поддержки молодёжных инициатив «LOGRUS ry» в Хельсинки.
+      <p class="text-sm sm:text-base text-zinc-600 max-w-2xl mx-auto font-medium">
+        Культурная некоммерческая ассоциация Logrus ry (Хельсинки)
       </p>
     </div>
   </section>
 
-  <!-- Main Content Section -->
-  <section class="py-14 sm:py-16">
-    <div class="site-container">
-      <!-- Mission & Contacts Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 mb-16">
-        <!-- Left: Mission & Details -->
-        <div class="lg:col-span-7 flex flex-col gap-6">
-          <div class="rounded-lg overflow-hidden border border-zinc-200 bg-zinc-950 aspect-[16/10] mb-2 shadow-sm">
-            <img
-              src="/images/about.webp"
-              alt="LOGRUS RY Театральное сообщество"
-              width="800"
-              height="500"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight uppercase text-zinc-950 mb-4">
-              Наша миссия
-            </h2>
-            <div class="space-y-4 text-sm sm:text-base text-zinc-700 leading-relaxed font-normal">
-              <p>
-                Общественная организация <strong class="font-bold text-zinc-950">LOGRUS ry</strong> создана для объединения молодёжи, развития творческих способностей, межкультурной интеграции и всесторонней поддержки молодежных инициатив в Финляндии.
-              </p>
-              <p>
-                Мы реализуем культурные и театральные постановки, проводим регулярные мастер-классы, танцевальные и художественные студии, а также организуем фестивали и молодежные творческие лагеря.
-              </p>
-              <p>
-                Организация активно сотрудничает с культурными центрами финской столицы (Caisa, Kanneltalo, Nuorisotilat Kontula), предоставляя качественную площадку для самовыражения и развития талантов.
-              </p>
-            </div>
-          </div>
+  <!-- Main Content -->
+  <section class="py-12 sm:py-16 bg-[#fcfbfa]">
+    <div class="site-container max-w-5xl">
+      <div class="bg-white border border-zinc-200 rounded-lg p-6 sm:p-10 md:p-12 shadow-sm space-y-10">
+        
+        <!-- Lead Paragraph -->
+        <p class="text-base sm:text-lg text-zinc-800 leading-relaxed">
+          <strong class="font-bold text-zinc-950">Logrus ry</strong> — зарегистрированная общественная культурная организация (rekisteröity yhdistys, Y-tunnus 2040144-2), основанная в 2006 году в Хельсинки. На протяжении 20 лет ассоциация непрерывно развивает независимое сценическое искусство, театральную педагогику и межкультурный диалог в столичном регионе Финляндии.
+        </p>
 
-          <!-- History / Milestones -->
-          <div class="bg-white border border-zinc-200 rounded-lg p-6 sm:p-8">
-            <h3 class="text-lg font-bold text-zinc-950 uppercase tracking-wide mb-3">
-              Ключевые направления
-            </h3>
-            <ul class="space-y-2.5 text-xs sm:text-sm text-zinc-600">
-              <li class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-zinc-950 shrink-0"></span>
-                <span>Театральная деятельность: собственный репертуар и фестивальные спектакли</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-zinc-950 shrink-0"></span>
-                <span>Бесплатные студии и курсы для подростков и молодежи от 14 до 25 лет</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-zinc-950 shrink-0"></span>
-                <span>Программа официальной практики (työkokeilu / harjoittelu) от TE-palvelut</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-zinc-950 shrink-0"></span>
-                <span>Международные фестивали искусств («Gloria Star», «Art-Planet»)</span>
-              </li>
-            </ul>
+        <!-- Metrics Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6 bg-[#faf9f7] border border-zinc-200 rounded-lg">
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">20 лет</div>
+            <div class="text-xs text-zinc-600 leading-snug">непрерывной культурной деятельности в Финляндии (с 2006 года)</div>
+          </div>
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">25+ проектов</div>
+            <div class="text-xs text-zinc-600 leading-snug">постановок, творческих лабораторий и образовательных инициатив</div>
+          </div>
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">15 000+</div>
+            <div class="text-xs text-zinc-600 leading-snug">зрителей и участников проектов всех поколений</div>
+          </div>
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">100%</div>
+            <div class="text-xs text-zinc-600 leading-snug">прозрачность управления и строгая проектная отчетность</div>
           </div>
         </div>
 
-        <!-- Right: Contact Box -->
-        <div class="lg:col-span-5">
-          <div class="bg-white border border-zinc-200 rounded-lg p-7 sm:p-9 sticky top-28 shadow-sm">
-            <h3 class="text-xl font-black uppercase tracking-wide mb-6 text-zinc-950">
-              Контакты
-            </h3>
-
-            <div class="space-y-5 text-sm text-zinc-700">
-              <!-- Location -->
-              <div class="flex items-start gap-3.5">
-                <svg class="h-5 w-5 text-zinc-950 shrink-0 mt-0.5" width="20" height="20" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <div>
-                  <strong class="font-bold text-zinc-950 block mb-1">Адреса площадок:</strong>
-                  <p class="text-xs sm:text-sm text-zinc-600 leading-relaxed">
-                    • Сцена Narri: Sörnäisten rantatie 31, Helsinki<br>
-                    • Молодежный центр Kontula: Ostostie 4, Helsinki<br>
-                    • Офис организации: Sibeliuksenkatu 19B, Helsinki
-                  </p>
-                </div>
-              </div>
-
-              <!-- Email -->
-              <div class="flex items-start gap-3.5">
-                <svg class="h-5 w-5 text-zinc-950 shrink-0 mt-0.5" width="20" height="20" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <div>
-                  <strong class="font-bold text-zinc-950 block mb-1">Электронная почта:</strong>
-                  <a href="mailto:info@logrus.fi" class="text-xs sm:text-sm text-zinc-900 hover:underline">
-                    info@logrus.fi
-                  </a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TE-toimisto Collaboration / Get Involved Section -->
-      <div id="involved" class="bg-white border border-zinc-200 rounded-lg overflow-hidden grid grid-cols-1 md:grid-cols-12 items-center">
-        <div class="md:col-span-5 h-72 md:h-full relative bg-zinc-900">
-          <img
-            src="/images/card-involved.webp"
-            alt="Практика в Logrus ry"
-            width="600"
-            height="400"
-            loading="lazy"
-            decoding="async"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div class="md:col-span-7 p-8 sm:p-10">
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-2 block">
-            Практика и сотрудничество
-          </span>
-          <h3 class="text-2xl font-black uppercase text-zinc-950 mb-3 leading-tight">
-            Официальная практика TE-toimisto
-          </h3>
-          <p class="text-sm text-zinc-600 mb-4 leading-relaxed">
-            Мы предлагаем официальную рабочую пробу (työkokeilu) и практику для швей, помощников костюмера, звуко- и светорежиссеров, а также администраторов проектов. Отличная возможность получить опыт работы в культурной среде Финляндии.
+        <!-- Mission and Priorities -->
+        <div class="space-y-4">
+          <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
+            Миссия и приоритеты
+          </h2>
+          <p class="text-sm sm:text-base text-zinc-700 leading-relaxed">
+            Цель Logrus ry — развитие устойчивой культурной платформы, где театр служит универсальным инструментом интеграции, психологической поддержки, межпоколенческого диалога и объединения жителей Финляндии.
           </p>
-          <a
-            href="mailto:info@logrus.fi?subject=Запрос на практику TE-toimisto"
-            class="inline-flex items-center gap-2 bg-zinc-950 text-white text-xs font-bold uppercase tracking-wider px-5 py-3 rounded hover:bg-zinc-800 transition-colors"
-          >
-            Подать заявку на практику &rarr;
-          </a>
+          <ul class="space-y-3 text-sm sm:text-base text-zinc-700">
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Художественное качество (Taiteellinen laatu):</strong> работа над постановками с участием профессиональных режиссеров, сценографов, драматургов и актеров.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Доступность и открытость (Matala kynnys & Saavutettavuus):</strong> вовлечение широкой аудитории независимо от социального статуса, возраста и уровня владения языками.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Интеграция через искусство (Kotoutuminen taiteen keinoin):</strong> включение поликультурных сообществ в финский культурный контекст через совместное творчество.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Принципы безопасного пространства (Turvallisemman tilan periaatteet):</strong> строгие стандарты инклюзивности, взаимного уважения и отсутствия дискриминации.</span>
+            </li>
+          </ul>
         </div>
+
+        <!-- Main Activities -->
+        <div class="space-y-4">
+          <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
+            Основные направления деятельности
+          </h2>
+          <ul class="space-y-3 text-sm sm:text-base text-zinc-700">
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Театральные постановки:</strong> репертуарные драматические, пластические и семейные спектакли. Постановки сопровождаются субтитрами или строятся на универсальном визуальном языке. Официальный ресурс сцены: <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener noreferrer" class="underline hover:text-zinc-950">teatterilogrus.fi</a>.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Студии и театральная педагогика:</strong> регулярные курсы актерского мастерства, сценической речи и развития творческого потенциала для детей, подростков и взрослых.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-zinc-950 font-bold select-none">—</span>
+              <span><strong class="font-bold text-zinc-950">Партнерские программы:</strong> совместные проекты с культурными центрами столичного региона и участие в фестивалях Финляндии.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Institutional Transparency -->
+        <div class="space-y-4">
+          <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
+            Институциональная прозрачность
+          </h2>
+          <p class="text-sm sm:text-base text-zinc-700 leading-relaxed">
+            Деятельность организации ведется строго по Закону об ассоциациях Финляндии (Yhdistyslaki). Документы открыты для партнеров, аудиторов и фондов:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
+            <a
+              href="/docs/saannot.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between p-4 bg-[#faf9f7] border border-zinc-200 rounded-md hover:bg-[#f3f1ee] hover:border-zinc-400 transition-all group"
+            >
+              <div class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-red-600 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+                </svg>
+                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">Устав Logrus ry</span>
+              </div>
+              <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
+            </a>
+
+            <a
+              href="/docs/toimintasuunnitelma.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between p-4 bg-[#faf9f7] border border-zinc-200 rounded-md hover:bg-[#f3f1ee] hover:border-zinc-400 transition-all group"
+            >
+              <div class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-red-600 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+                </svg>
+                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">План деятельности</span>
+              </div>
+              <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
+            </a>
+
+            <a
+              href="/docs/yhdenvertaisuus.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between p-4 bg-[#faf9f7] border border-zinc-200 rounded-md hover:bg-[#f3f1ee] hover:border-zinc-400 transition-all group"
+            >
+              <div class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-red-600 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+                </svg>
+                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">План равенства</span>
+              </div>
+              <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Official Details -->
+        <div class="space-y-4">
+          <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
+            Официальные реквизиты
+          </h2>
+          <div class="p-6 bg-[#faf9f7] border border-zinc-200 rounded-lg text-sm sm:text-base text-zinc-700 space-y-2 leading-relaxed">
+            <p><strong class="font-bold text-zinc-950">Организация:</strong> Logrus ry (Kulttuuriyhdistys Logrus ry)</p>
+            <p><strong class="font-bold text-zinc-950">Y-tunnus:</strong> 2040144-2</p>
+            <p><strong class="font-bold text-zinc-950">Год основания:</strong> 2006</p>
+            <p><strong class="font-bold text-zinc-950">Адрес офиса:</strong> Sibeliuksenkatu 19B, 00250 Helsinki</p>
+            <p><strong class="font-bold text-zinc-950">Email:</strong> <a href="mailto:info@logrus.fi" class="underline hover:text-zinc-950">info@logrus.fi</a></p>
+            <p><strong class="font-bold text-zinc-950">Сайт театра:</strong> <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener noreferrer" class="underline hover:text-zinc-950">www.teatterilogrus.fi</a></p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
