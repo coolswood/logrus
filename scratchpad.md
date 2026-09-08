@@ -3,8 +3,14 @@
 ## 1. Локальный веб-сервер (Astro)
 * **Команда запуска:** `cd C:\Projects\logrus; bun run server.js` (или `bun run dev`)
 
+### Финская версия (FI — Основная)
+* **Pääsivu:** http://localhost:4321/
+* **Meistä:** http://localhost:4321/fi/about
+* **Projektit:** http://localhost:4321/fi/projects
+* **Arkisto:** http://localhost:4321/fi/archive
+
 ### Русская версия (RU)
-* **Главная:** http://localhost:4321/
+* **Главная:** http://localhost:4321/ru
 * **О нас:** http://localhost:4321/about
 * **Проекты:** http://localhost:4321/projects
 * **Театр:** http://localhost:4321/theatre
@@ -16,18 +22,18 @@
 * **Projects:** http://localhost:4321/en/projects
 * **Archive:** http://localhost:4321/en/archive
 
-### Финская версия (FI)
-* **Pääsivu:** http://localhost:4321/fi
-* **Meistä:** http://localhost:4321/fi/about
-* **Projektit:** http://localhost:4321/fi/projects
-* **Arkisto:** http://localhost:4321/fi/archive
-
 ---
 
 ## 2. Локальные статические HTML-файлы
 
+### Финская версия (FI — Основная)
+* **Pääsivu:** file:///c:/Users/Wuser/Desktop/New-site/index.html
+* **Meistä:** file:///c:/Users/Wuser/Desktop/New-site/fi/about.html
+* **Projektit:** file:///c:/Users/Wuser/Desktop/New-site/fi/projects.html
+* **Arkisto:** file:///c:/Users/Wuser/Desktop/New-site/fi/archive.html
+
 ### Русская версия (RU)
-* **Главная:** file:///c:/Users/Wuser/Desktop/New-site/index.html
+* **Главная:** file:///c:/Users/Wuser/Desktop/New-site/ru/index.html
 * **О нас:** file:///c:/Users/Wuser/Desktop/New-site/about.html
 * **Проекты:** file:///c:/Users/Wuser/Desktop/New-site/projects.html
 * **Театр:** file:///c:/Users/Wuser/Desktop/New-site/theatre.html
@@ -38,12 +44,6 @@
 * **About Us:** file:///c:/Users/Wuser/Desktop/New-site/en/about.html
 * **Projects:** file:///c:/Users/Wuser/Desktop/New-site/en/projects.html
 * **Archive:** file:///c:/Users/Wuser/Desktop/New-site/en/archive.html
-
-### Финская версия (FI)
-* **Pääsivu:** file:///c:/Users/Wuser/Desktop/New-site/fi/index.html
-* **Meistä:** file:///c:/Users/Wuser/Desktop/New-site/fi/about.html
-* **Projektit:** file:///c:/Users/Wuser/Desktop/New-site/fi/projects.html
-* **Arkisto:** file:///c:/Users/Wuser/Desktop/New-site/fi/archive.html
 
 ---
 
