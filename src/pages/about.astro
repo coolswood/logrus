@@ -1,5 +1,5 @@
 ﻿---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
@@ -7,49 +7,49 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   description="Культурная некоммерческая ассоциация Logrus ry (Y-tunnus 2040144-2): сценическое искусство, театральная педагогика и диалог культур в Хельсинки с 2006 года."
   lang="ru"
 >
-  <!-- Page Hero -->
-  <section class="w-full bg-white border-b border-zinc-200 py-12 sm:py-16 text-center">
-    <div class="site-container">
+  <!-- Page Header -->
+  <section class="border-b border-zinc-200 bg-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-zinc-950 mb-3">
         О нас
       </h1>
-      <p class="text-sm sm:text-base text-zinc-600 max-w-2xl mx-auto font-medium">
+      <p class="text-base sm:text-lg text-zinc-600 max-w-2xl">
         Культурная некоммерческая ассоциация Logrus ry (Хельсинки)
       </p>
     </div>
   </section>
 
   <!-- Main Content -->
-  <section class="py-12 sm:py-16 bg-[#fcfbfa]">
-    <div class="site-container max-w-5xl">
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <div class="bg-white border border-zinc-200 rounded-lg p-6 sm:p-10 md:p-12 shadow-sm space-y-10">
-        
+
         <!-- Lead Paragraph -->
-        <p class="text-base sm:text-lg text-zinc-800 leading-relaxed">
+        <p class="text-base sm:text-lg text-zinc-800 leading-relaxed font-normal">
           <strong class="font-bold text-zinc-950">Logrus ry</strong> — зарегистрированная общественная культурная организация (rekisteröity yhdistys, Y-tunnus 2040144-2), основанная в 2006 году в Хельсинки. На протяжении 20 лет ассоциация непрерывно развивает независимое сценическое искусство, театральную педагогику и межкультурный диалог в столичном регионе Финляндии.
         </p>
 
-        <!-- Metrics Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6 bg-[#faf9f7] border border-zinc-200 rounded-lg">
-          <div class="space-y-1">
-            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">20 лет</div>
-            <div class="text-xs text-zinc-600 leading-snug">непрерывной культурной деятельности в Финляндии (с 2006 года)</div>
+        <!-- Metrics Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-[#faf9f7] border border-zinc-200 rounded-lg">
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950">20 лет</div>
+            <div class="text-xs sm:text-sm text-zinc-600 mt-1">культурной деятельности в Финляндии (с 2006)</div>
           </div>
-          <div class="space-y-1">
-            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">25+ проектов</div>
-            <div class="text-xs text-zinc-600 leading-snug">постановок, творческих лабораторий и образовательных инициатив</div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950">25+</div>
+            <div class="text-xs sm:text-sm text-zinc-600 mt-1">постановок, лабораторий и проектов</div>
           </div>
-          <div class="space-y-1">
-            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">15 000+</div>
-            <div class="text-xs text-zinc-600 leading-snug">зрителей и участников проектов всех поколений</div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950">15 000+</div>
+            <div class="text-xs sm:text-sm text-zinc-600 mt-1">зрителей и участников всех поколений</div>
           </div>
-          <div class="space-y-1">
-            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">100%</div>
-            <div class="text-xs text-zinc-600 leading-snug">прозрачность управления и строгая проектная отчетность</div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950">100%</div>
+            <div class="text-xs sm:text-sm text-zinc-600 mt-1">прозрачность и строгая отчетность</div>
           </div>
         </div>
 
-        <!-- Mission and Priorities -->
+        <!-- Mission & Values -->
         <div class="space-y-4">
           <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
             Миссия и приоритеты
@@ -98,15 +98,58 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           </ul>
         </div>
 
+        <!-- Leadership and Board -->
+        <div class="space-y-4">
+          <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
+            Правление и руководство (2026–2027)
+          </h2>
+          <p class="text-sm sm:text-base text-zinc-700 leading-relaxed">
+            Состав правления и должностные лица ассоциации на 2026–2027 годы (утверждено на уставном собрании):
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-5 bg-[#faf9f7] border border-zinc-200 rounded-md">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-zinc-950 text-base">Akvile Ruzgyte</span>
+                <span class="text-[11px] font-bold bg-zinc-900 text-white px-2.5 py-0.5 rounded">Председатель</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-normal">Руководство правлением и официальное представительство ассоциации</p>
+            </div>
+
+            <div class="p-5 bg-[#faf9f7] border border-zinc-200 rounded-md">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-zinc-950 text-base">Olga Hiltunen</span>
+                <span class="text-[11px] font-bold bg-zinc-900 text-white px-2.5 py-0.5 rounded">Секретарь</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-normal">Член правления, ведение протоколов и официальная документация ассоциации</p>
+            </div>
+
+            <div class="p-5 bg-[#faf9f7] border border-zinc-200 rounded-md">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-zinc-950 text-base">Evgenii Lapin</span>
+                <span class="text-[11px] font-bold bg-zinc-900 text-white px-2.5 py-0.5 rounded">Член правления</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-normal">Работа в составе правления и развитие программных направлений ассоциации</p>
+            </div>
+
+            <div class="p-5 bg-[#faf9f7] border border-zinc-200 rounded-md">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-zinc-950 text-base">Olga Lapina</span>
+                <span class="text-[11px] font-bold bg-red-600 text-white px-2.5 py-0.5 rounded">Исполнительный директор</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-normal">Руководство оперативной деятельностью, театральной сценой и учебными курсами</p>
+            </div>
+          </div>
+        </div>
+
         <!-- Institutional Transparency -->
         <div class="space-y-4">
           <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
-            Институциональная прозрачность
+            Институциональная прозрачность и документы
           </h2>
           <p class="text-sm sm:text-base text-zinc-700 leading-relaxed">
-            Деятельность организации ведется строго по Закону об ассоциациях Финляндии (Yhdistyslaki). Документы открыты для партнеров, аудиторов и фондов:
+            Деятельность организации ведется в строгом соответствии с Законом об ассоциациях Финляндии (Yhdistyslaki) и нормами GDPR. Официальные документы открыты для партнеров, аудиторов и фондов:
           </p>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 pt-2">
             <a
               href="/docs/saannot.pdf"
               target="_blank"
@@ -123,6 +166,21 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             </a>
 
             <a
+              href="/docs/hallitus_2026_2027_logrus_ry.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between p-4 bg-[#faf9f7] border border-zinc-200 rounded-md hover:bg-[#f3f1ee] hover:border-zinc-400 transition-all group"
+            >
+              <div class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-red-600 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+                </svg>
+                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">Состав правления 2026–2027</span>
+              </div>
+              <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
+            </a>
+
+            <a
               href="/docs/toimintasuunnitelma.pdf"
               target="_blank"
               rel="noopener noreferrer"
@@ -132,7 +190,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
                 <svg class="h-5 w-5 text-red-600 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
                 </svg>
-                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">План деятельности</span>
+                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">План деятельности 2027</span>
               </div>
               <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
             </a>
@@ -147,7 +205,22 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
                 <svg class="h-5 w-5 text-red-600 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
                 </svg>
-                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">План равенства</span>
+                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">План равенства (2026–2028)</span>
+              </div>
+              <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
+            </a>
+
+            <a
+              href="/docs/tietosuojaseloste_logrus_ry.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between p-4 bg-[#faf9f7] border border-zinc-200 rounded-md hover:bg-[#f3f1ee] hover:border-zinc-400 transition-all group"
+            >
+              <div class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-red-600 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+                </svg>
+                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">Политика конфиденциальности (GDPR)</span>
               </div>
               <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
             </a>
@@ -160,12 +233,13 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             Официальные реквизиты
           </h2>
           <div class="p-6 bg-[#faf9f7] border border-zinc-200 rounded-lg text-sm sm:text-base text-zinc-700 space-y-2 leading-relaxed">
+            <p><strong class="font-bold text-zinc-950">Зарегистрированное наименование:</strong> LOGRUS – kansainvälinen nuorisoaloitteiden tukiyhdistys ry</p>
             <p><strong class="font-bold text-zinc-950">Организация:</strong> Logrus ry (Kulttuuriyhdistys Logrus ry)</p>
             <p><strong class="font-bold text-zinc-950">Y-tunnus:</strong> 2040144-2</p>
             <p><strong class="font-bold text-zinc-950">Год основания:</strong> 2006</p>
-            <p><strong class="font-bold text-zinc-950">Адрес офиса:</strong> Sibeliuksenkatu 19B, 00250 Helsinki</p>
+            <p><strong class="font-bold text-zinc-950">Адрес офиса / почтовый:</strong> Sibeliuksenkatu 19B19, 00250 Helsinki</p>
             <p><strong class="font-bold text-zinc-950">Email:</strong> <a href="mailto:info@logrus.fi" class="underline hover:text-zinc-950">info@logrus.fi</a></p>
-            <p><strong class="font-bold text-zinc-950">Сайт театра:</strong> <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener noreferrer" class="underline hover:text-zinc-950">www.teatterilogrus.fi</a></p>
+            <p><strong class="font-bold text-zinc-950">Официальные сайты:</strong> <a href="https://logrus.fi" target="_blank" rel="noopener noreferrer" class="underline hover:text-zinc-950">logrus.fi</a> | <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener noreferrer" class="underline hover:text-zinc-950">www.teatterilogrus.fi</a></p>
           </div>
         </div>
 

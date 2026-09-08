@@ -1,5 +1,5 @@
-﻿---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
@@ -7,49 +7,49 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   description="Logrus ry (Business ID 2040144-2) is a non-profit cultural association founded in 2006 in Helsinki: performing arts, theatre pedagogy, and intercultural dialogue."
   lang="en"
 >
-  <!-- Page Hero -->
-  <section class="w-full bg-white border-b border-zinc-200 py-12 sm:py-16 text-center">
-    <div class="site-container">
+  <!-- Page Header -->
+  <section class="border-b border-zinc-200 bg-white py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-zinc-950 mb-3">
         About Us
       </h1>
-      <p class="text-sm sm:text-base text-zinc-600 max-w-2xl mx-auto font-medium">
+      <p class="text-base sm:text-lg text-zinc-600 max-w-2xl">
         Cultural Non-profit Association Logrus ry (Helsinki)
       </p>
     </div>
   </section>
 
   <!-- Main Content -->
-  <section class="py-12 sm:py-16 bg-[#fcfbfa]">
-    <div class="site-container max-w-5xl">
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <div class="bg-white border border-zinc-200 rounded-lg p-6 sm:p-10 md:p-12 shadow-sm space-y-10">
-        
+
         <!-- Lead Paragraph -->
-        <p class="text-base sm:text-lg text-zinc-800 leading-relaxed">
+        <p class="text-base sm:text-lg text-zinc-800 leading-relaxed font-normal">
           <strong class="font-bold text-zinc-950">Logrus ry</strong> is a registered non-profit cultural association (rekisteröity yhdistys, Business ID: 2040144-2), founded in Helsinki in 2006. For 20 years, the association has continuously advanced independent performing arts, theatre pedagogy, and intercultural dialogue across the Helsinki Metropolitan Area.
         </p>
 
-        <!-- Metrics Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6 bg-[#faf9f7] border border-zinc-200 rounded-lg">
-          <div class="space-y-1">
-            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">20 Years</div>
-            <div class="text-xs text-zinc-600 leading-snug">of continuous cultural activity in Finland (since 2006)</div>
+        <!-- Key Metrics -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-[#faf9f7] border border-zinc-200 rounded-lg">
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950">20 Years</div>
+            <div class="text-xs sm:text-sm text-zinc-600 mt-1">of continuous cultural activity in Finland (since 2006)</div>
           </div>
-          <div class="space-y-1">
-            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">25+ Projects</div>
-            <div class="text-xs text-zinc-600 leading-snug">theatre productions, creative laboratories, and educational initiatives</div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950">25+</div>
+            <div class="text-xs sm:text-sm text-zinc-600 mt-1">productions, laboratories & projects</div>
           </div>
-          <div class="space-y-1">
-            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">15,000+</div>
-            <div class="text-xs text-zinc-600 leading-snug">audience members and participants across generations</div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950">15,000+</div>
+            <div class="text-xs sm:text-sm text-zinc-600 mt-1">audience members & participants</div>
           </div>
-          <div class="space-y-1">
-            <div class="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">100%</div>
-            <div class="text-xs text-zinc-600 leading-snug">governance transparency and rigorous project accountability</div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-zinc-950">100%</div>
+            <div class="text-xs sm:text-sm text-zinc-600 mt-1">transparency & strict accountability</div>
           </div>
         </div>
 
-        <!-- Mission and Priorities -->
+        <!-- Mission & Values -->
         <div class="space-y-4">
           <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
             Mission & Strategic Priorities
@@ -98,15 +98,58 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           </ul>
         </div>
 
+        <!-- Board & Leadership -->
+        <div class="space-y-4">
+          <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
+            Board of Directors & Officers (Term 2026–2027)
+          </h2>
+          <p class="text-sm sm:text-base text-zinc-700 leading-relaxed">
+            Elected at the statutory meeting of Logrus ry, the Board of Directors and executive officers for the 2026–2027 operational term:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-5 bg-[#faf9f7] border border-zinc-200 rounded-md">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-zinc-950 text-base">Akvile Ruzgyte</span>
+                <span class="text-[11px] font-bold bg-zinc-900 text-white px-2.5 py-0.5 rounded">Chairperson</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-normal">Board leadership and official representation of the association</p>
+            </div>
+
+            <div class="p-5 bg-[#faf9f7] border border-zinc-200 rounded-md">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-zinc-950 text-base">Olga Hiltunen</span>
+                <span class="text-[11px] font-bold bg-zinc-900 text-white px-2.5 py-0.5 rounded">Secretary</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-normal">Board member, meeting minutes, and official association records</p>
+            </div>
+
+            <div class="p-5 bg-[#faf9f7] border border-zinc-200 rounded-md">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-zinc-950 text-base">Evgenii Lapin</span>
+                <span class="text-[11px] font-bold bg-zinc-900 text-white px-2.5 py-0.5 rounded">Board Member</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-normal">Board governance and development of association initiatives</p>
+            </div>
+
+            <div class="p-5 bg-[#faf9f7] border border-zinc-200 rounded-md">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-zinc-950 text-base">Olga Lapina</span>
+                <span class="text-[11px] font-bold bg-red-600 text-white px-2.5 py-0.5 rounded">Executive Director</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-600 leading-normal">Leadership of operational activities, theatre productions, and educational courses</p>
+            </div>
+          </div>
+        </div>
+
         <!-- Institutional Transparency -->
         <div class="space-y-4">
           <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
-            Institutional Transparency
+            Institutional Transparency & Governance Documents
           </h2>
           <p class="text-sm sm:text-base text-zinc-700 leading-relaxed">
-            The association operates in strict compliance with the Finnish Associations Act (Yhdistyslaki). Core governance documents are openly accessible for partners, auditors, and grant providers:
+            The association operates in strict compliance with the Finnish Associations Act (Yhdistyslaki) and EU GDPR standards. Core governance documents are openly accessible for partners, auditors, and grant providers:
           </p>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 pt-2">
             <a
               href="/docs/saannot.pdf"
               target="_blank"
@@ -118,6 +161,21 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
                 </svg>
                 <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">Bylaws of Logrus ry</span>
+              </div>
+              <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
+            </a>
+
+            <a
+              href="/docs/hallitus_2026_2027_logrus_ry.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between p-4 bg-[#faf9f7] border border-zinc-200 rounded-md hover:bg-[#f3f1ee] hover:border-zinc-400 transition-all group"
+            >
+              <div class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-red-600 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+                </svg>
+                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">Board & Officers 2026–2027</span>
               </div>
               <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
             </a>
@@ -147,25 +205,41 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
                 <svg class="h-5 w-5 text-red-600 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
                 </svg>
-                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">Equality Plan</span>
+                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">Equality Plan (2026–2028)</span>
+              </div>
+              <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
+            </a>
+
+            <a
+              href="/docs/tietosuojaseloste_logrus_ry.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between p-4 bg-[#faf9f7] border border-zinc-200 rounded-md hover:bg-[#f3f1ee] hover:border-zinc-400 transition-all group"
+            >
+              <div class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-red-600 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+                </svg>
+                <span class="text-xs sm:text-sm font-semibold text-zinc-900 group-hover:text-zinc-950">Privacy Policy (GDPR)</span>
               </div>
               <span class="text-[10px] font-bold bg-zinc-200 text-zinc-800 px-2 py-0.5 rounded">PDF</span>
             </a>
           </div>
         </div>
 
-        <!-- Official Registration Details -->
+        <!-- Official Details -->
         <div class="space-y-4">
           <h2 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-950 pb-3 border-b border-zinc-200">
             Official Registration & Contact Details
           </h2>
           <div class="p-6 bg-[#faf9f7] border border-zinc-200 rounded-lg text-sm sm:text-base text-zinc-700 space-y-2 leading-relaxed">
+            <p><strong class="font-bold text-zinc-950">Registered Name:</strong> LOGRUS – kansainvälinen nuorisoaloitteiden tukiyhdistys ry</p>
             <p><strong class="font-bold text-zinc-950">Organization:</strong> Logrus ry (Cultural Association Logrus ry)</p>
             <p><strong class="font-bold text-zinc-950">Business ID (Y-tunnus):</strong> 2040144-2</p>
             <p><strong class="font-bold text-zinc-950">Founded:</strong> 2006</p>
-            <p><strong class="font-bold text-zinc-950">Registered Office:</strong> Sibeliuksenkatu 19B, 00250 Helsinki, Finland</p>
+            <p><strong class="font-bold text-zinc-950">Visiting & Postal Address:</strong> Sibeliuksenkatu 19B19, 00250 Helsinki, Finland</p>
             <p><strong class="font-bold text-zinc-950">Email:</strong> <a href="mailto:info@logrus.fi" class="underline hover:text-zinc-950">info@logrus.fi</a></p>
-            <p><strong class="font-bold text-zinc-950">Theatre Portal:</strong> <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener noreferrer" class="underline hover:text-zinc-950">www.teatterilogrus.fi</a></p>
+            <p><strong class="font-bold text-zinc-950">Websites:</strong> <a href="https://logrus.fi" target="_blank" rel="noopener noreferrer" class="underline hover:text-zinc-950">logrus.fi</a> | <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener noreferrer" class="underline hover:text-zinc-950">www.teatterilogrus.fi</a></p>
           </div>
         </div>
 
