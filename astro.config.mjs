@@ -12,11 +12,11 @@ export default defineConfig({
     sitemap({
       filter: (page) => !page.includes('/404'),
       i18n: {
-        defaultLocale: 'ru',
+        defaultLocale: 'fi',
         locales: {
+          fi: 'fi-FI',
           ru: 'ru-RU',
           en: 'en-US',
-          fi: 'fi-FI',
         },
       },
     }),

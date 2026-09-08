@@ -13,9 +13,9 @@ interface Props {
 }
 
 const {
-  title = 'LOGRUS RY — Международное общество поддержки молодёжных инициатив',
-  description = 'LOGRUS ry: театр, молодежные творческие студии, танцевальные мастер-классы, фестивали и практика в Хельсинки, Финляндия.',
-  lang = 'ru',
+  title = 'LOGRUS RY — Kansainvälinen nuorisoaloitteiden tukiyhdistys',
+  description = 'LOGRUS ry:n virallinen verkkosivusto: teatteri, nuorten luovat työpajat, tanssitunnit ja harjoittelupaikat Helsingissä.',
+  lang = 'fi',
   ogImage = '/images/theatre-art.webp',
   noindex = false,
 } = Astro.props;
@@ -25,15 +25,17 @@ const canonicalURL = new URL(Astro.url.pathname, siteURL);
 const ogImageURL = new URL(ogImage, siteURL).toString();
 
 // Calculate hreflang paths
-let currentSlug = Astro.url.pathname.replace(/^\/(en|fi)(\/|$)/, '/');
+let currentSlug = Astro.url.pathname.replace(/^\/(en|fi|ru)(\/|$)/, '/');
 if (!currentSlug.startsWith('/')) currentSlug = '/' + currentSlug;
 if (currentSlug.length > 1 && currentSlug.endsWith('/')) currentSlug = currentSlug.slice(0, -1);
 if (currentSlug === '//') currentSlug = '/';
 
 const isTheatre = currentSlug === '/theatre';
-const ruURL = new URL(currentSlug === '/' ? '' : currentSlug.slice(1), siteURL).toString();
-const enURL = new URL(isTheatre ? 'en' : (currentSlug === '/' ? 'en' : 'en' + currentSlug), siteURL).toString();
-const fiURL = new URL(isTheatre ? 'fi' : (currentSlug === '/' ? 'fi' : 'fi' + currentSlug), siteURL).toString();
+const isHome = currentSlug === '/';
+
+const fiURL = new URL(isTheatre ? 'fi' : (isHome ? '' : 'fi' + currentSlug), siteURL).toString();
+const ruURL = new URL(isTheatre ? 'theatre' : (isHome ? 'ru' : currentSlug.slice(1)), siteURL).toString();
+const enURL = new URL(isTheatre ? 'en' : (isHome ? 'en' : 'en' + currentSlug), siteURL).toString();
 
 const ogLocale = lang === 'ru' ? 'ru_RU' : lang === 'fi' ? 'fi_FI' : 'en_US';
 ---
@@ -54,14 +56,12 @@ const ogLocale = lang === 'ru' ? 'ru_RU' : lang === 'fi' ? 'fi_FI' : 'en_US';
     <!-- Multilingual Hreflang Tags -->
     {!noindex && (
       <>
+        <link rel="alternate" hreflang="fi" href={fiURL} />
         <link rel="alternate" hreflang="ru" href={ruURL} />
         <link rel="alternate" hreflang="en" href={enURL} />
-        <link rel="alternate" hreflang="fi" href={fiURL} />
-        <link rel="alternate" hreflang="x-default" href={ruURL} />
+        <link rel="alternate" hreflang="x-default" href={fiURL} />
       </>
     )}
-
-
 
     <!-- Primary Meta Tags & SEO -->
     <title>{title}</title>
