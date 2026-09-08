@@ -66,6 +66,16 @@
         .doc-card-left i { font-size: 1.25rem; color: #d9383a; }
         .doc-badge { font-size: 0.7rem; font-weight: 800; background: #e5e5e5; color: #333; padding: 3px 8px; border-radius: 3px; letter-spacing: 0.05em; }
 
+        /* BOARD & TEAM GRID */
+        .board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 18px; }
+        .board-card { background: #faf9f7; border: 1px solid #eaeaea; border-radius: 6px; padding: 20px; transition: border-color 0.2s, transform 0.2s; }
+        .board-card:hover { border-color: #bbb; transform: translateY(-2px); }
+        .board-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+        .board-name { font-size: 1.05rem; font-weight: 800; color: #111; }
+        .board-role-badge { font-size: 0.72rem; font-weight: 700; background: #111; color: #fff; padding: 3px 8px; border-radius: 3px; white-space: nowrap; }
+        .board-role-badge.director { background: #d9383a; }
+        .board-desc { font-size: 0.85rem; color: #555; line-height: 1.5; }
+
         /* CONTACT INFO */
         .contact-info { background: #faf9f7; border: 1px solid #eaeaea; padding: 28px; border-radius: 4px; font-size: 0.92rem; line-height: 1.9; color: #444; }
         .contact-info strong { color: #111; }
@@ -180,17 +190,62 @@
                 </ul>
             </div>
 
+            <!-- BOARD & LEADERSHIP -->
+            <div class="section-block">
+                <h2>Board of Directors & Officers (Term 2026–2027)</h2>
+                <p>
+                    Elected at the statutory meeting of Logrus ry, the Board of Directors and executive officers for the 2026–2027 operational term:
+                </p>
+                <div class="board-grid">
+                    <div class="board-card">
+                        <div class="board-header">
+                            <span class="board-name">Akvile Ruzgyte</span>
+                            <span class="board-role-badge">Chairperson</span>
+                        </div>
+                        <p class="board-desc">Board leadership and official representation of the association</p>
+                    </div>
+                    <div class="board-card">
+                        <div class="board-header">
+                            <span class="board-name">Olga Hiltunen</span>
+                            <span class="board-role-badge">Secretary</span>
+                        </div>
+                        <p class="board-desc">Board member, meeting minutes, and official association records</p>
+                    </div>
+                    <div class="board-card">
+                        <div class="board-header">
+                            <span class="board-name">Evgenii Lapin</span>
+                            <span class="board-role-badge">Board Member</span>
+                        </div>
+                        <p class="board-desc">Board governance and development of association initiatives</p>
+                    </div>
+                    <div class="board-card">
+                        <div class="board-header">
+                            <span class="board-name">Olga Lapina</span>
+                            <span class="board-role-badge director">Executive Director</span>
+                        </div>
+                        <p class="board-desc">Leadership of operational activities, theatre productions, and educational courses</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- INSTITUTIONAL TRANSPARENCY -->
             <div class="section-block">
-                <h2>Institutional Transparency</h2>
+                <h2>Institutional Transparency & Governance Documents</h2>
                 <p>
-                    The association operates in strict compliance with the Finnish Associations Act (Yhdistyslaki). Core governance documents are openly accessible for partners, auditors, and grant providers:
+                    The association operates in strict compliance with the Finnish Associations Act (Yhdistyslaki) and EU GDPR standards. Core governance documents are openly accessible for partners, auditors, and grant providers:
                 </p>
                 <div class="docs-grid">
                     <a href="../docs/saannot.pdf" target="_blank" class="doc-card">
                         <div class="doc-card-left">
                             <i class="fa-solid fa-file-pdf"></i>
                             <span>Bylaws of Logrus ry (Säännöt)</span>
+                        </div>
+                        <span class="doc-badge">PDF</span>
+                    </a>
+                    <a href="../docs/hallitus_2026_2027_logrus_ry.pdf" target="_blank" class="doc-card">
+                        <div class="doc-card-left">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Board & Officers 2026–2027 (Hallitus)</span>
                         </div>
                         <span class="doc-badge">PDF</span>
                     </a>
@@ -208,6 +263,13 @@
                         </div>
                         <span class="doc-badge">PDF</span>
                     </a>
+                    <a href="../docs/tietosuojaseloste_logrus_ry.pdf" target="_blank" class="doc-card">
+                        <div class="doc-card-left">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Privacy Policy (GDPR Statement)</span>
+                        </div>
+                        <span class="doc-badge">PDF</span>
+                    </a>
                 </div>
             </div>
 
@@ -215,12 +277,13 @@
             <div class="section-block">
                 <h2>Official Registration & Contact Details</h2>
                 <div class="contact-info">
+                    <p><strong>Registered Name:</strong> LOGRUS – kansainvälinen nuorisoaloitteiden tukiyhdistys ry</p>
                     <p><strong>Organization:</strong> Logrus ry (Cultural Association Logrus ry)</p>
                     <p><strong>Business ID (Y-tunnus):</strong> 2040144-2</p>
                     <p><strong>Founded:</strong> 2006</p>
-                    <p><strong>Registered Office:</strong> Sibeliuksenkatu 19B, 00250 Helsinki, Finland</p>
+                    <p><strong>Visiting & Postal Address:</strong> Sibeliuksenkatu 19B19, 00250 Helsinki, Finland</p>
                     <p><strong>Email:</strong> <a href="mailto:info@logrus.fi">info@logrus.fi</a></p>
-                    <p><strong>Theatre Portal:</strong> <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener">www.teatterilogrus.fi</a></p>
+                    <p><strong>Websites:</strong> <a href="https://logrus.fi" target="_blank" rel="noopener">logrus.fi</a> | <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener">www.teatterilogrus.fi</a></p>
                 </div>
             </div>
 
@@ -235,7 +298,7 @@
                     <h4>Contacts</h4>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>Sibeliuksenkatu 19B, 00250 Helsinki, Finland</span>
+                        <span>Sibeliuksenkatu 19B19, 00250 Helsinki, Finland</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-envelope"></i>

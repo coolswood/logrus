@@ -66,6 +66,16 @@
         .doc-card-left i { font-size: 1.25rem; color: #d9383a; }
         .doc-badge { font-size: 0.7rem; font-weight: 800; background: #e5e5e5; color: #333; padding: 3px 8px; border-radius: 3px; letter-spacing: 0.05em; }
 
+        /* BOARD & TEAM GRID */
+        .board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 18px; }
+        .board-card { background: #faf9f7; border: 1px solid #eaeaea; border-radius: 6px; padding: 20px; transition: border-color 0.2s, transform 0.2s; }
+        .board-card:hover { border-color: #bbb; transform: translateY(-2px); }
+        .board-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+        .board-name { font-size: 1.05rem; font-weight: 800; color: #111; }
+        .board-role-badge { font-size: 0.72rem; font-weight: 700; background: #111; color: #fff; padding: 3px 8px; border-radius: 3px; white-space: nowrap; }
+        .board-role-badge.director { background: #d9383a; }
+        .board-desc { font-size: 0.85rem; color: #555; line-height: 1.5; }
+
         /* CONTACT INFO */
         .contact-info { background: #faf9f7; border: 1px solid #eaeaea; padding: 28px; border-radius: 4px; font-size: 0.92rem; line-height: 1.9; color: #444; }
         .contact-info strong { color: #111; }
@@ -180,11 +190,49 @@
                 </ul>
             </div>
 
+            <!-- HALLITUS JA TOIMIHENKILÖT -->
+            <div class="section-block">
+                <h2>Hallitus ja toimihenkilöt (toimikausi 2026–2027)</h2>
+                <p>
+                    LOGRUS ry:n sääntömääräisessä kokouksessa on valittu yhdistyksen hallitus sekä toimihenkilöt toimikaudelle 2026–2027 seuraavassa kokoonpanossa:
+                </p>
+                <div class="board-grid">
+                    <div class="board-card">
+                        <div class="board-header">
+                            <span class="board-name">Akvile Ruzgyte</span>
+                            <span class="board-role-badge">Puheenjohtaja</span>
+                        </div>
+                        <p class="board-desc">Hallituksen johtaminen ja yhdistyksen edustaminen</p>
+                    </div>
+                    <div class="board-card">
+                        <div class="board-header">
+                            <span class="board-name">Olga Hiltunen</span>
+                            <span class="board-role-badge">Sihteeri</span>
+                        </div>
+                        <p class="board-desc">Hallituksen jäsen, pöytäkirjat ja yhdistyksen asiakirjat</p>
+                    </div>
+                    <div class="board-card">
+                        <div class="board-header">
+                            <span class="board-name">Evgenii Lapin</span>
+                            <span class="board-role-badge">Hallituksen jäsen</span>
+                        </div>
+                        <p class="board-desc">Hallitustyöskentely ja yhdistystoiminnan kehittäminen</p>
+                    </div>
+                    <div class="board-card">
+                        <div class="board-header">
+                            <span class="board-name">Olga Lapina</span>
+                            <span class="board-role-badge director">Toiminnanjohtaja</span>
+                        </div>
+                        <p class="board-desc">Operatiivisen toiminnan, teatterin ja kurssien johtaminen</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- HALLINTO JA AVOIMUUS -->
             <div class="section-block">
                 <h2>Hallinto ja avoimuus</h2>
                 <p>
-                    Yhdistyksen toiminta noudattaa tarkasti Suomen yhdistyslakia ja hyvää hallintotapaa. Keskeiset asiakirjat ovat avoimesti saatavilla yhteistyökumppaneille ja rahoittajille:
+                    Yhdistyksen toiminta noudattaa tarkasti Suomen yhdistyslakia ja EU:n tietosuoja-asetusta (GDPR). Keskeiset viralliset asiakirjat ovat avoimesti saatavilla yhteistyökumppaneille ja rahoittajille:
                 </p>
                 <div class="docs-grid">
                     <a href="../docs/saannot.pdf" target="_blank" class="doc-card">
@@ -194,10 +242,17 @@
                         </div>
                         <span class="doc-badge">PDF</span>
                     </a>
+                    <a href="../docs/hallitus_2026_2027_logrus_ry.pdf" target="_blank" class="doc-card">
+                        <div class="doc-card-left">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Hallitus ja toimihenkilöt 2026–2027</span>
+                        </div>
+                        <span class="doc-badge">PDF</span>
+                    </a>
                     <a href="../docs/toimintasuunnitelma.pdf" target="_blank" class="doc-card">
                         <div class="doc-card-left">
                             <i class="fa-solid fa-file-pdf"></i>
-                            <span>Toimintasuunnitelma (Toimintasuunnitelma)</span>
+                            <span>Toimintasuunnitelma 2027</span>
                         </div>
                         <span class="doc-badge">PDF</span>
                     </a>
@@ -208,6 +263,13 @@
                         </div>
                         <span class="doc-badge">PDF</span>
                     </a>
+                    <a href="../docs/tietosuojaseloste_logrus_ry.pdf" target="_blank" class="doc-card">
+                        <div class="doc-card-left">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Tietosuojaseloste (GDPR 2016/679)</span>
+                        </div>
+                        <span class="doc-badge">PDF</span>
+                    </a>
                 </div>
             </div>
 
@@ -215,12 +277,13 @@
             <div class="section-block">
                 <h2>Viralliset rekisteritiedot ja yhteystiedot</h2>
                 <div class="contact-info">
+                    <p><strong>Rekisteröity nimi:</strong> LOGRUS – kansainvälinen nuorisoaloitteiden tukiyhdistys ry</p>
                     <p><strong>Yhdistys:</strong> Logrus ry (Kulttuuriyhdistys Logrus ry)</p>
                     <p><strong>Y-tunnus:</strong> 2040144-2</p>
                     <p><strong>Perustamisvuosi:</strong> 2006</p>
-                    <p><strong>Kotipaikka ja osoite:</strong> Sibeliuksenkatu 19B, 00250 Helsinki</p>
+                    <p><strong>Käynti- ja postiosoite:</strong> Sibeliuksenkatu 19B19, 00250 Helsinki</p>
                     <p><strong>Sähköposti:</strong> <a href="mailto:info@logrus.fi">info@logrus.fi</a></p>
-                    <p><strong>Teatterin verkkosivusto:</strong> <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener">www.teatterilogrus.fi</a></p>
+                    <p><strong>Verkkosivustot:</strong> <a href="https://logrus.fi" target="_blank" rel="noopener">logrus.fi</a> | <a href="https://www.teatterilogrus.fi/" target="_blank" rel="noopener">www.teatterilogrus.fi</a></p>
                 </div>
             </div>
 
@@ -235,7 +298,7 @@
                     <h4>Yhteystiedot</h4>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>Sibeliuksenkatu 19B, 00250 Helsinki</span>
+                        <span>Sibeliuksenkatu 19B19, 00250 Helsinki</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-envelope"></i>
